@@ -1,0 +1,46 @@
+# Cursor Project Rules and LLVM Knowledge Base
+
+These rules configure how AI assistants should work in this repository.
+
+## LLVM Knowledge Base (KB)
+- Purpose: Centralized guidance for code quality, contribution flow, and best practices inspired by LLVM standards.
+- Principles:
+  - Prefer clarity and simplicity; optimize for readability over cleverness.
+  - Use assertions and exhaustive error handling during development.
+  - Keep APIs small, modular, and orthogonal. Public APIs must be documented.
+  - Treat headers/exports as stable modules; avoid unnecessary imports.
+  - Code must compile warning-free and pass all tests before merge.
+
+## Coding Standards (Dart/Flutter)
+- Adhere to:
+  - Effective Dart: style, documentation, usage, design.
+  - Flutter adaptive UI best practices and performance guidance.
+- Formatting:
+  - Use `dart format` defaults.
+  - No unused code or dead files.
+- Naming:
+  - Types/classes: PascalCase; members/vars: lowerCamelCase; constants: lowerCamelCase with `const`.
+- Error Handling:
+  - Fail fast with clear exceptions; avoid silent catches.
+- Testing:
+  - Cover core logic and critical flows; prefer unit tests for BLoCs and DB.
+
+## Developer Policies
+- Every change:
+  - Must run: `dart format`, `dart analyze`, and tests.
+  - Must update Memory Bank (`memory-bank/activeContext.md`, `progress.md`) via hook.
+  - Requires meaningful commit messages (conventional-ish type: scope - summary).
+- Quality gates:
+  - No analyzer warnings or TODOs.
+  - New/changed public APIs documented.
+
+## Contribution Workflow
+1. Create/edit code.
+2. Run `tool/validate.sh` (formats, analyzes, tests).
+3. Commit; the hook updates Memory Bank and blocks on failures.
+
+## AI Assistant Guidance
+- Always read Memory Bank files first.
+- Keep responses concise; show only relevant code snippets.
+- Prefer implementing edits directly instead of proposing pseudo-code.
+- When unsure, scan codebase semantically, then refine.

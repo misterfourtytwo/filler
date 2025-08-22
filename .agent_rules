@@ -1,0 +1,10 @@
+# Project Intelligence (.agent_rules)
+
+- Primary platforms: macOS, Android, Web.
+- Architecture: CLEAN with data/domain/presentation layers; Drift DB; BLoC state; DI via InheritedWidget `AppScope`.
+- Testing: unit tests for DB and BLoCs; widget tests for navigation and pages.
+- Preferences drive canvas width/height/insets/defaultColor.
+- Export: `RepaintBoundary` → PNG; web uses `file_saver`, desktop/mobile uses `path_provider` to save to Documents.
+- Code style: Effective Dart, strict lints, no analyzer warnings.
+- Commits: frequent, meaningful; run `tool/validate.sh` before commit.
+- Memory Bank is authoritative context; always update `activeContext.md` and `progress.md` after significant changes.
