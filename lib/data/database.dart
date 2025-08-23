@@ -322,11 +322,14 @@ class AppDatabase extends _$AppDatabase {
         );
       } else {
         // Insert new preference
+        final now = DateTime.now();
         await into(preferenceKeyValues).insert(
           PreferenceKeyValuesCompanion.insert(
             key: key,
             value: value,
             valueType: Value(valueType),
+            createdAt: Value(now),
+            updatedAt: Value(now),
           ),
         );
       }

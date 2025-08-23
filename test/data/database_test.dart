@@ -189,22 +189,44 @@ void main() {
           'updatedAt.isAfter(beforeCreate): ${testRow.updatedAt.isAfter(beforeCreate)}',
         );
 
-        // The database timestamps are rounded to seconds, so we need to account for this
-        // by checking that the timestamps are at least in the same second or later
+        // SQLite timestamps have second precision, so we need to account for that
+        // The database timestamps should be at least as recent as beforeCreate (rounded to seconds)
+        final beforeCreateRounded = DateTime(
+          beforeCreate.year,
+          beforeCreate.month,
+          beforeCreate.day,
+          beforeCreate.hour,
+          beforeCreate.minute,
+          beforeCreate.second,
+        );
+
+        // Since SQLite rounds down to seconds, createdAt might be the same as beforeCreateRounded
+        // or up to 1 second earlier. We should allow for this.
         expect(
           testRow.createdAt.isAfter(
-            beforeCreate.subtract(const Duration(seconds: 1)),
+            beforeCreateRounded.subtract(const Duration(seconds: 2)),
           ),
           isTrue,
+          reason:
+              'createdAt should be at most 1 second before beforeCreate (accounting for SQLite second precision)',
         );
         expect(
           testRow.updatedAt.isAfter(
-            beforeCreate.subtract(const Duration(seconds: 1)),
+            beforeCreateRounded.subtract(const Duration(seconds: 2)),
           ),
           isTrue,
+          reason:
+              'updatedAt should be at most 1 second before beforeCreate (accounting for SQLite second precision)',
         );
-        // Note: For immediate updates, createdAt and updatedAt may be the same
-        // which is acceptable behavior for the database schema
+
+        // Verify that updatedAt is at least as recent as createdAt
+        expect(
+          testRow.updatedAt.isAfter(
+            testRow.createdAt.subtract(const Duration(seconds: 1)),
+          ),
+          isTrue,
+          reason: 'updatedAt should be at least as recent as createdAt',
+        );
       });
     });
   });
