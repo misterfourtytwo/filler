@@ -9,6 +9,8 @@ void main() {
   late CanvasRepository canvasRepo;
   late PreferencesRepository prefsRepo;
 
+  setUpAll(TestHelpers.initializeLogging);
+
   setUp(() {
     database = TestHelpers.createTestDatabase();
     canvasRepo = CanvasRepository(database);

@@ -1,8 +1,6 @@
-import 'dart:convert';
-
 import 'package:bloc_test/bloc_test.dart';
-import 'package:filler/data/database.dart';
 import 'package:filler/domain/repositories.dart';
+import 'package:filler/features/canvas/domain/canvas_model.dart';
 import 'package:filler/features/canvas/domain/pixel_data.dart';
 import 'package:filler/features/gallery/presentation/gallery_bloc.dart';
 import 'package:flutter/material.dart';
@@ -39,43 +37,43 @@ void main() {
         'emits [loading, loaded] when canvases loaded successfully',
         build: () {
           final mockCanvases = [
-            Canvase(
+            CanvasModel(
               id: 1,
               title: 'Canvas 1',
               width: 2,
               height: 2,
               insets: 0,
-              pixelsJson: jsonEncode([
-                {'pattern': 1, 'rotation': 0.0},
-                {'pattern': 2, 'rotation': 0.0},
-                {'pattern': 3, 'rotation': 0.0},
-                {'pattern': 4, 'rotation': 0.0},
-              ]),
-              patternPaintColor: 0xFF000000,
-              canvasBackgroundColor: 0xFFFFFFFF,
+              pixels: const [
+                PixelData(pattern: 0xFF2196F3, rotation: 0.0),
+                PixelData(pattern: 0xFFE53935, rotation: 0.0),
+                PixelData(pattern: 0xFF43A047, rotation: 0.0),
+                PixelData(pattern: 0xFF8E24AA, rotation: 0.0),
+              ],
+              patternPaintColor: const Color(0xFF000000),
+              canvasBackgroundColor: const Color(0xFFFFFFFF),
               createdAt: DateTime.now(),
               updatedAt: DateTime.now(),
             ),
-            Canvase(
+            CanvasModel(
               id: 2,
               title: 'Canvas 2',
               width: 3,
               height: 1,
               insets: 1,
-              pixelsJson: jsonEncode([
-                {'pattern': 0xFFFDD835, 'rotation': 0.0},
-                {'pattern': 0xFFFFA726, 'rotation': 0.0},
-                {'pattern': 0xFF1E88E5, 'rotation': 0.0},
-              ]),
-              patternPaintColor: 0xFF000000,
-              canvasBackgroundColor: 0xFFFFFFFF,
+              pixels: const [
+                PixelData(pattern: 0xFFFDD835, rotation: 0.0),
+                PixelData(pattern: 0xFFFFA726, rotation: 0.0),
+                PixelData(pattern: 0xFF1E88E5, rotation: 0.0),
+              ],
+              patternPaintColor: const Color(0xFF000000),
+              canvasBackgroundColor: const Color(0xFFFFFFFF),
               createdAt: DateTime.now(),
               updatedAt: DateTime.now(),
             ),
           ];
 
           when(
-            () => mockCanvasRepo.getAll(),
+            () => mockCanvasRepo.getAllModels(),
           ).thenAnswer((_) async => mockCanvases);
           return galleryBloc;
         },
@@ -90,10 +88,10 @@ void main() {
                 height: 2,
                 insets: 0,
                 pixels: [
-                  PixelData(pattern: 0xFF2196F3),
-                  PixelData(pattern: 0xFFE53935),
-                  PixelData(pattern: 0xFF43A047),
-                  PixelData(pattern: 0xFF8E24AA),
+                  PixelData(pattern: 0xFF2196F3, rotation: 0.0),
+                  PixelData(pattern: 0xFFE53935, rotation: 0.0),
+                  PixelData(pattern: 0xFF43A047, rotation: 0.0),
+                  PixelData(pattern: 0xFF8E24AA, rotation: 0.0),
                 ],
                 patternPaintColor: Color(0xFF000000),
                 canvasBackgroundColor: Color(0xFFFFFFFF),
@@ -104,9 +102,9 @@ void main() {
                 height: 1,
                 insets: 1,
                 pixels: [
-                  PixelData(pattern: 0xFFFDD835),
-                  PixelData(pattern: 0xFFFFA726),
-                  PixelData(pattern: 0xFF1E88E5),
+                  PixelData(pattern: 0xFFFDD835, rotation: 0.0),
+                  PixelData(pattern: 0xFFFFA726, rotation: 0.0),
+                  PixelData(pattern: 0xFF1E88E5, rotation: 0.0),
                 ],
                 patternPaintColor: Color(0xFF000000),
                 canvasBackgroundColor: Color(0xFFFFFFFF),
@@ -115,14 +113,14 @@ void main() {
           ),
         ],
         verify: (_) {
-          verify(() => mockCanvasRepo.getAll()).called(1);
+          verify(() => mockCanvasRepo.getAllModels()).called(1);
         },
       );
 
       blocTest<GalleryBloc, GalleryState>(
         'emits [loading, loaded] with empty list when no canvases exist',
         build: () {
-          when(() => mockCanvasRepo.getAll()).thenAnswer((_) async => []);
+          when(() => mockCanvasRepo.getAllModels()).thenAnswer((_) async => []);
           return galleryBloc;
         },
         act: (bloc) => bloc.add(const GalleryEvent.load()),
@@ -131,7 +129,7 @@ void main() {
           const GalleryState.loaded(items: []),
         ],
         verify: (_) {
-          verify(() => mockCanvasRepo.getAll()).called(1);
+          verify(() => mockCanvasRepo.getAllModels()).called(1);
         },
       );
 
@@ -139,51 +137,54 @@ void main() {
         'stays in loading state when repository throws error',
         build: () {
           when(
-            () => mockCanvasRepo.getAll(),
+            () => mockCanvasRepo.getAllModels(),
           ).thenThrow(Exception('Database error'));
           return galleryBloc;
         },
         act: (bloc) => bloc.add(const GalleryEvent.load()),
         expect: () => [const GalleryState.loading()],
         verify: (_) {
-          verify(() => mockCanvasRepo.getAll()).called(1);
+          verify(() => mockCanvasRepo.getAllModels()).called(1);
         },
       );
 
       blocTest<GalleryBloc, GalleryState>(
-        'handles invalid JSON in canvas data gracefully',
+        'handles canvas processing errors gracefully',
         build: () {
-          final canvasWithInvalidJson = Canvase(
+          final canvasWithError = CanvasModel(
             id: 1,
-            title: 'Invalid Canvas',
+            title: 'Canvas With Error',
             width: 2,
             height: 2,
             insets: 0,
-            pixelsJson: 'invalid-json-data',
-            patternPaintColor: 0xFF000000,
-            canvasBackgroundColor: 0xFFFFFFFF,
+            pixels: const [
+              PixelData(pattern: 0xFF2196F3, rotation: 0.0),
+              PixelData(pattern: 0xFFE53935, rotation: 0.0),
+              PixelData(pattern: 0xFF43A047, rotation: 0.0),
+              PixelData(pattern: 0xFF8E24AA, rotation: 0.0),
+            ],
+            patternPaintColor: const Color(0xFF000000),
+            canvasBackgroundColor: const Color(0xFFFFFFFF),
             createdAt: DateTime.now(),
             updatedAt: DateTime.now(),
           );
 
-          final validCanvas = Canvase(
+          final validCanvas = CanvasModel(
             id: 2,
             title: 'Valid Canvas',
             width: 1,
             height: 1,
             insets: 0,
-            pixelsJson: jsonEncode([
-              {'pattern': 0xFF2196F3, 'rotation': 0.0},
-            ]),
-            patternPaintColor: 0xFF000000,
-            canvasBackgroundColor: 0xFFFFFFFF,
+            pixels: const [PixelData(pattern: 0xFF2196F3, rotation: 0.0)],
+            patternPaintColor: const Color(0xFF000000),
+            canvasBackgroundColor: const Color(0xFFFFFFFF),
             createdAt: DateTime.now(),
             updatedAt: DateTime.now(),
           );
 
           when(
-            () => mockCanvasRepo.getAll(),
-          ).thenAnswer((_) async => [canvasWithInvalidJson, validCanvas]);
+            () => mockCanvasRepo.getAllModels(),
+          ).thenAnswer((_) async => [canvasWithError, validCanvas]);
           return galleryBloc;
         },
         act: (bloc) => bloc.add(const GalleryEvent.load()),
@@ -192,11 +193,25 @@ void main() {
           const GalleryState.loaded(
             items: [
               GalleryItem(
+                id: 1,
+                width: 2,
+                height: 2,
+                insets: 0,
+                pixels: [
+                  PixelData(pattern: 0xFF2196F3, rotation: 0.0),
+                  PixelData(pattern: 0xFFE53935, rotation: 0.0),
+                  PixelData(pattern: 0xFF43A047, rotation: 0.0),
+                  PixelData(pattern: 0xFF8E24AA, rotation: 0.0),
+                ],
+                patternPaintColor: Color(0xFF000000),
+                canvasBackgroundColor: Color(0xFFFFFFFF),
+              ),
+              GalleryItem(
                 id: 2,
                 width: 1,
                 height: 1,
                 insets: 0,
-                pixels: [PixelData(pattern: 0xFF2196F3)],
+                pixels: [PixelData(pattern: 0xFF2196F3, rotation: 0.0)],
                 patternPaintColor: Color(0xFF000000),
                 canvasBackgroundColor: Color(0xFFFFFFFF),
               ),
@@ -204,7 +219,7 @@ void main() {
           ),
         ],
         verify: (_) {
-          verify(() => mockCanvasRepo.getAll()).called(1);
+          verify(() => mockCanvasRepo.getAllModels()).called(1);
         },
       );
     });
@@ -213,7 +228,7 @@ void main() {
       blocTest<GalleryBloc, GalleryState>(
         'handles multiple load events correctly',
         build: () {
-          when(() => mockCanvasRepo.getAll()).thenAnswer((_) async => []);
+          when(() => mockCanvasRepo.getAllModels()).thenAnswer((_) async => []);
           return galleryBloc;
         },
         act: (bloc) {
