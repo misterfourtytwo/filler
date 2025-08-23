@@ -46762,7 +46762,7 @@ var $async$$0=A.I(function(a,b){if(a===1)return A.E(b,r)
 while(true)switch(s){case 0:$.a_.M().b0(0,"\ud83d\udcbe Database: Using WASM database (sqlite3 WASM with IndexedDB storage)",null)
 p=A.eC("/sql-wasm.wasm")
 s=3
-return A.x(A.U9("filler_db",A.eC("/drift_worker.dart.js"),p),$async$$0)
+return A.x(A.U9("filler_db",A.eC("/dummy-worker.js"),p),$async$$0)
 case 3:q=b.a
 s=1
 break
