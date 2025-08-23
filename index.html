@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--
+    If you are serving your web app in a path other than the root, change the
+    href value below to reflect the base path you are serving from.
+
+    The path provided below has to start and end with a slash "/" in order for
+    it to work correctly.
+
+    For more details:
+    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
+
+    This is a placeholder for base href that will be replaced by the value of
+    the `--base-href` argument provided to `flutter build`.
+  -->
+  <base href="/filler/">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Filler - A colorful pixel canvas editor with gallery, preferences, and export capabilities. Create beautiful pixel art with an intuitive interface.">
+  <meta name="keywords" content="pixel art, canvas editor, drawing, creative, flutter, web app">
+  <meta name="author" content="Filler App">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://your-username.github.io/filler/">
+  <meta property="og:title" content="Filler - Pixel Canvas Editor">
+  <meta property="og:description" content="Create beautiful pixel art with Filler's intuitive canvas editor">
+  <meta property="og:image" content="icons/Icon-512.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://your-username.github.io/filler/">
+  <meta property="twitter:title" content="Filler - Pixel Canvas Editor">
+  <meta property="twitter:description" content="Create beautiful pixel art with Filler's intuitive canvas editor">
+  <meta property="twitter:image" content="icons/Icon-512.png">
+
+  <!-- iOS meta tags & icons -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Filler">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png"/>
+
+  <title>Filler - Pixel Canvas Editor</title>
+  <link rel="manifest" href="manifest.json">
+  
+  <!-- Preload critical resources -->
+  <link rel="preload" href="sql-wasm.js" as="script">
+  <link rel="preload" href="flutter_bootstrap.js" as="script">
+  
+  <!-- Drift web database requires sql.js -->
+  <script src="sql-wasm.js"></script>
+  <script>
+    // Configure sql.js for Drift
+    window.sqlite3InitModule = function() {
+      return initSqlJs({
+        locateFile: function(file) {
+          return file;
+        }
+      });
+    };
+    
+    // Performance optimization: Hide loading message when app is ready
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        const loading = document.getElementById('loading');
+        if (loading) {
+          loading.style.opacity = '0';
+          setTimeout(function() {
+            loading.style.display = 'none';
+          }, 300);
+        }
+      }, 1000);
+    });
+  </script>
+  
+  <style>
+    /* Loading animation styles */
+    #loading {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: #666;
+      font-size: 18px;
+      font-weight: 500;
+      transition: opacity 0.3s ease;
+      z-index: 9999;
+    }
+    
+    /* Prevent flash of unstyled content */
+    body {
+      margin: 0;
+      padding: 0;
+      background: #fafafa;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+    
+    /* Loading spinner */
+    .loading-spinner {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #e0e0e0;
+      border-radius: 50%;
+      border-top-color: #007AFF;
+      animation: spin 1s ease-in-out infinite;
+      margin-right: 12px;
+    }
+    
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <!-- Loading message for better UX -->
+  <div id="loading">
+    <div class="loading-spinner"></div>
+    Loading Filler...
+  </div>
+  
+  <script src="flutter_bootstrap.js" async></script>
+</body>
+</html>
