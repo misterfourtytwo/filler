@@ -46,7 +46,7 @@ class MiniCanvas extends StatelessWidget {
               final pattern = CanvasPatternExtension.fromValue(
                 pixelData.pattern,
               );
-              return Container(
+              return SizedBox(
                 width: pixelSize,
                 height: pixelSize,
                 child: CustomPaint(

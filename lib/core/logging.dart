@@ -69,6 +69,41 @@ class AppLogger {
     _logger.i('📤 Export: $operation', error: data);
   }
 
+  /// Log gallery operations.
+  static void gallery(String operation, {Map<String, dynamic>? data}) {
+    _logger.d('🖼️ Gallery: $operation', error: data);
+  }
+
+  /// Log theme operations.
+  static void theme(String operation, {Map<String, dynamic>? data}) {
+    _logger.d('🎨 Theme: $operation', error: data);
+  }
+
+  /// Log file operations.
+  static void file(String operation, {Map<String, dynamic>? data}) {
+    _logger.d('📁 File: $operation', error: data);
+  }
+
+  /// Log network operations.
+  static void network(String operation, {Map<String, dynamic>? data}) {
+    _logger.d('🌐 Network: $operation', error: data);
+  }
+
+  /// Log security operations.
+  static void security(String operation, {Map<String, dynamic>? data}) {
+    _logger.w('🔒 Security: $operation', error: data);
+  }
+
+  /// Log cache operations.
+  static void cache(String operation, {Map<String, dynamic>? data}) {
+    _logger.d('💿 Cache: $operation', error: data);
+  }
+
+  /// Log analytics events.
+  static void analytics(String event, {Map<String, dynamic>? data}) {
+    _logger.i('📊 Analytics: $event', error: data);
+  }
+
   /// Log errors with full context.
   static void error(
     String message, {
@@ -97,5 +132,35 @@ class AppLogger {
       '⏱️ Performance: $operation took ${duration.inMilliseconds}ms',
       error: data,
     );
+  }
+
+  /// Log memory usage.
+  static void memory(String operation, {Map<String, dynamic>? data}) {
+    _logger.d('🧠 Memory: $operation', error: data);
+  }
+
+  /// Log lifecycle events.
+  static void lifecycle(String event, {Map<String, dynamic>? data}) {
+    _logger.i('🔄 Lifecycle: $event', error: data);
+  }
+
+  /// Log configuration changes.
+  static void config(String change, {Map<String, dynamic>? data}) {
+    _logger.i('⚙️ Config: $change', error: data);
+  }
+
+  /// Log debugging information.
+  static void debug(String message, {Map<String, dynamic>? data}) {
+    _logger.d('🐛 Debug: $message', error: data);
+  }
+
+  /// Log information messages.
+  static void info(String message, {Map<String, dynamic>? data}) {
+    _logger.i('ℹ️ Info: $message', error: data);
+  }
+
+  /// Log verbose messages.
+  static void verbose(String message, {Map<String, dynamic>? data}) {
+    _logger.t('🔍 Verbose: $message', error: data);
   }
 }

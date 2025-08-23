@@ -88,7 +88,7 @@ void main() {
           defaultPattern: 1,
           themeMode: 2,
         ),
-        act: (bloc) => bloc.add(const PreferencesEvent.setWidth(25)),
+        act: (bloc) => bloc.add(PreferencesEvent.setWidth(25)),
         expect: () => [
           const PreferencesState.ready(
             width: 25,
@@ -110,7 +110,7 @@ void main() {
           defaultPattern: 1,
           themeMode: 2,
         ),
-        act: (bloc) => bloc.add(const PreferencesEvent.setHeight(30)),
+        act: (bloc) => bloc.add(PreferencesEvent.setHeight(30)),
         expect: () => [
           const PreferencesState.ready(
             width: 10,
@@ -132,7 +132,7 @@ void main() {
           defaultPattern: 1,
           themeMode: 2,
         ),
-        act: (bloc) => bloc.add(const PreferencesEvent.setInsets(5)),
+        act: (bloc) => bloc.add(PreferencesEvent.setInsets(5)),
         expect: () => [
           const PreferencesState.ready(
             width: 10,

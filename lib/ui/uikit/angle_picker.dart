@@ -71,14 +71,10 @@ class _AnglePickerState extends State<AnglePicker> {
       decoration: BoxDecoration(
         color: scheme.surfaceContainerHighest,
         borderRadius: BorderRadius.circular(DesignSystem.radiusLg),
-        border: Border.all(
-          color: scheme.outline.withValues(alpha: 0.1),
-          width: DesignSystem.strokeThin,
-        ),
+        border: Border.all(color: scheme.outline.withValues(alpha: 0.1)),
         boxShadow: DesignSystem.shadowSubtle,
       ),
       child: Column(
-        mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           // Premium header

@@ -76,7 +76,6 @@ class _PatternSwatchButtonState extends State<PatternSwatchButton> {
             color: isSelected
                 ? theme.colorScheme.primary
                 : theme.colorScheme.outline,
-            width: isSelected ? 2.0 : 1.0,
           ),
           boxShadow: _isPressed
               ? [
@@ -93,7 +92,6 @@ class _PatternSwatchButtonState extends State<PatternSwatchButton> {
             size: const Size(24, 24),
             painter: PatternPainter(
               widget.pattern,
-              rotation: 0.0,
               paintColor: theme.colorScheme.onSurface,
             ),
           ),

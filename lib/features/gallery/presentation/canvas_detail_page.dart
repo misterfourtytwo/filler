@@ -26,6 +26,9 @@ class CanvasDetailPage extends StatefulWidget {
 }
 
 class _CanvasDetailPageState extends State<CanvasDetailPage> {
+  final GlobalKey _canvasGridKey = GlobalKey();
+  final GlobalKey _exportBoundaryKey = GlobalKey();
+
   @override
   void initState() {
     super.initState();
@@ -38,19 +41,23 @@ class _CanvasDetailPageState extends State<CanvasDetailPage> {
   }
 
   /// Builds a centered canvas grid for display.
-  Widget _buildCanvasGrid(BuildContext context, GlobalKey boundaryKey) {
-    return CanvasGrid(
-      width: widget.item.width,
-      height: widget.item.height,
-      insets: widget.item.insets,
-      pixels: widget.item.pixels,
-      patternRotation: 0.0, // No rotation for display
-      customPattern: null, // No custom pattern for display
-      onTap: (_) {}, // No interaction in detail view
-      boundaryKey: boundaryKey,
-      patternPaintColor: widget.item.patternPaintColor,
-      canvasBackgroundColor: widget.item.canvasBackgroundColor,
-      showBorders: false, // No borders for cleaner display
+  Widget _buildCanvasGrid(BuildContext context) {
+    return RepaintBoundary(
+      key: _exportBoundaryKey,
+      child: CanvasGrid(
+        key: _canvasGridKey,
+        width: widget.item.width,
+        height: widget.item.height,
+        insets: widget.item.insets,
+        pixels: widget.item.pixels,
+        patternRotation: 0.0, // No rotation for display
+        customPattern: null, // No custom pattern for display
+        onTap: (_) {}, // No interaction in detail view
+        boundaryKey: GlobalKey(),
+        patternPaintColor: widget.item.patternPaintColor,
+        canvasBackgroundColor: widget.item.canvasBackgroundColor,
+        showBorders: false, // No borders for cleaner display
+      ),
     );
   }
 
@@ -66,7 +73,6 @@ class _CanvasDetailPageState extends State<CanvasDetailPage> {
       },
     );
 
-    final boundaryKey = GlobalKey();
     return Scaffold(
       appBar: AppBar(
         title: const Text('Canvas Showcase'),
@@ -133,7 +139,7 @@ class _CanvasDetailPageState extends State<CanvasDetailPage> {
 
               try {
                 final boundary =
-                    boundaryKey.currentContext?.findRenderObject()
+                    _exportBoundaryKey.currentContext?.findRenderObject()
                         as RenderRepaintBoundary?;
                 if (boundary == null) {
                   AppLogger.warning('Export failed: RepaintBoundary not found');
@@ -269,12 +275,7 @@ class _CanvasDetailPageState extends State<CanvasDetailPage> {
           const SizedBox(width: DesignSystem.spaceSm),
         ],
       ),
-      body: Center(
-        child: RepaintBoundary(
-          key: boundaryKey,
-          child: _buildCanvasGrid(context, boundaryKey),
-        ),
-      ),
+      body: Center(child: _buildCanvasGrid(context)),
     );
   }
 

@@ -6,7 +6,7 @@
 - ✅ **Canvas Editor**: Full-featured pixel art creation with pattern painting
 - ✅ **Pattern System**: Built-in patterns with rotation support
 - ✅ **Custom Patterns**: User-defined pattern creation and editing
-- ✅ **Gallery**: Canvas storage, viewing, and management
+- ✅ **Gallery**: Canvas storage, viewing, and management (including detail page navigation)
 - ✅ **Preferences**: App settings and customization
 - ✅ **Export**: PNG export functionality
 - ✅ **Database**: Persistent storage with Drift (SQLite/IndexedDB)
@@ -85,6 +85,9 @@ The app now features a premium design system that includes:
 ### Minor UI Polish
 - None currently identified - all major design issues have been resolved
 
+### Critical Issues Fixed
+- ✅ **Canvas Detail Page Error**: Fixed critical error in gallery bloc that prevented canvas detail page from opening
+
 ### Performance Considerations
 - Large canvases may require optimization for very high resolutions
 - Complex custom patterns may need performance tuning
@@ -123,3 +126,4 @@ The app now features a premium design system that includes:
 - **Cross-Platform**: Consistent experience across devices
 - **Feature Complete**: All promised functionality delivered
 Updated: 2025-08-23T01:23:57Z
+Updated: 2025-08-23T01:59:29Z

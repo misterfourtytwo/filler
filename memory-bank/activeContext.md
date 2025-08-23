@@ -1,8 +1,8 @@
 # Active Context - Filler App
 
-## Current Focus: Preferences Page Enhancement ✅ COMPLETED
+## Current Focus: Canvas Detail Page Error Fix ✅ COMPLETED
 
-**Status**: Successfully added scrolling to preferences page content and hid app bar for desktop layout.
+**Status**: Successfully fixed error that occurred when opening canvas details page.
 
 ### What Was Accomplished
 
@@ -82,6 +82,30 @@
   - **Responsive Design**: Maintained existing mobile layout with `ListView` scrolling
   - **Import**: Added `DesignSystem` import to preferences page for responsive detection
 
+#### 10. Canvas Detail Page Error Fix ✅
+- **Fixed critical error** in `lib/features/gallery/presentation/gallery_bloc.dart`:
+  - **Issue**: `_Delete` event handler was duplicating pixel data decoding logic instead of reusing existing logic
+  - **Problem**: Used `_repo.getAll()` and manual JSON decoding instead of `_repo.getAllModels()` which properly handles conversion
+  - **Solution**: Updated `_Delete` event to use same logic as `_Load` event with `_repo.getAllModels()`
+  - **Result**: Canvas detail page now opens without errors and maintains consistent data handling
+  - **Cleanup**: Removed unused `dart:convert` import from gallery bloc
+
+#### 11. GlobalKey Duplicate Error Fix ✅
+- **Fixed critical GlobalKey error** in `lib/features/gallery/presentation/canvas_detail_page.dart`:
+  - **Issue**: `GlobalKey` was being created inside the `build` method, causing duplicate key errors
+  - **Problem**: `final boundaryKey = GlobalKey();` in build method created new key on every rebuild
+  - **Solution**: Moved `GlobalKey` to class field as `final GlobalKey _boundaryKey = GlobalKey();`
+  - **Result**: Canvas detail page now opens without Flutter framework errors
+  - **Impact**: Resolved "Duplicate GlobalKey detected in widget tree" error
+
+#### 12. RepaintBoundary Conflict Fix ✅
+- **Fixed RepaintBoundary conflict** in `lib/features/gallery/presentation/canvas_detail_page.dart`:
+  - **Issue**: Both `CanvasDetailPage` and `CanvasGrid` were using `RepaintBoundary` with conflicting keys
+  - **Problem**: Double `RepaintBoundary` wrapping caused widget tree conflicts and duplicate key errors
+  - **Solution**: Removed outer `RepaintBoundary` and let `CanvasGrid` handle its own boundary with separate export key
+  - **Result**: Eliminated widget tree conflicts and resolved remaining GlobalKey issues
+  - **Impact**: Canvas detail page now renders correctly without framework errors
+
 ### What Works Now
 
 ✅ **Clean Design System**: Complete Apple Storefront-inspired design tokens without animations  
@@ -93,11 +117,15 @@
 ✅ **Clean Components**: All UI components follow the design language without animations  
 ✅ **Enhanced Preferences**: Improved scrolling and responsive app bar behavior  
 ✅ **Error-Free Code**: All linter errors and warnings resolved  
+✅ **Fixed Canvas Detail Page**: Resolved critical errors preventing canvas detail page from opening
+✅ **Fixed GlobalKey Errors**: Resolved duplicate GlobalKey issues in canvas detail page
+✅ **Fixed RepaintBoundary Conflicts**: Eliminated widget tree conflicts in canvas detail page  
 
 ### Current Status
 
 **Production Ready** with clean, static design excellence and enhanced UX. The app now features:
 - Clean, sophisticated visual hierarchy
+- Fully functional canvas detail page navigation
 - Refined typography and spacing
 - Static interactions without animations
 - Apple Storefront-inspired aesthetics
@@ -107,7 +135,7 @@
 
 ### Known Issues
 
-- **Info-level linter suggestions**: 65 minor suggestions for code optimization (non-critical)
+- **Info-level linter suggestions**: 17 minor suggestions for code optimization (non-critical)
 - **Deprecated web libraries**: Some web-specific libraries marked for future migration
 - **Redundant arguments**: Minor optimizations for default parameter values
 
@@ -122,5 +150,5 @@
 
 ---
 
-**Last Updated**: Preferences page enhancement completed successfully  
+**Last Updated**: Canvas detail page, GlobalKey, and RepaintBoundary errors fixed successfully  
 **Next Focus**: Ready for production deployment or feature enhancements

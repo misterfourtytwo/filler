@@ -52,10 +52,7 @@ class PreferencesPage extends StatelessWidget {
             decoration: BoxDecoration(
               color: Theme.of(context).colorScheme.surface,
               border: Border(
-                top: BorderSide(
-                  color: Theme.of(context).dividerColor,
-                  width: 1,
-                ),
+                top: BorderSide(color: Theme.of(context).dividerColor),
               ),
             ),
             child: SizedBox(
@@ -65,9 +62,7 @@ class PreferencesPage extends StatelessWidget {
                   AppLogger.interaction('Preferences save button pressed');
                   bloc.add(const PreferencesEvent.save());
                 },
-                style: ElevatedButton.styleFrom(
-                  padding: const EdgeInsets.symmetric(vertical: 16.0),
-                ),
+                style: ElevatedButton.styleFrom(),
                 child: const Text(
                   'Save Preferences',
                   style: TextStyle(fontSize: 16.0),

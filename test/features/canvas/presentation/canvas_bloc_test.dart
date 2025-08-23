@@ -30,7 +30,7 @@ void main() {
         width: 1,
         height: 1,
         insets: 0,
-        pixels: [const PixelData(pattern: 0xFF000000, rotation: 0.0)],
+        pixels: [const PixelData(pattern: 0xFF000000)],
         patternPaintColor: Colors.black,
         canvasBackgroundColor: Colors.white,
         createdAt: DateTime.now(),
@@ -79,7 +79,7 @@ void main() {
             patternRotation: 0.0,
             pixels: List.generate(
               100,
-              (index) => const PixelData(pattern: 1, rotation: 0.0),
+              (index) => const PixelData(pattern: 1),
             ), // 10x10 = 100 pixels
             patternPaintColor: const Color(0xFF000000),
             canvasBackgroundColor: const Color(0xFFFFFFFF),
@@ -127,10 +127,10 @@ void main() {
           activeColor: 1, // Pattern index, not color
           patternRotation: 0.0,
           pixels: [
-            PixelData(pattern: 1, rotation: 0.0),
-            PixelData(pattern: 1, rotation: 0.0),
-            PixelData(pattern: 1, rotation: 0.0),
-            PixelData(pattern: 1, rotation: 0.0),
+            PixelData(pattern: 1),
+            PixelData(pattern: 1),
+            PixelData(pattern: 1),
+            PixelData(pattern: 1),
           ],
           patternPaintColor: Color(0xFF000000),
           canvasBackgroundColor: Color(0xFFFFFFFF),
@@ -144,10 +144,10 @@ void main() {
             activeColor: 2,
             patternRotation: 0.0,
             pixels: [
-              PixelData(pattern: 1, rotation: 0.0),
-              PixelData(pattern: 1, rotation: 0.0),
-              PixelData(pattern: 1, rotation: 0.0),
-              PixelData(pattern: 1, rotation: 0.0),
+              PixelData(pattern: 1),
+              PixelData(pattern: 1),
+              PixelData(pattern: 1),
+              PixelData(pattern: 1),
             ],
             patternPaintColor: Color(0xFF000000),
             canvasBackgroundColor: Color(0xFFFFFFFF),
@@ -175,10 +175,10 @@ void main() {
           activeColor: 2, // Pattern index, not color
           patternRotation: 0.0,
           pixels: [
-            PixelData(pattern: 1, rotation: 0.0),
-            PixelData(pattern: 1, rotation: 0.0),
-            PixelData(pattern: 1, rotation: 0.0),
-            PixelData(pattern: 1, rotation: 0.0),
+            PixelData(pattern: 1),
+            PixelData(pattern: 1),
+            PixelData(pattern: 1),
+            PixelData(pattern: 1),
           ],
           patternPaintColor: Color(0xFF000000),
           canvasBackgroundColor: Color(0xFFFFFFFF),
@@ -192,10 +192,10 @@ void main() {
             activeColor: 2, // Pattern index, not color
             patternRotation: 0.0,
             pixels: [
-              PixelData(pattern: 1, rotation: 0.0),
-              PixelData(pattern: 2, rotation: 0.0), // This pixel gets painted
-              PixelData(pattern: 1, rotation: 0.0),
-              PixelData(pattern: 1, rotation: 0.0),
+              PixelData(pattern: 1),
+              PixelData(pattern: 2), // This pixel gets painted
+              PixelData(pattern: 1),
+              PixelData(pattern: 1),
             ],
             patternPaintColor: Color(0xFF000000),
             canvasBackgroundColor: Color(0xFFFFFFFF),
@@ -213,10 +213,10 @@ void main() {
           activeColor: 2, // Pattern index, not color
           patternRotation: 0.0,
           pixels: [
-            PixelData(pattern: 1, rotation: 0.0),
-            PixelData(pattern: 1, rotation: 0.0),
-            PixelData(pattern: 1, rotation: 0.0),
-            PixelData(pattern: 1, rotation: 0.0),
+            PixelData(pattern: 1),
+            PixelData(pattern: 1),
+            PixelData(pattern: 1),
+            PixelData(pattern: 1),
           ],
           patternPaintColor: Color(0xFF000000),
           canvasBackgroundColor: Color(0xFFFFFFFF),
@@ -248,10 +248,10 @@ void main() {
           activeColor: 2, // Pattern index, not color
           patternRotation: 0.0,
           pixels: [
-            PixelData(pattern: 1, rotation: 0.0),
-            PixelData(pattern: 2, rotation: 0.0),
-            PixelData(pattern: 3, rotation: 0.0),
-            PixelData(pattern: 4, rotation: 0.0),
+            PixelData(pattern: 1),
+            PixelData(pattern: 2),
+            PixelData(pattern: 3),
+            PixelData(pattern: 4),
           ],
           patternPaintColor: Color(0xFF000000),
           canvasBackgroundColor: Color(0xFFFFFFFF),
@@ -288,7 +288,7 @@ void main() {
           insets: 0,
           activeColor: 1, // Pattern index, not color
           patternRotation: 0.0,
-          pixels: [PixelData(pattern: 1, rotation: 0.0)],
+          pixels: [PixelData(pattern: 1)],
           patternPaintColor: Color(0xFF000000),
           canvasBackgroundColor: Color(0xFFFFFFFF),
         ),

@@ -210,14 +210,12 @@ class DesignSystem {
           borderRadius: BorderRadius.circular(radiusMd),
           borderSide: BorderSide(
             color: colorScheme.outline.withValues(alpha: 0.2),
-            width: strokeThin,
           ),
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(radiusMd),
           borderSide: BorderSide(
             color: colorScheme.outline.withValues(alpha: 0.2),
-            width: strokeThin,
           ),
         ),
         focusedBorder: OutlineInputBorder(
@@ -238,7 +236,6 @@ class DesignSystem {
         style: ElevatedButton.styleFrom(
           backgroundColor: colorScheme.primary,
           foregroundColor: colorScheme.onPrimary,
-          elevation: 0,
           shadowColor: Colors.transparent,
           padding: const EdgeInsets.symmetric(
             horizontal: spaceLg,
@@ -259,10 +256,7 @@ class DesignSystem {
       outlinedButtonTheme: OutlinedButtonThemeData(
         style: OutlinedButton.styleFrom(
           foregroundColor: colorScheme.primary,
-          side: BorderSide(
-            color: colorScheme.outline.withValues(alpha: 0.3),
-            width: strokeThin,
-          ),
+          side: BorderSide(color: colorScheme.outline.withValues(alpha: 0.3)),
           padding: const EdgeInsets.symmetric(
             horizontal: spaceLg,
             vertical: spaceMd,
@@ -297,16 +291,11 @@ class DesignSystem {
       // Card Theme
       cardTheme: CardThemeData(
         color: colorScheme.surface,
-        elevation: 0,
         shadowColor: Colors.transparent,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(radiusLg),
-          side: BorderSide(
-            color: colorScheme.outline.withValues(alpha: 0.1),
-            width: strokeUltraThin,
-          ),
+          side: BorderSide(color: colorScheme.outline.withValues(alpha: 0.1)),
         ),
-        margin: EdgeInsets.zero,
       ),
 
       // Chip Theme

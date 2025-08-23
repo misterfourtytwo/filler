@@ -42,10 +42,7 @@ class ThemeSwitchTile extends StatelessWidget {
       decoration: BoxDecoration(
         color: scheme.surfaceContainerHighest,
         borderRadius: BorderRadius.circular(DesignSystem.radiusLg),
-        border: Border.all(
-          color: scheme.outline.withValues(alpha: 0.1),
-          width: DesignSystem.strokeThin,
-        ),
+        border: Border.all(color: scheme.outline.withValues(alpha: 0.1)),
         boxShadow: DesignSystem.shadowSubtle,
       ),
       child: Column(
@@ -116,9 +113,6 @@ class ThemeSwitchTile extends StatelessWidget {
               color: isSelected
                   ? scheme.primary
                   : scheme.outline.withValues(alpha: 0.2),
-              width: isSelected
-                  ? DesignSystem.strokeMedium
-                  : DesignSystem.strokeThin,
             ),
             boxShadow: isSelected
                 ? [

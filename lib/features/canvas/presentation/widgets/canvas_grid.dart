@@ -121,20 +121,17 @@ class _CanvasGridState extends State<CanvasGrid> {
         borderRadius: BorderRadius.circular(DesignSystem.radiusXl),
         border: Border.all(
           color: Theme.of(context).colorScheme.outline.withValues(alpha: 0.1),
-          width: DesignSystem.strokeThin,
         ),
         boxShadow: [
           BoxShadow(
             color: Colors.black.withValues(alpha: 0.08),
             blurRadius: 24,
             offset: const Offset(0, 8),
-            spreadRadius: 0,
           ),
           BoxShadow(
             color: Colors.black.withValues(alpha: 0.04),
             blurRadius: 8,
             offset: const Offset(0, 2),
-            spreadRadius: 0,
           ),
         ],
       ),

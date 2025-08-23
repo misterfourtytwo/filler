@@ -91,9 +91,7 @@ class AppDatabase extends _$AppDatabase {
 
   /// Gets the singleton database instance.
   static AppDatabase get instance {
-    if (_instance == null) {
-      _instance = AppDatabase._();
-    }
+    _instance ??= AppDatabase._();
     return _instance!;
   }
 

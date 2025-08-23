@@ -108,7 +108,6 @@ class _PatternPaletteState extends State<PatternPalette> {
         crossAxisCount: crossAxisCount,
         crossAxisSpacing: DesignSystem.spaceMd,
         mainAxisSpacing: DesignSystem.spaceMd,
-        childAspectRatio: 1.0,
       ),
       itemCount: widget.patterns.length,
       itemBuilder: (context, index) {

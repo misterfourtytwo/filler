@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:filler/core/logging.dart';
 import 'package:filler/domain/repositories.dart';
 import 'package:filler/features/canvas/domain/pixel_data.dart';
@@ -164,47 +162,38 @@ class GalleryBloc extends Bloc<GalleryEvent, GalleryState> {
           },
         );
 
-        // Reload the gallery after deletion
-        final rows = await _repo.getAll();
+        // Reload the gallery after deletion using the same logic as _Load
+        final canvases = await _repo.getAllModels();
         final items = <GalleryItem>[];
 
-        for (final canvas in rows) {
+        for (final canvas in canvases) {
           try {
-            // Decode pixel data from JSON - handle both old and new formats
-            final rawPixels = jsonDecode(canvas.pixelsJson) as List;
-            final pixels = rawPixels.map((pixel) {
-              if (pixel is int) {
-                // Old format: just pattern index
-                return PixelData(pattern: pixel);
-              } else if (pixel is Map<String, dynamic>) {
-                // New format: pattern and rotation
-                return PixelData.fromJson(pixel);
-              } else {
-                // Fallback
-                return PixelData(pattern: 0);
-              }
-            }).toList();
-
             final item = GalleryItem(
               id: canvas.id,
               width: canvas.width,
               height: canvas.height,
               insets: canvas.insets,
-              pixels: pixels,
-              patternPaintColor: Color(canvas.patternPaintColor),
-              canvasBackgroundColor: Color(canvas.canvasBackgroundColor),
+              pixels: canvas.pixels,
+              patternPaintColor: canvas.patternPaintColor,
+              canvasBackgroundColor: canvas.canvasBackgroundColor,
             );
             items.add(item);
+
+            AppLogger.canvas(
+              'Processed canvas for gallery after deletion',
+              data: {
+                'id': canvas.id,
+                'title': canvas.title,
+                'dimensions': '${canvas.width}x${canvas.height}',
+                'pixelCount': canvas.pixels.length,
+              },
+            );
           } on Exception catch (e, stackTrace) {
             AppLogger.error(
-              'Failed to decode canvas pixels after deletion',
+              'Failed to process canvas for gallery after deletion',
               error: e,
               stackTrace: stackTrace,
-              data: {
-                'canvasId': canvas.id,
-                'title': canvas.title,
-                'jsonLength': canvas.pixelsJson.length,
-              },
+              data: {'canvasId': canvas.id, 'title': canvas.title},
             );
           }
         }

@@ -122,7 +122,6 @@ class CanvasReadyView extends StatelessWidget {
           boundaryKey: boundaryKey,
           patternPaintColor: patternPaintColor,
           canvasBackgroundColor: canvasBackgroundColor,
-          showBorders: true,
         ),
       ),
     );
@@ -205,9 +204,7 @@ class CanvasReadyView extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         color: Theme.of(context).colorScheme.surface,
-        border: Border(
-          top: BorderSide(color: Theme.of(context).dividerColor, width: 1),
-        ),
+        border: Border(top: BorderSide(color: Theme.of(context).dividerColor)),
       ),
       child: SafeArea(
         child: SingleChildScrollView(
@@ -216,7 +213,6 @@ class CanvasReadyView extends StatelessWidget {
             vertical: DesignSystem.spaceSm,
           ),
           child: Column(
-            mainAxisSize: MainAxisSize.min,
             children: [
               // Simplified active pattern with rotation controls
               _buildCompactPatternSelector(context),
@@ -291,7 +287,6 @@ class CanvasReadyView extends StatelessWidget {
         Expanded(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisSize: MainAxisSize.min,
             children: [
               Text(
                 _getPatternName(pattern),
