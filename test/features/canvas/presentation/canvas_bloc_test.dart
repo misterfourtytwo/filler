@@ -135,7 +135,7 @@ void main() {
           patternPaintColor: Color(0xFF000000),
           canvasBackgroundColor: Color(0xFFFFFFFF),
         ),
-        act: (bloc) => bloc.add(const CanvasEvent.setActiveColor(0xFFE53935)),
+        act: (bloc) => bloc.add(const CanvasEvent.setActiveColor(2)),
         expect: () => [
           const CanvasState.ready(
             width: 2,
@@ -159,7 +159,7 @@ void main() {
         'ignores color change when canvas not ready',
         build: () => canvasBloc,
         seed: () => const CanvasState.loading(),
-        act: (bloc) => bloc.add(const CanvasEvent.setActiveColor(0xFFE53935)),
+        act: (bloc) => bloc.add(const CanvasEvent.setActiveColor(2)),
         expect: () => [],
       );
     });

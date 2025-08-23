@@ -94,7 +94,7 @@ void main() {
           expect(w, equals(15));
           expect(h, equals(12));
           expect(i, equals(3));
-          expect(c, equals(0xFFE53935)); // Custom color
+          expect(c, equals(1)); // Default pattern index (solid pattern)
           expect(p, hasLength(180)); // 15x12 = 180
           expect(
             ppc,

@@ -66,7 +66,8 @@ void main() {
 
     test('Canvas BLoC - Load Existing Canvas State Transitions', () async {
       // First create a canvas to load with pixel data
-      const pixelsJson = '[{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0}]';
+      const pixelsJson =
+          '[{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0}]';
       final canvasId = await canvasRepo.add(
         title: 'Test Canvas',
         width: 8,
@@ -232,7 +233,7 @@ void main() {
           expect(p[5].pattern, equals(2)); // Painted pixel
           expect(p[10].pattern, equals(2)); // Painted pixel
           // Other pixels should remain unchanged
-          expect(p[1].pattern, equals(0xFF2196F3)); // Default pattern
+          expect(p[1].pattern, equals(1)); // Default pattern
         },
         orElse: () => fail('Canvas should be in ready state'),
       );
