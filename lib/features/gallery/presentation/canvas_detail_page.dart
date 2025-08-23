@@ -6,6 +6,7 @@ import 'package:filler/features/canvas/presentation/canvas_page.dart';
 import 'package:filler/features/canvas/presentation/widgets/canvas_grid.dart';
 import 'package:filler/features/gallery/presentation/gallery_bloc.dart';
 import 'package:filler/ui/design_system.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
@@ -111,30 +112,32 @@ class _CanvasDetailPageState extends State<CanvasDetailPage> {
                 },
               );
 
-              // Check file permissions on macOS
-              final hasPermissions =
-                  await FilePickerService.hasFilePermissions();
-              if (!hasPermissions) {
-                if (context.mounted) {
-                  showDialog(
-                    context: context,
-                    builder: (context) => AlertDialog(
-                      title: const Text('File Access Permission Required'),
-                      content: const Text(
-                        'This app needs permission to save files. Please grant access in:\n\n'
-                        'System Preferences > Security & Privacy > Privacy > Files and Folders\n\n'
-                        'Then try exporting again.',
-                      ),
-                      actions: [
-                        TextButton(
-                          onPressed: () => Navigator.of(context).pop(),
-                          child: const Text('OK'),
+              // Check file permissions on macOS (only for native platforms)
+              if (!kIsWeb) {
+                final hasPermissions =
+                    await FilePickerService.hasFilePermissions();
+                if (!hasPermissions) {
+                  if (context.mounted) {
+                    showDialog(
+                      context: context,
+                      builder: (context) => AlertDialog(
+                        title: const Text('File Access Permission Required'),
+                        content: const Text(
+                          'This app needs permission to save files. Please grant access in:\n\n'
+                          'System Preferences > Security & Privacy > Privacy > Files and Folders\n\n'
+                          'Then try exporting again.',
                         ),
-                      ],
-                    ),
-                  );
+                        actions: [
+                          TextButton(
+                            onPressed: () => Navigator.of(context).pop(),
+                            child: const Text('OK'),
+                          ),
+                        ],
+                      ),
+                    );
+                  }
+                  return;
                 }
-                return;
               }
 
               try {

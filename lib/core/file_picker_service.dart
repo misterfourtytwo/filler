@@ -47,10 +47,29 @@ class FilePickerService {
     final extension = suggestedExtension ?? 'png';
     final filename = '$suggestedName.$extension';
 
-    return await FilePickerServiceWeb.downloadFile(
-      bytes: bytes,
-      filename: filename,
+    debugPrint(
+      'Web download: Starting download for $filename (${bytes.length} bytes)',
     );
+
+    try {
+      final result = await FilePickerServiceWeb.downloadFile(
+        bytes: bytes,
+        filename: filename,
+      );
+
+      if (result != null) {
+        debugPrint(
+          'Web download: Successfully triggered download for $filename',
+        );
+        return result;
+      } else {
+        debugPrint('Web download: Failed to trigger download for $filename');
+        return null;
+      }
+    } on Exception catch (e) {
+      debugPrint('Web download: Exception during download: $e');
+      return null;
+    }
   }
 
   /// Native implementation using file_picker save dialog.
@@ -124,6 +143,10 @@ class FilePickerService {
   /// On macOS, this checks if the app can access user-selected directories.
   /// Returns true if permissions are available, false otherwise.
   static Future<bool> hasFilePermissions() async {
+    if (kIsWeb) {
+      return true; // Web doesn't need file permissions
+    }
+
     if (!Platform.isMacOS) {
       return true; // Not needed on other platforms
     }

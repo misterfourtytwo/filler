@@ -9,6 +9,7 @@ import 'package:filler/ui/design_system.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
 
 /// Canvas editor page providing pixel art creation interface.
 ///
@@ -145,29 +146,31 @@ class _CanvasPageState extends State<CanvasPage> {
       data: {'canvasId': widget.canvasId},
     );
 
-    // Check file permissions on macOS
-    final hasPermissions = await FilePickerService.hasFilePermissions();
-    if (!hasPermissions) {
-      if (context.mounted) {
-        showDialog(
-          context: context,
-          builder: (context) => AlertDialog(
-            title: const Text('File Access Permission Required'),
-            content: const Text(
-              'This app needs permission to save files. Please grant access in:\n\n'
-              'System Preferences > Security & Privacy > Privacy > Files and Folders\n\n'
-              'Then try exporting again.',
-            ),
-            actions: [
-              TextButton(
-                onPressed: () => Navigator.of(context).pop(),
-                child: const Text('OK'),
+    // Check file permissions on macOS (only for native platforms)
+    if (!kIsWeb) {
+      final hasPermissions = await FilePickerService.hasFilePermissions();
+      if (!hasPermissions) {
+        if (context.mounted) {
+          showDialog(
+            context: context,
+            builder: (context) => AlertDialog(
+              title: const Text('File Access Permission Required'),
+              content: const Text(
+                'This app needs permission to save files. Please grant access in:\n\n'
+                'System Preferences > Security & Privacy > Privacy > Files and Folders\n\n'
+                'Then try exporting again.',
               ),
-            ],
-          ),
-        );
+              actions: [
+                TextButton(
+                  onPressed: () => Navigator.of(context).pop(),
+                  child: const Text('OK'),
+                ),
+              ],
+            ),
+          );
+        }
+        return;
       }
-      return;
     }
 
     try {
