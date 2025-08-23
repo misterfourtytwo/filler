@@ -53,6 +53,21 @@ jobs:
     - name: Create .nojekyll file
       run: touch build/web/.nojekyll
 
+    - name: Copy MIME type configuration files
+      run: |
+        if [ -f "web/.htaccess" ]; then
+          cp web/.htaccess build/web/.htaccess
+          echo "Copied .htaccess for MIME type configuration"
+        fi
+        if [ -f "web/_headers" ]; then
+          cp web/_headers build/web/_headers
+          echo "Copied _headers for GitHub Pages MIME type configuration"
+        fi
+        if [ -f "web/dummy-worker.js" ]; then
+          cp web/dummy-worker.js build/web/dummy-worker.js
+          echo "Copied dummy-worker.js for Drift WASM compatibility"
+        fi
+
     - name: Deploy to GitHub Pages
       if: github.ref == 'refs/heads/main'
       uses: peaceiris/actions-gh-pages@v3

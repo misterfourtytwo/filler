@@ -1,0 +1,99 @@
+# MIME Type Configuration for Filler Web App
+# This ensures proper serving of WASM files and other assets
+
+# WASM files
+AddType application/wasm .wasm
+
+# JavaScript files
+AddType application/javascript .js
+
+# JSON files
+AddType application/json .json
+
+# CSS files
+AddType text/css .css
+
+# HTML files
+AddType text/html .html
+
+# PNG images
+AddType image/png .png
+
+# ICO files
+AddType image/x-icon .ico
+
+# SVG files
+AddType image/svg+xml .svg
+
+# Web fonts
+AddType font/woff .woff
+AddType font/woff2 .woff2
+AddType font/ttf .ttf
+AddType font/otf .otf
+
+# Enable compression for better performance
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/xml
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE application/xhtml+xml
+    AddOutputFilterByType DEFLATE application/rss+xml
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/x-javascript
+    AddOutputFilterByType DEFLATE application/json
+</IfModule>
+
+# Cache control for static assets
+<IfModule mod_expires.c>
+    ExpiresActive on
+    
+    # WASM files - cache for 1 year
+    ExpiresByType application/wasm "access plus 1 year"
+    
+    # JavaScript files - cache for 1 month
+    ExpiresByType application/javascript "access plus 1 month"
+    
+    # CSS files - cache for 1 month
+    ExpiresByType text/css "access plus 1 month"
+    
+    # Images - cache for 1 month
+    ExpiresByType image/png "access plus 1 month"
+    ExpiresByType image/jpeg "access plus 1 month"
+    ExpiresByType image/gif "access plus 1 month"
+    ExpiresByType image/svg+xml "access plus 1 month"
+    
+    # Fonts - cache for 1 year
+    ExpiresByType font/woff "access plus 1 year"
+    ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresByType font/ttf "access plus 1 year"
+    ExpiresByType font/otf "access plus 1 year"
+</IfModule>
+
+# Security headers
+<IfModule mod_headers.c>
+    # Prevent MIME type sniffing
+    Header always set X-Content-Type-Options nosniff
+    
+    # Enable XSS protection
+    Header always set X-XSS-Protection "1; mode=block"
+    
+    # Referrer policy
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    
+    # Content Security Policy for WASM
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' blob:; worker-src 'self' blob:; child-src 'self' blob:; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self';"
+</IfModule>
+
+# Handle SPA routing - redirect all requests to index.html except for existing files
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    
+    # Don't rewrite files or directories that exist
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    
+    # Rewrite everything else to index.html
+    RewriteRule ^(.*)$ /index.html [L]
+</IfModule>

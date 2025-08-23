@@ -1,0 +1,66 @@
+# MIME Type Configuration for GitHub Pages
+# This ensures proper serving of WASM files and other assets
+
+# WASM files
+*.wasm
+  Content-Type: application/wasm
+  X-Content-Type-Options: nosniff
+  Cache-Control: public, max-age=31536000
+
+# JavaScript files
+*.js
+  Content-Type: application/javascript
+  Cache-Control: public, max-age=2592000
+
+# JSON files
+*.json
+  Content-Type: application/json
+  Cache-Control: public, max-age=2592000
+
+# CSS files
+*.css
+  Content-Type: text/css
+  Cache-Control: public, max-age=2592000
+
+# HTML files
+*.html
+  Content-Type: text/html
+  Cache-Control: public, max-age=3600
+
+# PNG images
+*.png
+  Content-Type: image/png
+  Cache-Control: public, max-age=2592000
+
+# ICO files
+*.ico
+  Content-Type: image/x-icon
+  Cache-Control: public, max-age=2592000
+
+# SVG files
+*.svg
+  Content-Type: image/svg+xml
+  Cache-Control: public, max-age=2592000
+
+# Web fonts
+*.woff
+  Content-Type: font/woff
+  Cache-Control: public, max-age=31536000
+
+*.woff2
+  Content-Type: font/woff2
+  Cache-Control: public, max-age=31536000
+
+*.ttf
+  Content-Type: font/ttf
+  Cache-Control: public, max-age=31536000
+
+*.otf
+  Content-Type: font/otf
+  Cache-Control: public, max-age=31536000
+
+# Security headers for all files
+/*
+  X-Content-Type-Options: nosniff
+  X-XSS-Protection: 1; mode=block
+  Referrer-Policy: strict-origin-when-cross-origin

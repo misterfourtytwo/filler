@@ -87,6 +87,7 @@ The app now features a premium design system that includes:
 
 ### Critical Issues Fixed
 - ✅ **Canvas Detail Page Error**: Fixed critical error in gallery bloc that prevented canvas detail page from opening
+- ✅ **Web Build WASM Error**: Fixed drift WASM MIME type and worker loading issues for web deployment
 
 ### Performance Considerations
 - Large canvases may require optimization for very high resolutions
@@ -141,3 +142,4 @@ Updated: 2025-08-23T12:17:02Z
 Updated: 2025-08-23T17:55:32Z
 Updated: 2025-08-23T23:30:11Z
 Updated: 2025-08-23T23:43:21Z
+Updated: 2025-08-23T23:55:38Z
