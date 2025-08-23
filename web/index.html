@@ -31,8 +31,33 @@
 
   <title>filler</title>
   <link rel="manifest" href="manifest.json">
+  
+  <!-- Drift web database requires sql.js -->
+  <script src="sql-wasm.js"></script>
+  <script>
+    // Configure sql.js for Drift
+    window.sqlite3InitModule = function() {
+      return initSqlJs({
+        locateFile: function(file) {
+          return file;
+        }
+      });
+    };
+  </script>
 </head>
 <body>
+  <!-- Loading message for better UX -->
+  <div id="loading" style="
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: sans-serif;
+    color: #666;
+  ">
+    Loading Filler...
+  </div>
+  
   <script src="flutter_bootstrap.js" async></script>
 </body>
 </html>

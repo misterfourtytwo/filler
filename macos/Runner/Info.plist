@@ -28,5 +28,11 @@
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
+	<key>NSDocumentsFolderUsageDescription</key>
+	<string>This app needs access to save canvas files to your Documents folder.</string>
+	<key>NSDesktopFolderUsageDescription</key>
+	<string>This app needs access to save canvas files to your Desktop.</string>
+	<key>NSDownloadsFolderUsageDescription</key>
+	<string>This app needs access to save canvas files to your Downloads folder.</string>
 </dict>
 </plist>
