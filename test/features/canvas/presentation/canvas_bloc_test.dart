@@ -104,6 +104,44 @@ void main() {
           verify(() => mockPrefsRepo.get()).called(1);
         },
       );
+
+      blocTest<CanvasBloc, CanvasState>(
+        'creates canvas with all cells filled with empty pattern (pattern 0)',
+        build: () {
+          when(() => mockPrefsRepo.get()).thenAnswer(
+            (_) async => const PreferencesModel(
+              width: 3,
+              height: 3,
+              insets: 1,
+              defaultPattern:
+                  5, // Set default to non-empty pattern to verify it's ignored
+            ),
+          );
+          return canvasBloc;
+        },
+        act: (bloc) => bloc.add(const CanvasEvent.init()),
+        expect: () => [
+          const CanvasState.loading(),
+          CanvasState.ready(
+            width: 3,
+            height: 3,
+            insets: 1,
+            activeColor: 0, // Should be empty pattern, not defaultPattern
+            patternRotation: 0.0,
+            pixels: List.generate(
+              9, // 3x3 = 9 pixels
+              (index) => const PixelData(
+                pattern: 0,
+              ), // All pixels should have empty pattern
+            ),
+            patternPaintColor: const Color(0xFF000000),
+            canvasBackgroundColor: const Color(0xFFFFFFFF),
+          ),
+        ],
+        verify: (_) {
+          verify(() => mockPrefsRepo.get()).called(1);
+        },
+      );
     });
 
     group('CanvasEvent.setActiveColor', () {
@@ -330,23 +368,7 @@ void main() {
           canvasBackgroundColor: Color(0xFFFFFFFF),
         ),
         act: (bloc) => bloc.add(const CanvasEvent.fill()),
-        expect: () => [
-          const CanvasState.ready(
-            width: 2,
-            height: 2,
-            insets: 0,
-            activeColor: 2, // Pattern index, not color
-            patternRotation: 0.0,
-            pixels: [
-              PixelData(pattern: 1), // Unchanged
-              PixelData(pattern: 3), // Unchanged
-              PixelData(pattern: 4), // Unchanged
-              PixelData(pattern: 5), // Unchanged
-            ],
-            patternPaintColor: Color(0xFF000000),
-            canvasBackgroundColor: Color(0xFFFFFFFF),
-          ),
-        ],
+        expect: () => [], // No state change since no cells were actually filled
       );
 
       blocTest<CanvasBloc, CanvasState>(

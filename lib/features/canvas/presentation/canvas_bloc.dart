@@ -130,7 +130,8 @@ class CanvasBloc extends Bloc<CanvasEvent, CanvasState> {
         final pixelCount = p.width * p.height;
         final pixels = List<PixelData>.generate(
           pixelCount,
-          (index) => PixelData(pattern: p.defaultPattern),
+          (index) =>
+              const PixelData(pattern: 0), // Always start with empty pattern
         );
 
         AppLogger.canvas(
@@ -140,6 +141,7 @@ class CanvasBloc extends Bloc<CanvasEvent, CanvasState> {
             'pixelCount': pixelCount,
             'insets': p.insets,
             'defaultPattern': p.defaultPattern,
+            'initialPattern': 0, // Always start with empty pattern
           },
         );
 
@@ -148,7 +150,7 @@ class CanvasBloc extends Bloc<CanvasEvent, CanvasState> {
             width: p.width,
             height: p.height,
             insets: p.insets,
-            activeColor: p.defaultPattern,
+            activeColor: 0, // Start with empty pattern as active
             patternRotation: 0.0,
             pixels: pixels,
             patternPaintColor: const Color(0xFF000000), // Default black
