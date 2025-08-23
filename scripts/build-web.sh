@@ -23,11 +23,8 @@ flutter test
 echo "🔨 Building web app with optimizations..."
 flutter build web \
   --release \
-  --web-renderer canvaskit \
   --dart-define=FLUTTER_WEB_USE_SKIA=true \
-  --dart-define=FLUTTER_WEB_USE_SKIA_RENDERER=true \
-  --tree-shake-icons \
-  --no-sound-null-safety
+  --tree-shake-icons
 
 # Optimize build size
 echo "📊 Optimizing build size..."

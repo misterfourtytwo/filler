@@ -34,7 +34,7 @@ This guide provides step-by-step instructions for deploying the Filler pixel can
 flutter clean
 flutter pub get
 flutter test
-flutter build web --release --web-renderer canvaskit
+flutter build web --release
 ```
 
 #### Test Locally
@@ -84,8 +84,8 @@ npx gh-pages -d build/web
 ## 🎯 Optimization Features
 
 ### Performance Optimizations
-- **CanvasKit Renderer**: Better performance for complex graphics
-- **Tree Shaking**: Removes unused code
+- **CanvasKit Renderer**: Default renderer for better performance (Flutter 3.35+)
+- **Tree Shaking**: Removes unused code and icons
 - **Resource Preloading**: Critical resources loaded early
 - **Compression**: Optimized asset delivery
 
@@ -109,6 +109,9 @@ npx gh-pages -d build/web
 flutter clean
 flutter pub get
 flutter build web --release
+
+# With optimizations (same as build script)
+flutter build web --release --dart-define=FLUTTER_WEB_USE_SKIA=true --tree-shake-icons
 ```
 
 #### Deployment Issues
