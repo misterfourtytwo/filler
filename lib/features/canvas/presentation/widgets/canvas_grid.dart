@@ -1,11 +1,10 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-
 import 'package:filler/features/canvas/domain/canvas_pattern.dart';
 import 'package:filler/features/canvas/domain/custom_pattern.dart';
 import 'package:filler/features/canvas/domain/custom_pattern_painter.dart';
 import 'package:filler/features/canvas/domain/pixel_data.dart';
 import 'package:filler/ui/design_system.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 /// Premium grid widget that displays canvas pixels as interactive squares.
 ///

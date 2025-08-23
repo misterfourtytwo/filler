@@ -191,21 +191,21 @@ class CanvasRepository {
           // New format: pattern and rotation
           try {
             return PixelData.fromJson(pixel);
-          } catch (e) {
+          } on Exception catch (e) {
             // Fallback for malformed pixel data
             AppLogger.error(
               'Failed to parse pixel data, using fallback',
               error: e,
               data: {'pixel': pixel},
             );
-            return PixelData(pattern: 0);
+            return const PixelData(pattern: 0);
           }
         } else {
           // Fallback
-          return PixelData(pattern: 0);
+          return const PixelData(pattern: 0);
         }
       }).toList();
-    } catch (e) {
+    } on Exception catch (e) {
       // Fallback for malformed JSON
       AppLogger.error(
         'Failed to parse pixels JSON, using empty array',

@@ -86,7 +86,8 @@ class _AppState extends State<App> {
                 builder: (context, themeState) {
                   // Update preferences bloc with theme bloc reference
                   final prefsBloc = context.read<PreferencesBloc>();
-                  prefsBloc.themeBloc ??= context.read<ThemeBloc>();
+                  final themeBloc = context.read<ThemeBloc>();
+                  prefsBloc.themeBloc ??= themeBloc;
 
                   return MaterialApp(
                     title: 'Filler',

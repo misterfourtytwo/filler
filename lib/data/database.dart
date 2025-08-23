@@ -79,7 +79,6 @@ class PreferenceKeyValues extends Table {
 /// Uses singleton pattern to prevent multiple database instances.
 @DriftDatabase(tables: [Canvases, PreferenceKeyValues])
 class AppDatabase extends _$AppDatabase {
-  static AppDatabase? _instance;
 
   /// Private constructor for singleton pattern.
   AppDatabase._() : super(_openConnection()) {
@@ -88,6 +87,7 @@ class AppDatabase extends _$AppDatabase {
 
   /// Creates a test database instance with platform-appropriate database.
   AppDatabase.test() : super(createTestDatabaseConnection());
+  static AppDatabase? _instance;
 
   /// Gets the singleton database instance.
   static AppDatabase get instance {

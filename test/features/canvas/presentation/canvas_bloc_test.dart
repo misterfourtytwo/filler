@@ -310,7 +310,7 @@ void main() {
       final canvasRepo = MockCanvasRepository();
       final prefsRepo = MockPreferencesRepository();
 
-      when(() => prefsRepo.get()).thenAnswer(
+      when(prefsRepo.get).thenAnswer(
         (_) async => const PreferencesModel(
           width: 16,
           height: 16,
@@ -319,11 +319,9 @@ void main() {
         ),
       );
 
-      final bloc = CanvasBloc(prefs: prefsRepo, repo: canvasRepo);
-
-      // Initialize the bloc
-      bloc.add(const CanvasEvent.init());
-      await bloc.close();
+      CanvasBloc(prefs: prefsRepo, repo: canvasRepo)
+        ..add(const CanvasEvent.init())
+        ..close();
 
       // If we get here without exceptions, the export functionality is working
       expect(true, isTrue);

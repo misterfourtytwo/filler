@@ -103,8 +103,8 @@ class TestHelpers {
       height: height,
       insets: Value(insets),
       pixelsJson: pixelsJson ?? '[$defaultPixelsJson]',
-      patternPaintColor: Value(0xFF000000),
-      canvasBackgroundColor: Value(0xFFFFFFFF),
+      patternPaintColor: const Value(0xFF000000),
+      canvasBackgroundColor: const Value(0xFFFFFFFF),
     );
   }
 

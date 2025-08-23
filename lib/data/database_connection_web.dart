@@ -1,19 +1,33 @@
 import 'package:drift/drift.dart';
-import 'package:drift/web.dart'; // TODO: Consider migrating to drift/wasm.dart
+// Using the new WASM approach instead of deprecated web.dart
+// See: https://drift.simonbinder.eu/web
+import 'package:drift/wasm.dart';
 import 'package:filler/core/logging.dart';
 
 /// Creates a database connection for web platform.
 LazyDatabase createDatabaseConnection() {
   return LazyDatabase(() async {
-    AppLogger.database('Using web database (sql.js with IndexedDB storage)');
-    return WebDatabase('filler_db');
+    AppLogger.database(
+      'Using WASM database (sqlite3 WASM with IndexedDB storage)',
+    );
+    final result = await WasmDatabase.open(
+      databaseName: 'filler_db',
+      sqlite3Uri: Uri.parse('/sql-wasm.wasm'),
+      driftWorkerUri: Uri.parse('/drift_worker.dart.js'),
+    );
+    return result.resolvedExecutor;
   });
 }
 
 /// Creates a test database connection for web platform.
 LazyDatabase createTestDatabaseConnection() {
   return LazyDatabase(() async {
-    AppLogger.database('Test AppDatabase instance created (sql.js test)');
-    return WebDatabase('filler_test_db');
+    AppLogger.database('Test AppDatabase instance created (WASM test)');
+    final result = await WasmDatabase.open(
+      databaseName: 'filler_test_db',
+      sqlite3Uri: Uri.parse('/sql-wasm.wasm'),
+      driftWorkerUri: Uri.parse('/drift_worker.dart.js'),
+    );
+    return result.resolvedExecutor;
   });
 }

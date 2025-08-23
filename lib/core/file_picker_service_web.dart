@@ -1,5 +1,7 @@
-import 'dart:html' as html;
+// Using universal_html instead of deprecated dart:html
+// See: https://dart.dev/web/js-interop
 import 'package:flutter/foundation.dart';
+import 'package:universal_html/html.dart' as html;
 
 /// Web-specific implementation for file download.
 class FilePickerServiceWeb {
@@ -39,7 +41,7 @@ class FilePickerServiceWeb {
           anchor.remove();
           html.Url.revokeObjectUrl(url);
           debugPrint('Web download: Cleaned up resources');
-        } catch (e) {
+        } on Exception catch (e) {
           debugPrint('Web download: Error during cleanup: $e');
         }
       });
