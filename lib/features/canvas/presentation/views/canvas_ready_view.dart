@@ -165,6 +165,18 @@ class CanvasReadyView extends StatelessWidget {
           ),
           const SizedBox(height: DesignSystem.spaceLg),
 
+          // Fill button
+          ElevatedButton.icon(
+            onPressed: () =>
+                context.read<CanvasBloc>().add(const CanvasEvent.fill()),
+            icon: const Icon(Icons.format_color_fill),
+            label: const Text('Fill Empty'),
+            style: ElevatedButton.styleFrom(
+              minimumSize: const Size.fromHeight(48),
+            ),
+          ),
+          const SizedBox(height: DesignSystem.spaceLg),
+
           // Custom pattern button
           ElevatedButton.icon(
             onPressed: () => _showCustomPatternEditor(context),
@@ -311,6 +323,23 @@ class CanvasReadyView extends StatelessWidget {
   Widget _buildCompactControlsRow(BuildContext context) {
     return Row(
       children: [
+        // Fill button
+        Expanded(
+          child: OutlinedButton.icon(
+            onPressed: () =>
+                context.read<CanvasBloc>().add(const CanvasEvent.fill()),
+            icon: const Icon(Icons.format_color_fill, size: 16),
+            label: const Text('Fill'),
+            style: OutlinedButton.styleFrom(
+              padding: const EdgeInsets.symmetric(
+                horizontal: DesignSystem.spaceSm,
+                vertical: DesignSystem.spaceXs,
+              ),
+            ),
+          ),
+        ),
+        const SizedBox(width: DesignSystem.spaceSm),
+
         // Custom pattern button
         Expanded(
           child: OutlinedButton.icon(

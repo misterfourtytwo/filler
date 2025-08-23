@@ -84,7 +84,7 @@ class TestHelpers {
   }) {
     final defaultPixelsJson = List.generate(
       width * height,
-      (index) => '{"pattern":1,"rotation":0.0}',
+      (index) => '{"pattern":0,"rotation":0.0}', // Empty pattern
     ).join(',');
 
     AppLogger.instance.d(
@@ -119,7 +119,7 @@ class TestHelpers {
   }) {
     final defaultPixels = List.generate(
       width * height,
-      (index) => const PixelData(pattern: 1),
+      (index) => const PixelData(pattern: 0), // Empty pattern
     );
 
     AppLogger.instance.d(

@@ -39,6 +39,9 @@ class CanvasEvent with _$CanvasEvent {
   /// Rotates a pixel at the given flat array index.
   const factory CanvasEvent.rotatePixel(int index) = _RotatePixel;
 
+  /// Fills all empty canvas cells with the currently active pattern.
+  const factory CanvasEvent.fill() = _Fill;
+
   /// Saves the current canvas with given title.
   const factory CanvasEvent.save(String title) = _Save;
 
@@ -516,6 +519,60 @@ class CanvasBloc extends Bloc<CanvasEvent, CanvasState> {
             },
         orElse: () {
           AppLogger.warning('Rotate pixel called but canvas not ready');
+        },
+      );
+    });
+    on<_Fill>((event, emit) {
+      state.maybeWhen(
+        ready:
+            (
+              w,
+              h,
+              ins,
+              color,
+              rotation,
+              customPattern,
+              px,
+              patternPaintColor,
+              canvasBackgroundColor,
+            ) {
+              final copy = List<PixelData>.from(px);
+              int filledCount = 0;
+
+              // Fill all empty cells (pattern 0) with the active pattern
+              for (int i = 0; i < copy.length; i++) {
+                if (copy[i].pattern == 0) {
+                  // Empty pattern
+                  copy[i] = PixelData(pattern: color);
+                  filledCount++;
+                }
+              }
+
+              AppLogger.canvas(
+                'Canvas filled',
+                data: {
+                  'filledCells': filledCount,
+                  'totalCells': copy.length,
+                  'activePattern': color,
+                },
+              );
+
+              emit(
+                CanvasState.ready(
+                  width: w,
+                  height: h,
+                  insets: ins,
+                  activeColor: color,
+                  patternRotation: rotation,
+                  customPattern: customPattern,
+                  pixels: copy,
+                  patternPaintColor: patternPaintColor,
+                  canvasBackgroundColor: canvasBackgroundColor,
+                ),
+              );
+            },
+        orElse: () {
+          AppLogger.warning('Fill called but canvas not ready');
         },
       );
     });

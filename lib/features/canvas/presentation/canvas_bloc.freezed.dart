@@ -26,6 +26,7 @@ mixin _$CanvasEvent {
     required TResult Function(CustomPattern pattern) setCustomPattern,
     required TResult Function(int index) paint,
     required TResult Function(int index) rotatePixel,
+    required TResult Function() fill,
     required TResult Function(String title) save,
     required TResult Function(Color color) setPatternPaintColor,
     required TResult Function(Color color) setCanvasBackgroundColor,
@@ -39,6 +40,7 @@ mixin _$CanvasEvent {
     TResult? Function(CustomPattern pattern)? setCustomPattern,
     TResult? Function(int index)? paint,
     TResult? Function(int index)? rotatePixel,
+    TResult? Function()? fill,
     TResult? Function(String title)? save,
     TResult? Function(Color color)? setPatternPaintColor,
     TResult? Function(Color color)? setCanvasBackgroundColor,
@@ -52,6 +54,7 @@ mixin _$CanvasEvent {
     TResult Function(CustomPattern pattern)? setCustomPattern,
     TResult Function(int index)? paint,
     TResult Function(int index)? rotatePixel,
+    TResult Function()? fill,
     TResult Function(String title)? save,
     TResult Function(Color color)? setPatternPaintColor,
     TResult Function(Color color)? setCanvasBackgroundColor,
@@ -66,6 +69,7 @@ mixin _$CanvasEvent {
     required TResult Function(_SetCustomPattern value) setCustomPattern,
     required TResult Function(_Paint value) paint,
     required TResult Function(_RotatePixel value) rotatePixel,
+    required TResult Function(_Fill value) fill,
     required TResult Function(_Save value) save,
     required TResult Function(_SetPatternPaintColor value) setPatternPaintColor,
     required TResult Function(_SetCanvasBackgroundColor value)
@@ -80,6 +84,7 @@ mixin _$CanvasEvent {
     TResult? Function(_SetCustomPattern value)? setCustomPattern,
     TResult? Function(_Paint value)? paint,
     TResult? Function(_RotatePixel value)? rotatePixel,
+    TResult? Function(_Fill value)? fill,
     TResult? Function(_Save value)? save,
     TResult? Function(_SetPatternPaintColor value)? setPatternPaintColor,
     TResult? Function(_SetCanvasBackgroundColor value)?
@@ -94,6 +99,7 @@ mixin _$CanvasEvent {
     TResult Function(_SetCustomPattern value)? setCustomPattern,
     TResult Function(_Paint value)? paint,
     TResult Function(_RotatePixel value)? rotatePixel,
+    TResult Function(_Fill value)? fill,
     TResult Function(_Save value)? save,
     TResult Function(_SetPatternPaintColor value)? setPatternPaintColor,
     TResult Function(_SetCanvasBackgroundColor value)? setCanvasBackgroundColor,
@@ -171,6 +177,7 @@ class _$InitImpl implements _Init {
     required TResult Function(CustomPattern pattern) setCustomPattern,
     required TResult Function(int index) paint,
     required TResult Function(int index) rotatePixel,
+    required TResult Function() fill,
     required TResult Function(String title) save,
     required TResult Function(Color color) setPatternPaintColor,
     required TResult Function(Color color) setCanvasBackgroundColor,
@@ -188,6 +195,7 @@ class _$InitImpl implements _Init {
     TResult? Function(CustomPattern pattern)? setCustomPattern,
     TResult? Function(int index)? paint,
     TResult? Function(int index)? rotatePixel,
+    TResult? Function()? fill,
     TResult? Function(String title)? save,
     TResult? Function(Color color)? setPatternPaintColor,
     TResult? Function(Color color)? setCanvasBackgroundColor,
@@ -205,6 +213,7 @@ class _$InitImpl implements _Init {
     TResult Function(CustomPattern pattern)? setCustomPattern,
     TResult Function(int index)? paint,
     TResult Function(int index)? rotatePixel,
+    TResult Function()? fill,
     TResult Function(String title)? save,
     TResult Function(Color color)? setPatternPaintColor,
     TResult Function(Color color)? setCanvasBackgroundColor,
@@ -226,6 +235,7 @@ class _$InitImpl implements _Init {
     required TResult Function(_SetCustomPattern value) setCustomPattern,
     required TResult Function(_Paint value) paint,
     required TResult Function(_RotatePixel value) rotatePixel,
+    required TResult Function(_Fill value) fill,
     required TResult Function(_Save value) save,
     required TResult Function(_SetPatternPaintColor value) setPatternPaintColor,
     required TResult Function(_SetCanvasBackgroundColor value)
@@ -244,6 +254,7 @@ class _$InitImpl implements _Init {
     TResult? Function(_SetCustomPattern value)? setCustomPattern,
     TResult? Function(_Paint value)? paint,
     TResult? Function(_RotatePixel value)? rotatePixel,
+    TResult? Function(_Fill value)? fill,
     TResult? Function(_Save value)? save,
     TResult? Function(_SetPatternPaintColor value)? setPatternPaintColor,
     TResult? Function(_SetCanvasBackgroundColor value)?
@@ -262,6 +273,7 @@ class _$InitImpl implements _Init {
     TResult Function(_SetCustomPattern value)? setCustomPattern,
     TResult Function(_Paint value)? paint,
     TResult Function(_RotatePixel value)? rotatePixel,
+    TResult Function(_Fill value)? fill,
     TResult Function(_Save value)? save,
     TResult Function(_SetPatternPaintColor value)? setPatternPaintColor,
     TResult Function(_SetCanvasBackgroundColor value)? setCanvasBackgroundColor,
@@ -354,6 +366,7 @@ class _$LoadImpl implements _Load {
     required TResult Function(CustomPattern pattern) setCustomPattern,
     required TResult Function(int index) paint,
     required TResult Function(int index) rotatePixel,
+    required TResult Function() fill,
     required TResult Function(String title) save,
     required TResult Function(Color color) setPatternPaintColor,
     required TResult Function(Color color) setCanvasBackgroundColor,
@@ -371,6 +384,7 @@ class _$LoadImpl implements _Load {
     TResult? Function(CustomPattern pattern)? setCustomPattern,
     TResult? Function(int index)? paint,
     TResult? Function(int index)? rotatePixel,
+    TResult? Function()? fill,
     TResult? Function(String title)? save,
     TResult? Function(Color color)? setPatternPaintColor,
     TResult? Function(Color color)? setCanvasBackgroundColor,
@@ -388,6 +402,7 @@ class _$LoadImpl implements _Load {
     TResult Function(CustomPattern pattern)? setCustomPattern,
     TResult Function(int index)? paint,
     TResult Function(int index)? rotatePixel,
+    TResult Function()? fill,
     TResult Function(String title)? save,
     TResult Function(Color color)? setPatternPaintColor,
     TResult Function(Color color)? setCanvasBackgroundColor,
@@ -409,6 +424,7 @@ class _$LoadImpl implements _Load {
     required TResult Function(_SetCustomPattern value) setCustomPattern,
     required TResult Function(_Paint value) paint,
     required TResult Function(_RotatePixel value) rotatePixel,
+    required TResult Function(_Fill value) fill,
     required TResult Function(_Save value) save,
     required TResult Function(_SetPatternPaintColor value) setPatternPaintColor,
     required TResult Function(_SetCanvasBackgroundColor value)
@@ -427,6 +443,7 @@ class _$LoadImpl implements _Load {
     TResult? Function(_SetCustomPattern value)? setCustomPattern,
     TResult? Function(_Paint value)? paint,
     TResult? Function(_RotatePixel value)? rotatePixel,
+    TResult? Function(_Fill value)? fill,
     TResult? Function(_Save value)? save,
     TResult? Function(_SetPatternPaintColor value)? setPatternPaintColor,
     TResult? Function(_SetCanvasBackgroundColor value)?
@@ -445,6 +462,7 @@ class _$LoadImpl implements _Load {
     TResult Function(_SetCustomPattern value)? setCustomPattern,
     TResult Function(_Paint value)? paint,
     TResult Function(_RotatePixel value)? rotatePixel,
+    TResult Function(_Fill value)? fill,
     TResult Function(_Save value)? save,
     TResult Function(_SetPatternPaintColor value)? setPatternPaintColor,
     TResult Function(_SetCanvasBackgroundColor value)? setCanvasBackgroundColor,
@@ -549,6 +567,7 @@ class _$SetActiveColorImpl implements _SetActiveColor {
     required TResult Function(CustomPattern pattern) setCustomPattern,
     required TResult Function(int index) paint,
     required TResult Function(int index) rotatePixel,
+    required TResult Function() fill,
     required TResult Function(String title) save,
     required TResult Function(Color color) setPatternPaintColor,
     required TResult Function(Color color) setCanvasBackgroundColor,
@@ -566,6 +585,7 @@ class _$SetActiveColorImpl implements _SetActiveColor {
     TResult? Function(CustomPattern pattern)? setCustomPattern,
     TResult? Function(int index)? paint,
     TResult? Function(int index)? rotatePixel,
+    TResult? Function()? fill,
     TResult? Function(String title)? save,
     TResult? Function(Color color)? setPatternPaintColor,
     TResult? Function(Color color)? setCanvasBackgroundColor,
@@ -583,6 +603,7 @@ class _$SetActiveColorImpl implements _SetActiveColor {
     TResult Function(CustomPattern pattern)? setCustomPattern,
     TResult Function(int index)? paint,
     TResult Function(int index)? rotatePixel,
+    TResult Function()? fill,
     TResult Function(String title)? save,
     TResult Function(Color color)? setPatternPaintColor,
     TResult Function(Color color)? setCanvasBackgroundColor,
@@ -604,6 +625,7 @@ class _$SetActiveColorImpl implements _SetActiveColor {
     required TResult Function(_SetCustomPattern value) setCustomPattern,
     required TResult Function(_Paint value) paint,
     required TResult Function(_RotatePixel value) rotatePixel,
+    required TResult Function(_Fill value) fill,
     required TResult Function(_Save value) save,
     required TResult Function(_SetPatternPaintColor value) setPatternPaintColor,
     required TResult Function(_SetCanvasBackgroundColor value)
@@ -622,6 +644,7 @@ class _$SetActiveColorImpl implements _SetActiveColor {
     TResult? Function(_SetCustomPattern value)? setCustomPattern,
     TResult? Function(_Paint value)? paint,
     TResult? Function(_RotatePixel value)? rotatePixel,
+    TResult? Function(_Fill value)? fill,
     TResult? Function(_Save value)? save,
     TResult? Function(_SetPatternPaintColor value)? setPatternPaintColor,
     TResult? Function(_SetCanvasBackgroundColor value)?
@@ -640,6 +663,7 @@ class _$SetActiveColorImpl implements _SetActiveColor {
     TResult Function(_SetCustomPattern value)? setCustomPattern,
     TResult Function(_Paint value)? paint,
     TResult Function(_RotatePixel value)? rotatePixel,
+    TResult Function(_Fill value)? fill,
     TResult Function(_Save value)? save,
     TResult Function(_SetPatternPaintColor value)? setPatternPaintColor,
     TResult Function(_SetCanvasBackgroundColor value)? setCanvasBackgroundColor,
@@ -741,6 +765,7 @@ class _$RotatePatternImpl implements _RotatePattern {
     required TResult Function(CustomPattern pattern) setCustomPattern,
     required TResult Function(int index) paint,
     required TResult Function(int index) rotatePixel,
+    required TResult Function() fill,
     required TResult Function(String title) save,
     required TResult Function(Color color) setPatternPaintColor,
     required TResult Function(Color color) setCanvasBackgroundColor,
@@ -758,6 +783,7 @@ class _$RotatePatternImpl implements _RotatePattern {
     TResult? Function(CustomPattern pattern)? setCustomPattern,
     TResult? Function(int index)? paint,
     TResult? Function(int index)? rotatePixel,
+    TResult? Function()? fill,
     TResult? Function(String title)? save,
     TResult? Function(Color color)? setPatternPaintColor,
     TResult? Function(Color color)? setCanvasBackgroundColor,
@@ -775,6 +801,7 @@ class _$RotatePatternImpl implements _RotatePattern {
     TResult Function(CustomPattern pattern)? setCustomPattern,
     TResult Function(int index)? paint,
     TResult Function(int index)? rotatePixel,
+    TResult Function()? fill,
     TResult Function(String title)? save,
     TResult Function(Color color)? setPatternPaintColor,
     TResult Function(Color color)? setCanvasBackgroundColor,
@@ -796,6 +823,7 @@ class _$RotatePatternImpl implements _RotatePattern {
     required TResult Function(_SetCustomPattern value) setCustomPattern,
     required TResult Function(_Paint value) paint,
     required TResult Function(_RotatePixel value) rotatePixel,
+    required TResult Function(_Fill value) fill,
     required TResult Function(_Save value) save,
     required TResult Function(_SetPatternPaintColor value) setPatternPaintColor,
     required TResult Function(_SetCanvasBackgroundColor value)
@@ -814,6 +842,7 @@ class _$RotatePatternImpl implements _RotatePattern {
     TResult? Function(_SetCustomPattern value)? setCustomPattern,
     TResult? Function(_Paint value)? paint,
     TResult? Function(_RotatePixel value)? rotatePixel,
+    TResult? Function(_Fill value)? fill,
     TResult? Function(_Save value)? save,
     TResult? Function(_SetPatternPaintColor value)? setPatternPaintColor,
     TResult? Function(_SetCanvasBackgroundColor value)?
@@ -832,6 +861,7 @@ class _$RotatePatternImpl implements _RotatePattern {
     TResult Function(_SetCustomPattern value)? setCustomPattern,
     TResult Function(_Paint value)? paint,
     TResult Function(_RotatePixel value)? rotatePixel,
+    TResult Function(_Fill value)? fill,
     TResult Function(_Save value)? save,
     TResult Function(_SetPatternPaintColor value)? setPatternPaintColor,
     TResult Function(_SetCanvasBackgroundColor value)? setCanvasBackgroundColor,
@@ -948,6 +978,7 @@ class _$SetCustomPatternImpl implements _SetCustomPattern {
     required TResult Function(CustomPattern pattern) setCustomPattern,
     required TResult Function(int index) paint,
     required TResult Function(int index) rotatePixel,
+    required TResult Function() fill,
     required TResult Function(String title) save,
     required TResult Function(Color color) setPatternPaintColor,
     required TResult Function(Color color) setCanvasBackgroundColor,
@@ -965,6 +996,7 @@ class _$SetCustomPatternImpl implements _SetCustomPattern {
     TResult? Function(CustomPattern pattern)? setCustomPattern,
     TResult? Function(int index)? paint,
     TResult? Function(int index)? rotatePixel,
+    TResult? Function()? fill,
     TResult? Function(String title)? save,
     TResult? Function(Color color)? setPatternPaintColor,
     TResult? Function(Color color)? setCanvasBackgroundColor,
@@ -982,6 +1014,7 @@ class _$SetCustomPatternImpl implements _SetCustomPattern {
     TResult Function(CustomPattern pattern)? setCustomPattern,
     TResult Function(int index)? paint,
     TResult Function(int index)? rotatePixel,
+    TResult Function()? fill,
     TResult Function(String title)? save,
     TResult Function(Color color)? setPatternPaintColor,
     TResult Function(Color color)? setCanvasBackgroundColor,
@@ -1003,6 +1036,7 @@ class _$SetCustomPatternImpl implements _SetCustomPattern {
     required TResult Function(_SetCustomPattern value) setCustomPattern,
     required TResult Function(_Paint value) paint,
     required TResult Function(_RotatePixel value) rotatePixel,
+    required TResult Function(_Fill value) fill,
     required TResult Function(_Save value) save,
     required TResult Function(_SetPatternPaintColor value) setPatternPaintColor,
     required TResult Function(_SetCanvasBackgroundColor value)
@@ -1021,6 +1055,7 @@ class _$SetCustomPatternImpl implements _SetCustomPattern {
     TResult? Function(_SetCustomPattern value)? setCustomPattern,
     TResult? Function(_Paint value)? paint,
     TResult? Function(_RotatePixel value)? rotatePixel,
+    TResult? Function(_Fill value)? fill,
     TResult? Function(_Save value)? save,
     TResult? Function(_SetPatternPaintColor value)? setPatternPaintColor,
     TResult? Function(_SetCanvasBackgroundColor value)?
@@ -1039,6 +1074,7 @@ class _$SetCustomPatternImpl implements _SetCustomPattern {
     TResult Function(_SetCustomPattern value)? setCustomPattern,
     TResult Function(_Paint value)? paint,
     TResult Function(_RotatePixel value)? rotatePixel,
+    TResult Function(_Fill value)? fill,
     TResult Function(_Save value)? save,
     TResult Function(_SetPatternPaintColor value)? setPatternPaintColor,
     TResult Function(_SetCanvasBackgroundColor value)? setCanvasBackgroundColor,
@@ -1141,6 +1177,7 @@ class _$PaintImpl implements _Paint {
     required TResult Function(CustomPattern pattern) setCustomPattern,
     required TResult Function(int index) paint,
     required TResult Function(int index) rotatePixel,
+    required TResult Function() fill,
     required TResult Function(String title) save,
     required TResult Function(Color color) setPatternPaintColor,
     required TResult Function(Color color) setCanvasBackgroundColor,
@@ -1158,6 +1195,7 @@ class _$PaintImpl implements _Paint {
     TResult? Function(CustomPattern pattern)? setCustomPattern,
     TResult? Function(int index)? paint,
     TResult? Function(int index)? rotatePixel,
+    TResult? Function()? fill,
     TResult? Function(String title)? save,
     TResult? Function(Color color)? setPatternPaintColor,
     TResult? Function(Color color)? setCanvasBackgroundColor,
@@ -1175,6 +1213,7 @@ class _$PaintImpl implements _Paint {
     TResult Function(CustomPattern pattern)? setCustomPattern,
     TResult Function(int index)? paint,
     TResult Function(int index)? rotatePixel,
+    TResult Function()? fill,
     TResult Function(String title)? save,
     TResult Function(Color color)? setPatternPaintColor,
     TResult Function(Color color)? setCanvasBackgroundColor,
@@ -1196,6 +1235,7 @@ class _$PaintImpl implements _Paint {
     required TResult Function(_SetCustomPattern value) setCustomPattern,
     required TResult Function(_Paint value) paint,
     required TResult Function(_RotatePixel value) rotatePixel,
+    required TResult Function(_Fill value) fill,
     required TResult Function(_Save value) save,
     required TResult Function(_SetPatternPaintColor value) setPatternPaintColor,
     required TResult Function(_SetCanvasBackgroundColor value)
@@ -1214,6 +1254,7 @@ class _$PaintImpl implements _Paint {
     TResult? Function(_SetCustomPattern value)? setCustomPattern,
     TResult? Function(_Paint value)? paint,
     TResult? Function(_RotatePixel value)? rotatePixel,
+    TResult? Function(_Fill value)? fill,
     TResult? Function(_Save value)? save,
     TResult? Function(_SetPatternPaintColor value)? setPatternPaintColor,
     TResult? Function(_SetCanvasBackgroundColor value)?
@@ -1232,6 +1273,7 @@ class _$PaintImpl implements _Paint {
     TResult Function(_SetCustomPattern value)? setCustomPattern,
     TResult Function(_Paint value)? paint,
     TResult Function(_RotatePixel value)? rotatePixel,
+    TResult Function(_Fill value)? fill,
     TResult Function(_Save value)? save,
     TResult Function(_SetPatternPaintColor value)? setPatternPaintColor,
     TResult Function(_SetCanvasBackgroundColor value)? setCanvasBackgroundColor,
@@ -1333,6 +1375,7 @@ class _$RotatePixelImpl implements _RotatePixel {
     required TResult Function(CustomPattern pattern) setCustomPattern,
     required TResult Function(int index) paint,
     required TResult Function(int index) rotatePixel,
+    required TResult Function() fill,
     required TResult Function(String title) save,
     required TResult Function(Color color) setPatternPaintColor,
     required TResult Function(Color color) setCanvasBackgroundColor,
@@ -1350,6 +1393,7 @@ class _$RotatePixelImpl implements _RotatePixel {
     TResult? Function(CustomPattern pattern)? setCustomPattern,
     TResult? Function(int index)? paint,
     TResult? Function(int index)? rotatePixel,
+    TResult? Function()? fill,
     TResult? Function(String title)? save,
     TResult? Function(Color color)? setPatternPaintColor,
     TResult? Function(Color color)? setCanvasBackgroundColor,
@@ -1367,6 +1411,7 @@ class _$RotatePixelImpl implements _RotatePixel {
     TResult Function(CustomPattern pattern)? setCustomPattern,
     TResult Function(int index)? paint,
     TResult Function(int index)? rotatePixel,
+    TResult Function()? fill,
     TResult Function(String title)? save,
     TResult Function(Color color)? setPatternPaintColor,
     TResult Function(Color color)? setCanvasBackgroundColor,
@@ -1388,6 +1433,7 @@ class _$RotatePixelImpl implements _RotatePixel {
     required TResult Function(_SetCustomPattern value) setCustomPattern,
     required TResult Function(_Paint value) paint,
     required TResult Function(_RotatePixel value) rotatePixel,
+    required TResult Function(_Fill value) fill,
     required TResult Function(_Save value) save,
     required TResult Function(_SetPatternPaintColor value) setPatternPaintColor,
     required TResult Function(_SetCanvasBackgroundColor value)
@@ -1406,6 +1452,7 @@ class _$RotatePixelImpl implements _RotatePixel {
     TResult? Function(_SetCustomPattern value)? setCustomPattern,
     TResult? Function(_Paint value)? paint,
     TResult? Function(_RotatePixel value)? rotatePixel,
+    TResult? Function(_Fill value)? fill,
     TResult? Function(_Save value)? save,
     TResult? Function(_SetPatternPaintColor value)? setPatternPaintColor,
     TResult? Function(_SetCanvasBackgroundColor value)?
@@ -1424,6 +1471,7 @@ class _$RotatePixelImpl implements _RotatePixel {
     TResult Function(_SetCustomPattern value)? setCustomPattern,
     TResult Function(_Paint value)? paint,
     TResult Function(_RotatePixel value)? rotatePixel,
+    TResult Function(_Fill value)? fill,
     TResult Function(_Save value)? save,
     TResult Function(_SetPatternPaintColor value)? setPatternPaintColor,
     TResult Function(_SetCanvasBackgroundColor value)? setCanvasBackgroundColor,
@@ -1446,6 +1494,167 @@ abstract class _RotatePixel implements CanvasEvent {
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$RotatePixelImplCopyWith<_$RotatePixelImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$FillImplCopyWith<$Res> {
+  factory _$$FillImplCopyWith(
+    _$FillImpl value,
+    $Res Function(_$FillImpl) then,
+  ) = __$$FillImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$FillImplCopyWithImpl<$Res>
+    extends _$CanvasEventCopyWithImpl<$Res, _$FillImpl>
+    implements _$$FillImplCopyWith<$Res> {
+  __$$FillImplCopyWithImpl(_$FillImpl _value, $Res Function(_$FillImpl) _then)
+    : super(_value, _then);
+
+  /// Create a copy of CanvasEvent
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$FillImpl implements _Fill {
+  const _$FillImpl();
+
+  @override
+  String toString() {
+    return 'CanvasEvent.fill()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$FillImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() init,
+    required TResult Function(int canvasId) load,
+    required TResult Function(int pattern) setActiveColor,
+    required TResult Function(double angle) rotatePattern,
+    required TResult Function(CustomPattern pattern) setCustomPattern,
+    required TResult Function(int index) paint,
+    required TResult Function(int index) rotatePixel,
+    required TResult Function() fill,
+    required TResult Function(String title) save,
+    required TResult Function(Color color) setPatternPaintColor,
+    required TResult Function(Color color) setCanvasBackgroundColor,
+  }) {
+    return fill();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? init,
+    TResult? Function(int canvasId)? load,
+    TResult? Function(int pattern)? setActiveColor,
+    TResult? Function(double angle)? rotatePattern,
+    TResult? Function(CustomPattern pattern)? setCustomPattern,
+    TResult? Function(int index)? paint,
+    TResult? Function(int index)? rotatePixel,
+    TResult? Function()? fill,
+    TResult? Function(String title)? save,
+    TResult? Function(Color color)? setPatternPaintColor,
+    TResult? Function(Color color)? setCanvasBackgroundColor,
+  }) {
+    return fill?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? init,
+    TResult Function(int canvasId)? load,
+    TResult Function(int pattern)? setActiveColor,
+    TResult Function(double angle)? rotatePattern,
+    TResult Function(CustomPattern pattern)? setCustomPattern,
+    TResult Function(int index)? paint,
+    TResult Function(int index)? rotatePixel,
+    TResult Function()? fill,
+    TResult Function(String title)? save,
+    TResult Function(Color color)? setPatternPaintColor,
+    TResult Function(Color color)? setCanvasBackgroundColor,
+    required TResult orElse(),
+  }) {
+    if (fill != null) {
+      return fill();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Init value) init,
+    required TResult Function(_Load value) load,
+    required TResult Function(_SetActiveColor value) setActiveColor,
+    required TResult Function(_RotatePattern value) rotatePattern,
+    required TResult Function(_SetCustomPattern value) setCustomPattern,
+    required TResult Function(_Paint value) paint,
+    required TResult Function(_RotatePixel value) rotatePixel,
+    required TResult Function(_Fill value) fill,
+    required TResult Function(_Save value) save,
+    required TResult Function(_SetPatternPaintColor value) setPatternPaintColor,
+    required TResult Function(_SetCanvasBackgroundColor value)
+    setCanvasBackgroundColor,
+  }) {
+    return fill(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Init value)? init,
+    TResult? Function(_Load value)? load,
+    TResult? Function(_SetActiveColor value)? setActiveColor,
+    TResult? Function(_RotatePattern value)? rotatePattern,
+    TResult? Function(_SetCustomPattern value)? setCustomPattern,
+    TResult? Function(_Paint value)? paint,
+    TResult? Function(_RotatePixel value)? rotatePixel,
+    TResult? Function(_Fill value)? fill,
+    TResult? Function(_Save value)? save,
+    TResult? Function(_SetPatternPaintColor value)? setPatternPaintColor,
+    TResult? Function(_SetCanvasBackgroundColor value)?
+    setCanvasBackgroundColor,
+  }) {
+    return fill?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Init value)? init,
+    TResult Function(_Load value)? load,
+    TResult Function(_SetActiveColor value)? setActiveColor,
+    TResult Function(_RotatePattern value)? rotatePattern,
+    TResult Function(_SetCustomPattern value)? setCustomPattern,
+    TResult Function(_Paint value)? paint,
+    TResult Function(_RotatePixel value)? rotatePixel,
+    TResult Function(_Fill value)? fill,
+    TResult Function(_Save value)? save,
+    TResult Function(_SetPatternPaintColor value)? setPatternPaintColor,
+    TResult Function(_SetCanvasBackgroundColor value)? setCanvasBackgroundColor,
+    required TResult orElse(),
+  }) {
+    if (fill != null) {
+      return fill(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Fill implements CanvasEvent {
+  const factory _Fill() = _$FillImpl;
 }
 
 /// @nodoc
@@ -1523,6 +1732,7 @@ class _$SaveImpl implements _Save {
     required TResult Function(CustomPattern pattern) setCustomPattern,
     required TResult Function(int index) paint,
     required TResult Function(int index) rotatePixel,
+    required TResult Function() fill,
     required TResult Function(String title) save,
     required TResult Function(Color color) setPatternPaintColor,
     required TResult Function(Color color) setCanvasBackgroundColor,
@@ -1540,6 +1750,7 @@ class _$SaveImpl implements _Save {
     TResult? Function(CustomPattern pattern)? setCustomPattern,
     TResult? Function(int index)? paint,
     TResult? Function(int index)? rotatePixel,
+    TResult? Function()? fill,
     TResult? Function(String title)? save,
     TResult? Function(Color color)? setPatternPaintColor,
     TResult? Function(Color color)? setCanvasBackgroundColor,
@@ -1557,6 +1768,7 @@ class _$SaveImpl implements _Save {
     TResult Function(CustomPattern pattern)? setCustomPattern,
     TResult Function(int index)? paint,
     TResult Function(int index)? rotatePixel,
+    TResult Function()? fill,
     TResult Function(String title)? save,
     TResult Function(Color color)? setPatternPaintColor,
     TResult Function(Color color)? setCanvasBackgroundColor,
@@ -1578,6 +1790,7 @@ class _$SaveImpl implements _Save {
     required TResult Function(_SetCustomPattern value) setCustomPattern,
     required TResult Function(_Paint value) paint,
     required TResult Function(_RotatePixel value) rotatePixel,
+    required TResult Function(_Fill value) fill,
     required TResult Function(_Save value) save,
     required TResult Function(_SetPatternPaintColor value) setPatternPaintColor,
     required TResult Function(_SetCanvasBackgroundColor value)
@@ -1596,6 +1809,7 @@ class _$SaveImpl implements _Save {
     TResult? Function(_SetCustomPattern value)? setCustomPattern,
     TResult? Function(_Paint value)? paint,
     TResult? Function(_RotatePixel value)? rotatePixel,
+    TResult? Function(_Fill value)? fill,
     TResult? Function(_Save value)? save,
     TResult? Function(_SetPatternPaintColor value)? setPatternPaintColor,
     TResult? Function(_SetCanvasBackgroundColor value)?
@@ -1614,6 +1828,7 @@ class _$SaveImpl implements _Save {
     TResult Function(_SetCustomPattern value)? setCustomPattern,
     TResult Function(_Paint value)? paint,
     TResult Function(_RotatePixel value)? rotatePixel,
+    TResult Function(_Fill value)? fill,
     TResult Function(_Save value)? save,
     TResult Function(_SetPatternPaintColor value)? setPatternPaintColor,
     TResult Function(_SetCanvasBackgroundColor value)? setCanvasBackgroundColor,
@@ -1719,6 +1934,7 @@ class _$SetPatternPaintColorImpl implements _SetPatternPaintColor {
     required TResult Function(CustomPattern pattern) setCustomPattern,
     required TResult Function(int index) paint,
     required TResult Function(int index) rotatePixel,
+    required TResult Function() fill,
     required TResult Function(String title) save,
     required TResult Function(Color color) setPatternPaintColor,
     required TResult Function(Color color) setCanvasBackgroundColor,
@@ -1736,6 +1952,7 @@ class _$SetPatternPaintColorImpl implements _SetPatternPaintColor {
     TResult? Function(CustomPattern pattern)? setCustomPattern,
     TResult? Function(int index)? paint,
     TResult? Function(int index)? rotatePixel,
+    TResult? Function()? fill,
     TResult? Function(String title)? save,
     TResult? Function(Color color)? setPatternPaintColor,
     TResult? Function(Color color)? setCanvasBackgroundColor,
@@ -1753,6 +1970,7 @@ class _$SetPatternPaintColorImpl implements _SetPatternPaintColor {
     TResult Function(CustomPattern pattern)? setCustomPattern,
     TResult Function(int index)? paint,
     TResult Function(int index)? rotatePixel,
+    TResult Function()? fill,
     TResult Function(String title)? save,
     TResult Function(Color color)? setPatternPaintColor,
     TResult Function(Color color)? setCanvasBackgroundColor,
@@ -1774,6 +1992,7 @@ class _$SetPatternPaintColorImpl implements _SetPatternPaintColor {
     required TResult Function(_SetCustomPattern value) setCustomPattern,
     required TResult Function(_Paint value) paint,
     required TResult Function(_RotatePixel value) rotatePixel,
+    required TResult Function(_Fill value) fill,
     required TResult Function(_Save value) save,
     required TResult Function(_SetPatternPaintColor value) setPatternPaintColor,
     required TResult Function(_SetCanvasBackgroundColor value)
@@ -1792,6 +2011,7 @@ class _$SetPatternPaintColorImpl implements _SetPatternPaintColor {
     TResult? Function(_SetCustomPattern value)? setCustomPattern,
     TResult? Function(_Paint value)? paint,
     TResult? Function(_RotatePixel value)? rotatePixel,
+    TResult? Function(_Fill value)? fill,
     TResult? Function(_Save value)? save,
     TResult? Function(_SetPatternPaintColor value)? setPatternPaintColor,
     TResult? Function(_SetCanvasBackgroundColor value)?
@@ -1810,6 +2030,7 @@ class _$SetPatternPaintColorImpl implements _SetPatternPaintColor {
     TResult Function(_SetCustomPattern value)? setCustomPattern,
     TResult Function(_Paint value)? paint,
     TResult Function(_RotatePixel value)? rotatePixel,
+    TResult Function(_Fill value)? fill,
     TResult Function(_Save value)? save,
     TResult Function(_SetPatternPaintColor value)? setPatternPaintColor,
     TResult Function(_SetCanvasBackgroundColor value)? setCanvasBackgroundColor,
@@ -1915,6 +2136,7 @@ class _$SetCanvasBackgroundColorImpl implements _SetCanvasBackgroundColor {
     required TResult Function(CustomPattern pattern) setCustomPattern,
     required TResult Function(int index) paint,
     required TResult Function(int index) rotatePixel,
+    required TResult Function() fill,
     required TResult Function(String title) save,
     required TResult Function(Color color) setPatternPaintColor,
     required TResult Function(Color color) setCanvasBackgroundColor,
@@ -1932,6 +2154,7 @@ class _$SetCanvasBackgroundColorImpl implements _SetCanvasBackgroundColor {
     TResult? Function(CustomPattern pattern)? setCustomPattern,
     TResult? Function(int index)? paint,
     TResult? Function(int index)? rotatePixel,
+    TResult? Function()? fill,
     TResult? Function(String title)? save,
     TResult? Function(Color color)? setPatternPaintColor,
     TResult? Function(Color color)? setCanvasBackgroundColor,
@@ -1949,6 +2172,7 @@ class _$SetCanvasBackgroundColorImpl implements _SetCanvasBackgroundColor {
     TResult Function(CustomPattern pattern)? setCustomPattern,
     TResult Function(int index)? paint,
     TResult Function(int index)? rotatePixel,
+    TResult Function()? fill,
     TResult Function(String title)? save,
     TResult Function(Color color)? setPatternPaintColor,
     TResult Function(Color color)? setCanvasBackgroundColor,
@@ -1970,6 +2194,7 @@ class _$SetCanvasBackgroundColorImpl implements _SetCanvasBackgroundColor {
     required TResult Function(_SetCustomPattern value) setCustomPattern,
     required TResult Function(_Paint value) paint,
     required TResult Function(_RotatePixel value) rotatePixel,
+    required TResult Function(_Fill value) fill,
     required TResult Function(_Save value) save,
     required TResult Function(_SetPatternPaintColor value) setPatternPaintColor,
     required TResult Function(_SetCanvasBackgroundColor value)
@@ -1988,6 +2213,7 @@ class _$SetCanvasBackgroundColorImpl implements _SetCanvasBackgroundColor {
     TResult? Function(_SetCustomPattern value)? setCustomPattern,
     TResult? Function(_Paint value)? paint,
     TResult? Function(_RotatePixel value)? rotatePixel,
+    TResult? Function(_Fill value)? fill,
     TResult? Function(_Save value)? save,
     TResult? Function(_SetPatternPaintColor value)? setPatternPaintColor,
     TResult? Function(_SetCanvasBackgroundColor value)?
@@ -2006,6 +2232,7 @@ class _$SetCanvasBackgroundColorImpl implements _SetCanvasBackgroundColor {
     TResult Function(_SetCustomPattern value)? setCustomPattern,
     TResult Function(_Paint value)? paint,
     TResult Function(_RotatePixel value)? rotatePixel,
+    TResult Function(_Fill value)? fill,
     TResult Function(_Save value)? save,
     TResult Function(_SetPatternPaintColor value)? setPatternPaintColor,
     TResult Function(_SetCanvasBackgroundColor value)? setCanvasBackgroundColor,

@@ -97,7 +97,7 @@ void main() {
       expect(preferences.width, equals(10));
       expect(preferences.height, equals(10));
       expect(preferences.insets, equals(0));
-      expect(preferences.defaultPattern, equals(1)); // Default pattern
+      expect(preferences.defaultPattern, equals(0)); // Default empty pattern
     });
 
     test('should save and retrieve preferences', () async {
@@ -125,7 +125,7 @@ void main() {
         width: 10,
         height: 10,
         insets: 0,
-        defaultPattern: 1,
+        defaultPattern: 0,
         themeMode: 2,
       );
 

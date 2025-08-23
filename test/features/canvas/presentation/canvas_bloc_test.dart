@@ -63,7 +63,7 @@ void main() {
               width: 10,
               height: 10,
               insets: 0,
-              defaultPattern: 1,
+              defaultPattern: 0, // Empty pattern
             ),
           );
           return canvasBloc;
@@ -75,11 +75,11 @@ void main() {
             width: 10,
             height: 10,
             insets: 0,
-            activeColor: 1, // Pattern index, not color
+            activeColor: 0, // Empty pattern index
             patternRotation: 0.0,
             pixels: List.generate(
               100,
-              (index) => const PixelData(pattern: 1),
+              (index) => const PixelData(pattern: 0), // Empty pattern
             ), // 10x10 = 100 pixels
             patternPaintColor: const Color(0xFF000000),
             canvasBackgroundColor: const Color(0xFFFFFFFF),
@@ -115,7 +115,7 @@ void main() {
               width: 2,
               height: 2,
               insets: 0,
-              defaultPattern: 1,
+              defaultPattern: 0, // Empty pattern
             ),
           );
           return canvasBloc;
@@ -124,13 +124,13 @@ void main() {
           width: 2,
           height: 2,
           insets: 0,
-          activeColor: 1, // Pattern index, not color
+          activeColor: 0, // Empty pattern index
           patternRotation: 0.0,
           pixels: [
-            PixelData(pattern: 1),
-            PixelData(pattern: 1),
-            PixelData(pattern: 1),
-            PixelData(pattern: 1),
+            PixelData(pattern: 0), // Empty pattern
+            PixelData(pattern: 0), // Empty pattern
+            PixelData(pattern: 0), // Empty pattern
+            PixelData(pattern: 0), // Empty pattern
           ],
           patternPaintColor: Color(0xFF000000),
           canvasBackgroundColor: Color(0xFFFFFFFF),
@@ -144,10 +144,10 @@ void main() {
             activeColor: 2,
             patternRotation: 0.0,
             pixels: [
-              PixelData(pattern: 1),
-              PixelData(pattern: 1),
-              PixelData(pattern: 1),
-              PixelData(pattern: 1),
+              PixelData(pattern: 0), // Empty pattern
+              PixelData(pattern: 0), // Empty pattern
+              PixelData(pattern: 0), // Empty pattern
+              PixelData(pattern: 0), // Empty pattern
             ],
             patternPaintColor: Color(0xFF000000),
             canvasBackgroundColor: Color(0xFFFFFFFF),
@@ -175,10 +175,10 @@ void main() {
           activeColor: 2, // Pattern index, not color
           patternRotation: 0.0,
           pixels: [
-            PixelData(pattern: 1),
-            PixelData(pattern: 1),
-            PixelData(pattern: 1),
-            PixelData(pattern: 1),
+            PixelData(pattern: 0), // Empty pattern
+            PixelData(pattern: 0), // Empty pattern
+            PixelData(pattern: 0), // Empty pattern
+            PixelData(pattern: 0), // Empty pattern
           ],
           patternPaintColor: Color(0xFF000000),
           canvasBackgroundColor: Color(0xFFFFFFFF),
@@ -192,10 +192,10 @@ void main() {
             activeColor: 2, // Pattern index, not color
             patternRotation: 0.0,
             pixels: [
-              PixelData(pattern: 1),
+              PixelData(pattern: 0), // Empty pattern
               PixelData(pattern: 2), // This pixel gets painted
-              PixelData(pattern: 1),
-              PixelData(pattern: 1),
+              PixelData(pattern: 0), // Empty pattern
+              PixelData(pattern: 0), // Empty pattern
             ],
             patternPaintColor: Color(0xFF000000),
             canvasBackgroundColor: Color(0xFFFFFFFF),
@@ -213,10 +213,10 @@ void main() {
           activeColor: 2, // Pattern index, not color
           patternRotation: 0.0,
           pixels: [
-            PixelData(pattern: 1),
-            PixelData(pattern: 1),
-            PixelData(pattern: 1),
-            PixelData(pattern: 1),
+            PixelData(pattern: 0), // Empty pattern
+            PixelData(pattern: 0), // Empty pattern
+            PixelData(pattern: 0), // Empty pattern
+            PixelData(pattern: 0), // Empty pattern
           ],
           patternPaintColor: Color(0xFF000000),
           canvasBackgroundColor: Color(0xFFFFFFFF),
@@ -230,6 +230,130 @@ void main() {
         build: () => canvasBloc,
         seed: () => const CanvasState.loading(),
         act: (bloc) => bloc.add(const CanvasEvent.paint(0)),
+        expect: () => [],
+      );
+    });
+
+    group('CanvasEvent.fill', () {
+      blocTest<CanvasBloc, CanvasState>(
+        'fills all empty cells with active pattern',
+        build: () => canvasBloc,
+        seed: () => const CanvasState.ready(
+          width: 2,
+          height: 2,
+          insets: 0,
+          activeColor: 2, // Pattern index, not color
+          patternRotation: 0.0,
+          pixels: [
+            PixelData(pattern: 0), // Empty pattern
+            PixelData(pattern: 1), // Non-empty pattern
+            PixelData(pattern: 0), // Empty pattern
+            PixelData(pattern: 3), // Non-empty pattern
+          ],
+          patternPaintColor: Color(0xFF000000),
+          canvasBackgroundColor: Color(0xFFFFFFFF),
+        ),
+        act: (bloc) => bloc.add(const CanvasEvent.fill()),
+        expect: () => [
+          const CanvasState.ready(
+            width: 2,
+            height: 2,
+            insets: 0,
+            activeColor: 2, // Pattern index, not color
+            patternRotation: 0.0,
+            pixels: [
+              PixelData(pattern: 2), // Filled with active pattern
+              PixelData(pattern: 1), // Unchanged (was non-empty)
+              PixelData(pattern: 2), // Filled with active pattern
+              PixelData(pattern: 3), // Unchanged (was non-empty)
+            ],
+            patternPaintColor: Color(0xFF000000),
+            canvasBackgroundColor: Color(0xFFFFFFFF),
+          ),
+        ],
+      );
+
+      blocTest<CanvasBloc, CanvasState>(
+        'fills all cells when all are empty',
+        build: () => canvasBloc,
+        seed: () => const CanvasState.ready(
+          width: 2,
+          height: 2,
+          insets: 0,
+          activeColor: 1, // Pattern index, not color
+          patternRotation: 0.0,
+          pixels: [
+            PixelData(pattern: 0), // Empty pattern
+            PixelData(pattern: 0), // Empty pattern
+            PixelData(pattern: 0), // Empty pattern
+            PixelData(pattern: 0), // Empty pattern
+          ],
+          patternPaintColor: Color(0xFF000000),
+          canvasBackgroundColor: Color(0xFFFFFFFF),
+        ),
+        act: (bloc) => bloc.add(const CanvasEvent.fill()),
+        expect: () => [
+          const CanvasState.ready(
+            width: 2,
+            height: 2,
+            insets: 0,
+            activeColor: 1, // Pattern index, not color
+            patternRotation: 0.0,
+            pixels: [
+              PixelData(pattern: 1), // Filled with active pattern
+              PixelData(pattern: 1), // Filled with active pattern
+              PixelData(pattern: 1), // Filled with active pattern
+              PixelData(pattern: 1), // Filled with active pattern
+            ],
+            patternPaintColor: Color(0xFF000000),
+            canvasBackgroundColor: Color(0xFFFFFFFF),
+          ),
+        ],
+      );
+
+      blocTest<CanvasBloc, CanvasState>(
+        'does not change any cells when none are empty',
+        build: () => canvasBloc,
+        seed: () => const CanvasState.ready(
+          width: 2,
+          height: 2,
+          insets: 0,
+          activeColor: 2, // Pattern index, not color
+          patternRotation: 0.0,
+          pixels: [
+            PixelData(pattern: 1), // Non-empty pattern
+            PixelData(pattern: 3), // Non-empty pattern
+            PixelData(pattern: 4), // Non-empty pattern
+            PixelData(pattern: 5), // Non-empty pattern
+          ],
+          patternPaintColor: Color(0xFF000000),
+          canvasBackgroundColor: Color(0xFFFFFFFF),
+        ),
+        act: (bloc) => bloc.add(const CanvasEvent.fill()),
+        expect: () => [
+          const CanvasState.ready(
+            width: 2,
+            height: 2,
+            insets: 0,
+            activeColor: 2, // Pattern index, not color
+            patternRotation: 0.0,
+            pixels: [
+              PixelData(pattern: 1), // Unchanged
+              PixelData(pattern: 3), // Unchanged
+              PixelData(pattern: 4), // Unchanged
+              PixelData(pattern: 5), // Unchanged
+            ],
+            patternPaintColor: Color(0xFF000000),
+            canvasBackgroundColor: Color(0xFFFFFFFF),
+          ),
+        ],
+      );
+
+      blocTest<CanvasBloc, CanvasState>(
+        'ignores fill when canvas not ready',
+        build: () => canvasBloc,
+        seed: () => const CanvasState.loading(),
+        act: (bloc) => bloc.add(const CanvasEvent.fill()),
         expect: () => [],
       );
     });
@@ -248,7 +372,7 @@ void main() {
           activeColor: 2, // Pattern index, not color
           patternRotation: 0.0,
           pixels: [
-            PixelData(pattern: 1),
+            PixelData(pattern: 0), // Empty pattern
             PixelData(pattern: 2),
             PixelData(pattern: 3),
             PixelData(pattern: 4),
@@ -286,9 +410,9 @@ void main() {
           width: 1,
           height: 1,
           insets: 0,
-          activeColor: 1, // Pattern index, not color
+          activeColor: 0, // Empty pattern index
           patternRotation: 0.0,
-          pixels: [PixelData(pattern: 1)],
+          pixels: [PixelData(pattern: 0)], // Empty pattern
           patternPaintColor: Color(0xFF000000),
           canvasBackgroundColor: Color(0xFFFFFFFF),
         ),

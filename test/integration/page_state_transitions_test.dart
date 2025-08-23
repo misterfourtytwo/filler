@@ -166,7 +166,7 @@ void main() {
           expect(w, equals(10)); // Default width
           expect(h, equals(10)); // Default height
           expect(i, equals(0)); // Default insets
-          expect(c, equals(1)); // Default pattern
+          expect(c, equals(0)); // Default pattern (empty)
           expect(t, equals(2)); // Default theme mode
         },
         orElse: () => fail('Preferences should be in ready state'),
@@ -187,7 +187,7 @@ void main() {
           expect(w, equals(15)); // Updated width
           expect(h, equals(10)); // Unchanged height
           expect(i, equals(0)); // Unchanged insets
-          expect(c, equals(1)); // Default pattern
+          expect(c, equals(0)); // Default pattern (empty)
           expect(t, equals(2)); // Default theme mode
         },
         orElse: () => fail('Preferences should be in ready state'),
@@ -202,7 +202,7 @@ void main() {
           expect(w, equals(15)); // Previous width
           expect(h, equals(12)); // Updated height
           expect(i, equals(0)); // Unchanged insets
-          expect(c, equals(1)); // Default pattern
+          expect(c, equals(0)); // Default pattern (empty)
           expect(t, equals(2)); // Default theme mode
         },
         orElse: () => fail('Preferences should be in ready state'),
@@ -233,7 +233,7 @@ void main() {
           expect(p[5].pattern, equals(2)); // Painted pixel
           expect(p[10].pattern, equals(2)); // Painted pixel
           // Other pixels should remain unchanged
-          expect(p[1].pattern, equals(1)); // Default pattern
+          expect(p[1].pattern, equals(0)); // Default pattern (empty)
         },
         orElse: () => fail('Canvas should be in ready state'),
       );

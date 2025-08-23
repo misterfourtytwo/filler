@@ -414,7 +414,7 @@ class PreferencesRepository {
     'width': 10,
     'height': 10,
     'insets': 0,
-    'defaultPattern': 1,
+    'defaultPattern': 0, // 0=empty pattern
     'themeMode': 2, // 0=light, 1=dark, 2=system
   };
 

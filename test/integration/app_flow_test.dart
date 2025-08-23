@@ -58,14 +58,14 @@ void main() {
       expect(defaultPrefs.width, equals(10));
       expect(defaultPrefs.height, equals(10));
       expect(defaultPrefs.insets, equals(0));
-      expect(defaultPrefs.defaultPattern, equals(1));
+      expect(defaultPrefs.defaultPattern, equals(0)); // Empty pattern
 
       // 2. Save custom preferences
       await prefsRepo.save(
         width: 15,
         height: 12,
         insets: 2,
-        defaultPattern: 1,
+        defaultPattern: 0, // Empty pattern
         themeMode: 2,
       );
 
@@ -74,7 +74,7 @@ void main() {
       expect(savedPrefs.width, equals(15));
       expect(savedPrefs.height, equals(12));
       expect(savedPrefs.insets, equals(2));
-      expect(savedPrefs.defaultPattern, equals(1));
+      expect(savedPrefs.defaultPattern, equals(0)); // Empty pattern
     });
 
     test('key-value preference storage', () async {
@@ -89,7 +89,7 @@ void main() {
         width: 12,
         height: 8,
         insets: 1,
-        defaultPattern: 1,
+        defaultPattern: 0, // Empty pattern
         themeMode: 2,
       );
 
@@ -142,7 +142,7 @@ void main() {
         width: 2,
         height: 2,
         insets: 0,
-        defaultPattern: 1,
+        defaultPattern: 0, // Empty pattern
         themeMode: 2,
       );
 
@@ -151,7 +151,7 @@ void main() {
       expect(prefs.width, equals(2));
       expect(prefs.height, equals(2));
       expect(prefs.insets, equals(0));
-      expect(prefs.defaultPattern, equals(1));
+      expect(prefs.defaultPattern, equals(0)); // Empty pattern
     });
 
     test('concurrent operations handling', () async {

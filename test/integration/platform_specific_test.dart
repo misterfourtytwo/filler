@@ -64,7 +64,7 @@ void main() {
         width: 12,
         height: 10,
         insets: 2,
-        defaultPattern: 1,
+        defaultPattern: 0, // Empty pattern
         themeMode: 2,
       );
 
@@ -81,7 +81,7 @@ void main() {
         width: 15,
         height: 12,
         insets: 3,
-        defaultPattern: 1,
+        defaultPattern: 0, // Empty pattern
         themeMode: 2,
       );
 
@@ -94,7 +94,7 @@ void main() {
           expect(w, equals(15));
           expect(h, equals(12));
           expect(i, equals(3));
-          expect(c, equals(1)); // Default pattern index (solid pattern)
+          expect(c, equals(0)); // Default pattern index (empty pattern)
           expect(p, hasLength(180)); // 15x12 = 180
           expect(
             ppc,
@@ -210,7 +210,7 @@ void main() {
           width: -1, // Invalid width
           height: 10,
           insets: 0,
-          defaultPattern: 1,
+          defaultPattern: 0, // Empty pattern
           themeMode: 2,
         );
         fail('Should have thrown an error');

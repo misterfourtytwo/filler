@@ -39,7 +39,7 @@ void main() {
               width: 10,
               height: 10,
               insets: 0,
-              defaultPattern: 1,
+              defaultPattern: 0, // Empty pattern
             ),
           );
           return preferencesBloc;
@@ -51,7 +51,7 @@ void main() {
             width: 10,
             height: 10,
             insets: 0,
-            defaultPattern: 1,
+            defaultPattern: 0, // Empty pattern
             themeMode: 2,
           ),
         ],
@@ -84,7 +84,7 @@ void main() {
           width: 10,
           height: 15,
           insets: 2,
-          defaultPattern: 1,
+          defaultPattern: 0, // Empty pattern
           themeMode: 2,
         ),
         act: (bloc) => bloc.add(const PreferencesEvent.setWidth(25)),
@@ -93,7 +93,7 @@ void main() {
             width: 25,
             height: 15,
             insets: 2,
-            defaultPattern: 1,
+            defaultPattern: 0, // Empty pattern
             themeMode: 2,
           ),
         ],
@@ -106,7 +106,7 @@ void main() {
           width: 10,
           height: 15,
           insets: 2,
-          defaultPattern: 1,
+          defaultPattern: 0, // Empty pattern
           themeMode: 2,
         ),
         act: (bloc) => bloc.add(const PreferencesEvent.setHeight(30)),
@@ -115,7 +115,7 @@ void main() {
             width: 10,
             height: 30,
             insets: 2,
-            defaultPattern: 1,
+            defaultPattern: 0, // Empty pattern
             themeMode: 2,
           ),
         ],
@@ -128,7 +128,7 @@ void main() {
           width: 10,
           height: 15,
           insets: 2,
-          defaultPattern: 1,
+          defaultPattern: 0, // Empty pattern
           themeMode: 2,
         ),
         act: (bloc) => bloc.add(const PreferencesEvent.setInsets(5)),
@@ -137,7 +137,7 @@ void main() {
             width: 10,
             height: 15,
             insets: 5,
-            defaultPattern: 1,
+            defaultPattern: 0, // Empty pattern
             themeMode: 2,
           ),
         ],
@@ -150,7 +150,7 @@ void main() {
           width: 10,
           height: 15,
           insets: 2,
-          defaultPattern: 1,
+          defaultPattern: 0, // Empty pattern
           themeMode: 2,
         ),
         act: (bloc) => bloc.add(const PreferencesEvent.setPattern(2)),
@@ -248,7 +248,7 @@ void main() {
           width: 10,
           height: 10,
           insets: 0,
-          defaultPattern: 1,
+          defaultPattern: 0, // Empty pattern
           themeMode: 2,
         ),
         act: (bloc) => bloc.add(const PreferencesEvent.save()),
@@ -259,7 +259,7 @@ void main() {
               width: 10,
               height: 10,
               insets: 0,
-              defaultPattern: 1,
+              defaultPattern: 0, // Empty pattern
               themeMode: 2,
             ),
           ).called(1);
@@ -275,7 +275,7 @@ void main() {
           width: 10,
           height: 10,
           insets: 0,
-          defaultPattern: 1,
+          defaultPattern: 0, // Empty pattern
           themeMode: 2,
         ),
         act: (bloc) {
@@ -289,21 +289,21 @@ void main() {
             width: 15,
             height: 10,
             insets: 0,
-            defaultPattern: 1,
+            defaultPattern: 0, // Empty pattern
             themeMode: 2,
           ),
           const PreferencesState.ready(
             width: 15,
             height: 20,
             insets: 0,
-            defaultPattern: 1,
+            defaultPattern: 0, // Empty pattern
             themeMode: 2,
           ),
           const PreferencesState.ready(
             width: 15,
             height: 20,
             insets: 2,
-            defaultPattern: 1,
+            defaultPattern: 0, // Empty pattern
             themeMode: 2,
           ),
         ],
@@ -317,7 +317,7 @@ void main() {
               width: 10,
               height: 10,
               insets: 0,
-              defaultPattern: 1,
+              defaultPattern: 0, // Empty pattern
             ),
           );
           when(
@@ -343,14 +343,14 @@ void main() {
             width: 10,
             height: 10,
             insets: 0,
-            defaultPattern: 1,
+            defaultPattern: 0, // Empty pattern
             themeMode: 2,
           ),
           const PreferencesState.ready(
             width: 15,
             height: 10,
             insets: 0,
-            defaultPattern: 1,
+            defaultPattern: 0, // Empty pattern
             themeMode: 2,
           ),
         ],
@@ -361,7 +361,7 @@ void main() {
               width: 15,
               height: 10,
               insets: 0,
-              defaultPattern: 1,
+              defaultPattern: 0, // Empty pattern
               themeMode: 2,
             ),
           ).called(1);
