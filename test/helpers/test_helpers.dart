@@ -82,10 +82,10 @@ class TestHelpers {
     int insets = 1,
     String? pixelsJson,
   }) {
-    final defaultPixels = List.generate(
+    final defaultPixelsJson = List.generate(
       width * height,
-      (index) => {'pattern': 1, 'rotation': 0.0},
-    );
+      (index) => '{"pattern":1,"rotation":0.0}',
+    ).join(',');
 
     AppLogger.instance.d(
       '🎨 Creating test canvas',
@@ -102,13 +102,7 @@ class TestHelpers {
       width: width,
       height: height,
       insets: Value(insets),
-      pixelsJson:
-          pixelsJson ??
-          defaultPixels
-              .toString()
-              .replaceAll('{', '{"')
-              .replaceAll(': ', '": ')
-              .replaceAll('}', '"}'),
+      pixelsJson: pixelsJson ?? '[$defaultPixelsJson]',
       patternPaintColor: Value(0xFF000000),
       canvasBackgroundColor: Value(0xFFFFFFFF),
     );

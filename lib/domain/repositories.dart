@@ -180,7 +180,7 @@ class CanvasRepository {
   CanvasModel _toDomainModel(Canvase entity) {
     // Decode pixel data from JSON - handle both old and new formats
     List<PixelData> pixels = [];
-    
+
     try {
       final rawPixels = jsonDecode(entity.pixelsJson) as List;
       pixels = rawPixels.map((pixel) {

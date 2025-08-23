@@ -66,20 +66,13 @@ void main() {
 
     test('Canvas BLoC - Load Existing Canvas State Transitions', () async {
       // First create a canvas to load with pixel data
-      final pixelData = List.generate(
-        48,
-        (index) => {'pattern': 1, 'rotation': 0.0},
-      );
+      const pixelsJson = '[{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0},{"pattern":1,"rotation":0.0}]';
       final canvasId = await canvasRepo.add(
         title: 'Test Canvas',
         width: 8,
         height: 6,
         insets: 2,
-        pixelsJson: pixelData
-            .toString()
-            .replaceAll('{', '{"')
-            .replaceAll(': ', '": ')
-            .replaceAll('}', '"}'),
+        pixelsJson: pixelsJson,
         patternPaintColor: 0xFF000000,
         canvasBackgroundColor: 0xFFFFFFFF,
       );
