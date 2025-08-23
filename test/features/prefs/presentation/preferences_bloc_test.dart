@@ -62,7 +62,7 @@ void main() {
       );
 
       blocTest<PreferencesBloc, PreferencesState>(
-        'stays in loading state when repository throws error',
+        'handles repository errors gracefully without state change',
         build: () {
           when(
             () => mockPrefsRepo.get(),

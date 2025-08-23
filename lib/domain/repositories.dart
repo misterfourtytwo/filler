@@ -179,19 +179,41 @@ class CanvasRepository {
   /// Converts a database entity to a domain model.
   CanvasModel _toDomainModel(Canvase entity) {
     // Decode pixel data from JSON - handle both old and new formats
-    final rawPixels = jsonDecode(entity.pixelsJson) as List;
-    final pixels = rawPixels.map((pixel) {
-      if (pixel is int) {
-        // Old format: just pattern index
-        return PixelData(pattern: pixel);
-      } else if (pixel is Map<String, dynamic>) {
-        // New format: pattern and rotation
-        return PixelData.fromJson(pixel);
-      } else {
-        // Fallback
-        return PixelData(pattern: 0);
-      }
-    }).toList();
+    List<PixelData> pixels = [];
+    
+    try {
+      final rawPixels = jsonDecode(entity.pixelsJson) as List;
+      pixels = rawPixels.map((pixel) {
+        if (pixel is int) {
+          // Old format: just pattern index
+          return PixelData(pattern: pixel);
+        } else if (pixel is Map<String, dynamic>) {
+          // New format: pattern and rotation
+          try {
+            return PixelData.fromJson(pixel);
+          } catch (e) {
+            // Fallback for malformed pixel data
+            AppLogger.error(
+              'Failed to parse pixel data, using fallback',
+              error: e,
+              data: {'pixel': pixel},
+            );
+            return PixelData(pattern: 0);
+          }
+        } else {
+          // Fallback
+          return PixelData(pattern: 0);
+        }
+      }).toList();
+    } catch (e) {
+      // Fallback for malformed JSON
+      AppLogger.error(
+        'Failed to parse pixels JSON, using empty array',
+        error: e,
+        data: {'pixelsJson': entity.pixelsJson},
+      );
+      pixels = [];
+    }
 
     return CanvasModel(
       id: entity.id,
