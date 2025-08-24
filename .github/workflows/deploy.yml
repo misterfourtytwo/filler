@@ -47,8 +47,7 @@ jobs:
         flutter build web \
           --release \
           --dart-define=FLUTTER_WEB_USE_SKIA=true \
-          --tree-shake-icons \
-          --base-href=/filler/
+          --tree-shake-icons
 
     - name: Create .nojekyll file
       run: touch build/web/.nojekyll

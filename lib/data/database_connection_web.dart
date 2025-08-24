@@ -11,12 +11,10 @@ LazyDatabase createDatabaseConnection() {
       'Using WASM database (sqlite3 WASM with IndexedDB storage)',
     );
 
-    // Use main thread approach to avoid worker issues
+    // Use WASM database with proper worker configuration
     final result = await WasmDatabase.open(
       databaseName: 'filler_db',
       sqlite3Uri: Uri.parse('/sql-wasm.wasm'),
-      // Use a dummy URI for worker to satisfy the API requirement
-      // The worker won't actually be used since we're running in main thread
       driftWorkerUri: Uri.parse('/dummy-worker.js'),
     );
     return result.resolvedExecutor;
@@ -31,7 +29,6 @@ LazyDatabase createTestDatabaseConnection() {
     final result = await WasmDatabase.open(
       databaseName: 'filler_test_db',
       sqlite3Uri: Uri.parse('/sql-wasm.wasm'),
-      // Use a dummy URI for worker to satisfy the API requirement
       driftWorkerUri: Uri.parse('/dummy-worker.js'),
     );
     return result.resolvedExecutor;
