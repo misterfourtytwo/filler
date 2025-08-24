@@ -12,6 +12,12 @@
   Content-Type: application/javascript
   Cache-Control: public, max-age=2592000
 
+# Specific configuration for dummy-worker.js
+dummy-worker.js
+  Content-Type: application/javascript
+  X-Content-Type-Options: nosniff
+  Cache-Control: public, max-age=2592000
+
 # JSON files
 *.json
   Content-Type: application/json

@@ -7,6 +7,12 @@ AddType application/wasm .wasm
 # JavaScript files
 AddType application/javascript .js
 
+# Specific configuration for dummy-worker.js
+<Files "dummy-worker.js">
+    ForceType application/javascript
+    Header set X-Content-Type-Options nosniff
+</Files>
+
 # JSON files
 AddType application/json .json
 
