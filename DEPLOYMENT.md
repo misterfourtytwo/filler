@@ -61,7 +61,7 @@ flutter run -d chrome --web-port 8080
    - Build the Flutter web app
    - Run tests
    - Deploy to GitHub Pages
-3. Your app will be available at: `https://your-username.github.io/konstruktor/`
+3. Your app will be available at: `https://misterfourtytwo.github.io/konstruktor/`
 
 #### Manual Deployment
 ```bash

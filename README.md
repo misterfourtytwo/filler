@@ -58,7 +58,7 @@ flutter build web --release --web-renderer canvaskit
 3. **Deploy**:
    - Push changes to the `main` branch
    - GitHub Actions will automatically build and deploy
-   - Your app will be available at: `https://your-username.github.io/konstruktor/`
+   - Your app will be available at: `https://misterfourtytwo.github.io/konstruktor/`
 
 ### Manual Deployment
 ```bash

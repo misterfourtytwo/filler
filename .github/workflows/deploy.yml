@@ -46,7 +46,8 @@ jobs:
       run: |
         flutter build web \
           --release \
-          --base-href=/konstruktor/ \
+          --base-href="/konstruktor/" \
+          --dart-define=FLUTTER_BASE_HREF="https://mr42.dev/konstruktor/" \
           --dart-define=FLUTTER_WEB_USE_SKIA=true \
           --tree-shake-icons
 
