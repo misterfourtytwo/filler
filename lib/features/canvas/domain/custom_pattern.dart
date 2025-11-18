@@ -9,7 +9,7 @@ part 'custom_pattern.g.dart';
 /// Represents a custom pattern with a grid of boolean values
 /// indicating which pixels should be filled in a pattern square.
 @freezed
-class CustomPattern with _$CustomPattern {
+abstract class CustomPattern with _$CustomPattern {
   /// Creates a custom pattern with the given properties.
   const factory CustomPattern({
     /// Unique identifier for the custom pattern.

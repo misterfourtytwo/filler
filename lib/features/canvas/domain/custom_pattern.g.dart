@@ -6,8 +6,8 @@ part of 'custom_pattern.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$CustomPatternImpl _$$CustomPatternImplFromJson(Map<String, dynamic> json) =>
-    _$CustomPatternImpl(
+_CustomPattern _$CustomPatternFromJson(Map<String, dynamic> json) =>
+    _CustomPattern(
       id: json['id'] as String,
       name: json['name'] as String,
       gridSize: (json['gridSize'] as num).toInt(),
@@ -17,7 +17,7 @@ _$CustomPatternImpl _$$CustomPatternImplFromJson(Map<String, dynamic> json) =>
       createdAt: DateTime.parse(json['createdAt'] as String),
     );
 
-Map<String, dynamic> _$$CustomPatternImplToJson(_$CustomPatternImpl instance) =>
+Map<String, dynamic> _$CustomPatternToJson(_CustomPattern instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,

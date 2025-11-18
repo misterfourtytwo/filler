@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,1831 +9,899 @@ part of 'preferences_bloc.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
-);
-
 /// @nodoc
 mixin _$PreferencesEvent {
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() load,
-    required TResult Function(int value) setWidth,
-    required TResult Function(int value) setHeight,
-    required TResult Function(int value) setInsets,
-    required TResult Function(int value) setPattern,
-    required TResult Function(int value) setThemeMode,
-    required TResult Function() save,
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? load,
-    TResult? Function(int value)? setWidth,
-    TResult? Function(int value)? setHeight,
-    TResult? Function(int value)? setInsets,
-    TResult? Function(int value)? setPattern,
-    TResult? Function(int value)? setThemeMode,
-    TResult? Function()? save,
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? load,
-    TResult Function(int value)? setWidth,
-    TResult Function(int value)? setHeight,
-    TResult Function(int value)? setInsets,
-    TResult Function(int value)? setPattern,
-    TResult Function(int value)? setThemeMode,
-    TResult Function()? save,
-    required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Load value) load,
-    required TResult Function(_SetWidth value) setWidth,
-    required TResult Function(_SetHeight value) setHeight,
-    required TResult Function(_SetInsets value) setInsets,
-    required TResult Function(_SetPattern value) setPattern,
-    required TResult Function(_SetThemeMode value) setThemeMode,
-    required TResult Function(_Save value) save,
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Load value)? load,
-    TResult? Function(_SetWidth value)? setWidth,
-    TResult? Function(_SetHeight value)? setHeight,
-    TResult? Function(_SetInsets value)? setInsets,
-    TResult? Function(_SetPattern value)? setPattern,
-    TResult? Function(_SetThemeMode value)? setThemeMode,
-    TResult? Function(_Save value)? save,
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Load value)? load,
-    TResult Function(_SetWidth value)? setWidth,
-    TResult Function(_SetHeight value)? setHeight,
-    TResult Function(_SetInsets value)? setInsets,
-    TResult Function(_SetPattern value)? setPattern,
-    TResult Function(_SetThemeMode value)? setThemeMode,
-    TResult Function(_Save value)? save,
-    required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+
+
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is PreferencesEvent);
+}
+
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'PreferencesEvent()';
+}
+
+
 }
 
 /// @nodoc
-abstract class $PreferencesEventCopyWith<$Res> {
-  factory $PreferencesEventCopyWith(
-    PreferencesEvent value,
-    $Res Function(PreferencesEvent) then,
-  ) = _$PreferencesEventCopyWithImpl<$Res, PreferencesEvent>;
+class $PreferencesEventCopyWith<$Res>  {
+$PreferencesEventCopyWith(PreferencesEvent _, $Res Function(PreferencesEvent) __);
 }
 
-/// @nodoc
-class _$PreferencesEventCopyWithImpl<$Res, $Val extends PreferencesEvent>
-    implements $PreferencesEventCopyWith<$Res> {
-  _$PreferencesEventCopyWithImpl(this._value, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+/// Adds pattern-matching-related methods to [PreferencesEvent].
+extension PreferencesEventPatterns on PreferencesEvent {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
 
-  /// Create a copy of PreferencesEvent
-  /// with the given fields replaced by the non-null parameter values.
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _Load value)?  load,TResult Function( _SetWidth value)?  setWidth,TResult Function( _SetHeight value)?  setHeight,TResult Function( _SetInsets value)?  setInsets,TResult Function( _SetPattern value)?  setPattern,TResult Function( _SetThemeMode value)?  setThemeMode,TResult Function( _Save value)?  save,required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _Load() when load != null:
+return load(_that);case _SetWidth() when setWidth != null:
+return setWidth(_that);case _SetHeight() when setHeight != null:
+return setHeight(_that);case _SetInsets() when setInsets != null:
+return setInsets(_that);case _SetPattern() when setPattern != null:
+return setPattern(_that);case _SetThemeMode() when setThemeMode != null:
+return setThemeMode(_that);case _Save() when save != null:
+return save(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _Load value)  load,required TResult Function( _SetWidth value)  setWidth,required TResult Function( _SetHeight value)  setHeight,required TResult Function( _SetInsets value)  setInsets,required TResult Function( _SetPattern value)  setPattern,required TResult Function( _SetThemeMode value)  setThemeMode,required TResult Function( _Save value)  save,}){
+final _that = this;
+switch (_that) {
+case _Load():
+return load(_that);case _SetWidth():
+return setWidth(_that);case _SetHeight():
+return setHeight(_that);case _SetInsets():
+return setInsets(_that);case _SetPattern():
+return setPattern(_that);case _SetThemeMode():
+return setThemeMode(_that);case _Save():
+return save(_that);}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _Load value)?  load,TResult? Function( _SetWidth value)?  setWidth,TResult? Function( _SetHeight value)?  setHeight,TResult? Function( _SetInsets value)?  setInsets,TResult? Function( _SetPattern value)?  setPattern,TResult? Function( _SetThemeMode value)?  setThemeMode,TResult? Function( _Save value)?  save,}){
+final _that = this;
+switch (_that) {
+case _Load() when load != null:
+return load(_that);case _SetWidth() when setWidth != null:
+return setWidth(_that);case _SetHeight() when setHeight != null:
+return setHeight(_that);case _SetInsets() when setInsets != null:
+return setInsets(_that);case _SetPattern() when setPattern != null:
+return setPattern(_that);case _SetThemeMode() when setThemeMode != null:
+return setThemeMode(_that);case _Save() when save != null:
+return save(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  load,TResult Function( int value)?  setWidth,TResult Function( int value)?  setHeight,TResult Function( int value)?  setInsets,TResult Function( int value)?  setPattern,TResult Function( int value)?  setThemeMode,TResult Function()?  save,required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _Load() when load != null:
+return load();case _SetWidth() when setWidth != null:
+return setWidth(_that.value);case _SetHeight() when setHeight != null:
+return setHeight(_that.value);case _SetInsets() when setInsets != null:
+return setInsets(_that.value);case _SetPattern() when setPattern != null:
+return setPattern(_that.value);case _SetThemeMode() when setThemeMode != null:
+return setThemeMode(_that.value);case _Save() when save != null:
+return save();case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  load,required TResult Function( int value)  setWidth,required TResult Function( int value)  setHeight,required TResult Function( int value)  setInsets,required TResult Function( int value)  setPattern,required TResult Function( int value)  setThemeMode,required TResult Function()  save,}) {final _that = this;
+switch (_that) {
+case _Load():
+return load();case _SetWidth():
+return setWidth(_that.value);case _SetHeight():
+return setHeight(_that.value);case _SetInsets():
+return setInsets(_that.value);case _SetPattern():
+return setPattern(_that.value);case _SetThemeMode():
+return setThemeMode(_that.value);case _Save():
+return save();}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  load,TResult? Function( int value)?  setWidth,TResult? Function( int value)?  setHeight,TResult? Function( int value)?  setInsets,TResult? Function( int value)?  setPattern,TResult? Function( int value)?  setThemeMode,TResult? Function()?  save,}) {final _that = this;
+switch (_that) {
+case _Load() when load != null:
+return load();case _SetWidth() when setWidth != null:
+return setWidth(_that.value);case _SetHeight() when setHeight != null:
+return setHeight(_that.value);case _SetInsets() when setInsets != null:
+return setInsets(_that.value);case _SetPattern() when setPattern != null:
+return setPattern(_that.value);case _SetThemeMode() when setThemeMode != null:
+return setThemeMode(_that.value);case _Save() when save != null:
+return save();case _:
+  return null;
+
+}
 }
 
-/// @nodoc
-abstract class _$$LoadImplCopyWith<$Res> {
-  factory _$$LoadImplCopyWith(
-    _$LoadImpl value,
-    $Res Function(_$LoadImpl) then,
-  ) = __$$LoadImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$LoadImplCopyWithImpl<$Res>
-    extends _$PreferencesEventCopyWithImpl<$Res, _$LoadImpl>
-    implements _$$LoadImplCopyWith<$Res> {
-  __$$LoadImplCopyWithImpl(_$LoadImpl _value, $Res Function(_$LoadImpl) _then)
-    : super(_value, _then);
-
-  /// Create a copy of PreferencesEvent
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-
-class _$LoadImpl implements _Load {
-  const _$LoadImpl();
-
-  @override
-  String toString() {
-    return 'PreferencesEvent.load()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$LoadImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() load,
-    required TResult Function(int value) setWidth,
-    required TResult Function(int value) setHeight,
-    required TResult Function(int value) setInsets,
-    required TResult Function(int value) setPattern,
-    required TResult Function(int value) setThemeMode,
-    required TResult Function() save,
-  }) {
-    return load();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? load,
-    TResult? Function(int value)? setWidth,
-    TResult? Function(int value)? setHeight,
-    TResult? Function(int value)? setInsets,
-    TResult? Function(int value)? setPattern,
-    TResult? Function(int value)? setThemeMode,
-    TResult? Function()? save,
-  }) {
-    return load?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? load,
-    TResult Function(int value)? setWidth,
-    TResult Function(int value)? setHeight,
-    TResult Function(int value)? setInsets,
-    TResult Function(int value)? setPattern,
-    TResult Function(int value)? setThemeMode,
-    TResult Function()? save,
-    required TResult orElse(),
-  }) {
-    if (load != null) {
-      return load();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Load value) load,
-    required TResult Function(_SetWidth value) setWidth,
-    required TResult Function(_SetHeight value) setHeight,
-    required TResult Function(_SetInsets value) setInsets,
-    required TResult Function(_SetPattern value) setPattern,
-    required TResult Function(_SetThemeMode value) setThemeMode,
-    required TResult Function(_Save value) save,
-  }) {
-    return load(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Load value)? load,
-    TResult? Function(_SetWidth value)? setWidth,
-    TResult? Function(_SetHeight value)? setHeight,
-    TResult? Function(_SetInsets value)? setInsets,
-    TResult? Function(_SetPattern value)? setPattern,
-    TResult? Function(_SetThemeMode value)? setThemeMode,
-    TResult? Function(_Save value)? save,
-  }) {
-    return load?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Load value)? load,
-    TResult Function(_SetWidth value)? setWidth,
-    TResult Function(_SetHeight value)? setHeight,
-    TResult Function(_SetInsets value)? setInsets,
-    TResult Function(_SetPattern value)? setPattern,
-    TResult Function(_SetThemeMode value)? setThemeMode,
-    TResult Function(_Save value)? save,
-    required TResult orElse(),
-  }) {
-    if (load != null) {
-      return load(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Load implements PreferencesEvent {
-  const factory _Load() = _$LoadImpl;
-}
-
-/// @nodoc
-abstract class _$$SetWidthImplCopyWith<$Res> {
-  factory _$$SetWidthImplCopyWith(
-    _$SetWidthImpl value,
-    $Res Function(_$SetWidthImpl) then,
-  ) = __$$SetWidthImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({int value});
-}
-
-/// @nodoc
-class __$$SetWidthImplCopyWithImpl<$Res>
-    extends _$PreferencesEventCopyWithImpl<$Res, _$SetWidthImpl>
-    implements _$$SetWidthImplCopyWith<$Res> {
-  __$$SetWidthImplCopyWithImpl(
-    _$SetWidthImpl _value,
-    $Res Function(_$SetWidthImpl) _then,
-  ) : super(_value, _then);
-
-  /// Create a copy of PreferencesEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({Object? value = null}) {
-    return _then(
-      _$SetWidthImpl(
-        null == value
-            ? _value.value
-            : value // ignore: cast_nullable_to_non_nullable
-                  as int,
-      ),
-    );
-  }
 }
 
 /// @nodoc
 
-class _$SetWidthImpl implements _SetWidth {
-  const _$SetWidthImpl(this.value);
 
-  @override
-  final int value;
+class _Load implements PreferencesEvent {
+  const _Load();
+  
 
-  @override
-  String toString() {
-    return 'PreferencesEvent.setWidth(value: $value)';
-  }
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$SetWidthImpl &&
-            (identical(other.value, value) || other.value == value));
-  }
 
-  @override
-  int get hashCode => Object.hash(runtimeType, value);
 
-  /// Create a copy of PreferencesEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$SetWidthImplCopyWith<_$SetWidthImpl> get copyWith =>
-      __$$SetWidthImplCopyWithImpl<_$SetWidthImpl>(this, _$identity);
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() load,
-    required TResult Function(int value) setWidth,
-    required TResult Function(int value) setHeight,
-    required TResult Function(int value) setInsets,
-    required TResult Function(int value) setPattern,
-    required TResult Function(int value) setThemeMode,
-    required TResult Function() save,
-  }) {
-    return setWidth(value);
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? load,
-    TResult? Function(int value)? setWidth,
-    TResult? Function(int value)? setHeight,
-    TResult? Function(int value)? setInsets,
-    TResult? Function(int value)? setPattern,
-    TResult? Function(int value)? setThemeMode,
-    TResult? Function()? save,
-  }) {
-    return setWidth?.call(value);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? load,
-    TResult Function(int value)? setWidth,
-    TResult Function(int value)? setHeight,
-    TResult Function(int value)? setInsets,
-    TResult Function(int value)? setPattern,
-    TResult Function(int value)? setThemeMode,
-    TResult Function()? save,
-    required TResult orElse(),
-  }) {
-    if (setWidth != null) {
-      return setWidth(value);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Load value) load,
-    required TResult Function(_SetWidth value) setWidth,
-    required TResult Function(_SetHeight value) setHeight,
-    required TResult Function(_SetInsets value) setInsets,
-    required TResult Function(_SetPattern value) setPattern,
-    required TResult Function(_SetThemeMode value) setThemeMode,
-    required TResult Function(_Save value) save,
-  }) {
-    return setWidth(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Load value)? load,
-    TResult? Function(_SetWidth value)? setWidth,
-    TResult? Function(_SetHeight value)? setHeight,
-    TResult? Function(_SetInsets value)? setInsets,
-    TResult? Function(_SetPattern value)? setPattern,
-    TResult? Function(_SetThemeMode value)? setThemeMode,
-    TResult? Function(_Save value)? save,
-  }) {
-    return setWidth?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Load value)? load,
-    TResult Function(_SetWidth value)? setWidth,
-    TResult Function(_SetHeight value)? setHeight,
-    TResult Function(_SetInsets value)? setInsets,
-    TResult Function(_SetPattern value)? setPattern,
-    TResult Function(_SetThemeMode value)? setThemeMode,
-    TResult Function(_Save value)? save,
-    required TResult orElse(),
-  }) {
-    if (setWidth != null) {
-      return setWidth(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Load);
 }
 
-abstract class _SetWidth implements PreferencesEvent {
-  const factory _SetWidth(final int value) = _$SetWidthImpl;
 
-  int get value;
+@override
+int get hashCode => runtimeType.hashCode;
 
-  /// Create a copy of PreferencesEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$SetWidthImplCopyWith<_$SetWidthImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+@override
+String toString() {
+  return 'PreferencesEvent.load()';
+}
+
+
+}
+
+
+
+
+/// @nodoc
+
+
+class _SetWidth implements PreferencesEvent {
+  const _SetWidth(this.value);
+  
+
+ final  int value;
+
+/// Create a copy of PreferencesEvent
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$SetWidthCopyWith<_SetWidth> get copyWith => __$SetWidthCopyWithImpl<_SetWidth>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _SetWidth&&(identical(other.value, value) || other.value == value));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,value);
+
+@override
+String toString() {
+  return 'PreferencesEvent.setWidth(value: $value)';
+}
+
+
 }
 
 /// @nodoc
-abstract class _$$SetHeightImplCopyWith<$Res> {
-  factory _$$SetHeightImplCopyWith(
-    _$SetHeightImpl value,
-    $Res Function(_$SetHeightImpl) then,
-  ) = __$$SetHeightImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({int value});
+abstract mixin class _$SetWidthCopyWith<$Res> implements $PreferencesEventCopyWith<$Res> {
+  factory _$SetWidthCopyWith(_SetWidth value, $Res Function(_SetWidth) _then) = __$SetWidthCopyWithImpl;
+@useResult
+$Res call({
+ int value
+});
+
+
+
+
+}
+/// @nodoc
+class __$SetWidthCopyWithImpl<$Res>
+    implements _$SetWidthCopyWith<$Res> {
+  __$SetWidthCopyWithImpl(this._self, this._then);
+
+  final _SetWidth _self;
+  final $Res Function(_SetWidth) _then;
+
+/// Create a copy of PreferencesEvent
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? value = null,}) {
+  return _then(_SetWidth(
+null == value ? _self.value : value // ignore: cast_nullable_to_non_nullable
+as int,
+  ));
 }
 
-/// @nodoc
-class __$$SetHeightImplCopyWithImpl<$Res>
-    extends _$PreferencesEventCopyWithImpl<$Res, _$SetHeightImpl>
-    implements _$$SetHeightImplCopyWith<$Res> {
-  __$$SetHeightImplCopyWithImpl(
-    _$SetHeightImpl _value,
-    $Res Function(_$SetHeightImpl) _then,
-  ) : super(_value, _then);
 
-  /// Create a copy of PreferencesEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({Object? value = null}) {
-    return _then(
-      _$SetHeightImpl(
-        null == value
-            ? _value.value
-            : value // ignore: cast_nullable_to_non_nullable
-                  as int,
-      ),
-    );
-  }
 }
 
 /// @nodoc
 
-class _$SetHeightImpl implements _SetHeight {
-  const _$SetHeightImpl(this.value);
 
-  @override
-  final int value;
+class _SetHeight implements PreferencesEvent {
+  const _SetHeight(this.value);
+  
 
-  @override
-  String toString() {
-    return 'PreferencesEvent.setHeight(value: $value)';
-  }
+ final  int value;
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$SetHeightImpl &&
-            (identical(other.value, value) || other.value == value));
-  }
+/// Create a copy of PreferencesEvent
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$SetHeightCopyWith<_SetHeight> get copyWith => __$SetHeightCopyWithImpl<_SetHeight>(this, _$identity);
 
-  @override
-  int get hashCode => Object.hash(runtimeType, value);
 
-  /// Create a copy of PreferencesEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$SetHeightImplCopyWith<_$SetHeightImpl> get copyWith =>
-      __$$SetHeightImplCopyWithImpl<_$SetHeightImpl>(this, _$identity);
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() load,
-    required TResult Function(int value) setWidth,
-    required TResult Function(int value) setHeight,
-    required TResult Function(int value) setInsets,
-    required TResult Function(int value) setPattern,
-    required TResult Function(int value) setThemeMode,
-    required TResult Function() save,
-  }) {
-    return setHeight(value);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? load,
-    TResult? Function(int value)? setWidth,
-    TResult? Function(int value)? setHeight,
-    TResult? Function(int value)? setInsets,
-    TResult? Function(int value)? setPattern,
-    TResult? Function(int value)? setThemeMode,
-    TResult? Function()? save,
-  }) {
-    return setHeight?.call(value);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? load,
-    TResult Function(int value)? setWidth,
-    TResult Function(int value)? setHeight,
-    TResult Function(int value)? setInsets,
-    TResult Function(int value)? setPattern,
-    TResult Function(int value)? setThemeMode,
-    TResult Function()? save,
-    required TResult orElse(),
-  }) {
-    if (setHeight != null) {
-      return setHeight(value);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Load value) load,
-    required TResult Function(_SetWidth value) setWidth,
-    required TResult Function(_SetHeight value) setHeight,
-    required TResult Function(_SetInsets value) setInsets,
-    required TResult Function(_SetPattern value) setPattern,
-    required TResult Function(_SetThemeMode value) setThemeMode,
-    required TResult Function(_Save value) save,
-  }) {
-    return setHeight(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Load value)? load,
-    TResult? Function(_SetWidth value)? setWidth,
-    TResult? Function(_SetHeight value)? setHeight,
-    TResult? Function(_SetInsets value)? setInsets,
-    TResult? Function(_SetPattern value)? setPattern,
-    TResult? Function(_SetThemeMode value)? setThemeMode,
-    TResult? Function(_Save value)? save,
-  }) {
-    return setHeight?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Load value)? load,
-    TResult Function(_SetWidth value)? setWidth,
-    TResult Function(_SetHeight value)? setHeight,
-    TResult Function(_SetInsets value)? setInsets,
-    TResult Function(_SetPattern value)? setPattern,
-    TResult Function(_SetThemeMode value)? setThemeMode,
-    TResult Function(_Save value)? save,
-    required TResult orElse(),
-  }) {
-    if (setHeight != null) {
-      return setHeight(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _SetHeight&&(identical(other.value, value) || other.value == value));
 }
 
-abstract class _SetHeight implements PreferencesEvent {
-  const factory _SetHeight(final int value) = _$SetHeightImpl;
 
-  int get value;
+@override
+int get hashCode => Object.hash(runtimeType,value);
 
-  /// Create a copy of PreferencesEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$SetHeightImplCopyWith<_$SetHeightImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+@override
+String toString() {
+  return 'PreferencesEvent.setHeight(value: $value)';
+}
+
+
 }
 
 /// @nodoc
-abstract class _$$SetInsetsImplCopyWith<$Res> {
-  factory _$$SetInsetsImplCopyWith(
-    _$SetInsetsImpl value,
-    $Res Function(_$SetInsetsImpl) then,
-  ) = __$$SetInsetsImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({int value});
+abstract mixin class _$SetHeightCopyWith<$Res> implements $PreferencesEventCopyWith<$Res> {
+  factory _$SetHeightCopyWith(_SetHeight value, $Res Function(_SetHeight) _then) = __$SetHeightCopyWithImpl;
+@useResult
+$Res call({
+ int value
+});
+
+
+
+
+}
+/// @nodoc
+class __$SetHeightCopyWithImpl<$Res>
+    implements _$SetHeightCopyWith<$Res> {
+  __$SetHeightCopyWithImpl(this._self, this._then);
+
+  final _SetHeight _self;
+  final $Res Function(_SetHeight) _then;
+
+/// Create a copy of PreferencesEvent
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? value = null,}) {
+  return _then(_SetHeight(
+null == value ? _self.value : value // ignore: cast_nullable_to_non_nullable
+as int,
+  ));
 }
 
-/// @nodoc
-class __$$SetInsetsImplCopyWithImpl<$Res>
-    extends _$PreferencesEventCopyWithImpl<$Res, _$SetInsetsImpl>
-    implements _$$SetInsetsImplCopyWith<$Res> {
-  __$$SetInsetsImplCopyWithImpl(
-    _$SetInsetsImpl _value,
-    $Res Function(_$SetInsetsImpl) _then,
-  ) : super(_value, _then);
 
-  /// Create a copy of PreferencesEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({Object? value = null}) {
-    return _then(
-      _$SetInsetsImpl(
-        null == value
-            ? _value.value
-            : value // ignore: cast_nullable_to_non_nullable
-                  as int,
-      ),
-    );
-  }
 }
 
 /// @nodoc
 
-class _$SetInsetsImpl implements _SetInsets {
-  const _$SetInsetsImpl(this.value);
 
-  @override
-  final int value;
+class _SetInsets implements PreferencesEvent {
+  const _SetInsets(this.value);
+  
 
-  @override
-  String toString() {
-    return 'PreferencesEvent.setInsets(value: $value)';
-  }
+ final  int value;
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$SetInsetsImpl &&
-            (identical(other.value, value) || other.value == value));
-  }
+/// Create a copy of PreferencesEvent
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$SetInsetsCopyWith<_SetInsets> get copyWith => __$SetInsetsCopyWithImpl<_SetInsets>(this, _$identity);
 
-  @override
-  int get hashCode => Object.hash(runtimeType, value);
 
-  /// Create a copy of PreferencesEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$SetInsetsImplCopyWith<_$SetInsetsImpl> get copyWith =>
-      __$$SetInsetsImplCopyWithImpl<_$SetInsetsImpl>(this, _$identity);
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() load,
-    required TResult Function(int value) setWidth,
-    required TResult Function(int value) setHeight,
-    required TResult Function(int value) setInsets,
-    required TResult Function(int value) setPattern,
-    required TResult Function(int value) setThemeMode,
-    required TResult Function() save,
-  }) {
-    return setInsets(value);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? load,
-    TResult? Function(int value)? setWidth,
-    TResult? Function(int value)? setHeight,
-    TResult? Function(int value)? setInsets,
-    TResult? Function(int value)? setPattern,
-    TResult? Function(int value)? setThemeMode,
-    TResult? Function()? save,
-  }) {
-    return setInsets?.call(value);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? load,
-    TResult Function(int value)? setWidth,
-    TResult Function(int value)? setHeight,
-    TResult Function(int value)? setInsets,
-    TResult Function(int value)? setPattern,
-    TResult Function(int value)? setThemeMode,
-    TResult Function()? save,
-    required TResult orElse(),
-  }) {
-    if (setInsets != null) {
-      return setInsets(value);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Load value) load,
-    required TResult Function(_SetWidth value) setWidth,
-    required TResult Function(_SetHeight value) setHeight,
-    required TResult Function(_SetInsets value) setInsets,
-    required TResult Function(_SetPattern value) setPattern,
-    required TResult Function(_SetThemeMode value) setThemeMode,
-    required TResult Function(_Save value) save,
-  }) {
-    return setInsets(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Load value)? load,
-    TResult? Function(_SetWidth value)? setWidth,
-    TResult? Function(_SetHeight value)? setHeight,
-    TResult? Function(_SetInsets value)? setInsets,
-    TResult? Function(_SetPattern value)? setPattern,
-    TResult? Function(_SetThemeMode value)? setThemeMode,
-    TResult? Function(_Save value)? save,
-  }) {
-    return setInsets?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Load value)? load,
-    TResult Function(_SetWidth value)? setWidth,
-    TResult Function(_SetHeight value)? setHeight,
-    TResult Function(_SetInsets value)? setInsets,
-    TResult Function(_SetPattern value)? setPattern,
-    TResult Function(_SetThemeMode value)? setThemeMode,
-    TResult Function(_Save value)? save,
-    required TResult orElse(),
-  }) {
-    if (setInsets != null) {
-      return setInsets(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _SetInsets&&(identical(other.value, value) || other.value == value));
 }
 
-abstract class _SetInsets implements PreferencesEvent {
-  const factory _SetInsets(final int value) = _$SetInsetsImpl;
 
-  int get value;
+@override
+int get hashCode => Object.hash(runtimeType,value);
 
-  /// Create a copy of PreferencesEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$SetInsetsImplCopyWith<_$SetInsetsImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+@override
+String toString() {
+  return 'PreferencesEvent.setInsets(value: $value)';
+}
+
+
 }
 
 /// @nodoc
-abstract class _$$SetPatternImplCopyWith<$Res> {
-  factory _$$SetPatternImplCopyWith(
-    _$SetPatternImpl value,
-    $Res Function(_$SetPatternImpl) then,
-  ) = __$$SetPatternImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({int value});
+abstract mixin class _$SetInsetsCopyWith<$Res> implements $PreferencesEventCopyWith<$Res> {
+  factory _$SetInsetsCopyWith(_SetInsets value, $Res Function(_SetInsets) _then) = __$SetInsetsCopyWithImpl;
+@useResult
+$Res call({
+ int value
+});
+
+
+
+
+}
+/// @nodoc
+class __$SetInsetsCopyWithImpl<$Res>
+    implements _$SetInsetsCopyWith<$Res> {
+  __$SetInsetsCopyWithImpl(this._self, this._then);
+
+  final _SetInsets _self;
+  final $Res Function(_SetInsets) _then;
+
+/// Create a copy of PreferencesEvent
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? value = null,}) {
+  return _then(_SetInsets(
+null == value ? _self.value : value // ignore: cast_nullable_to_non_nullable
+as int,
+  ));
 }
 
-/// @nodoc
-class __$$SetPatternImplCopyWithImpl<$Res>
-    extends _$PreferencesEventCopyWithImpl<$Res, _$SetPatternImpl>
-    implements _$$SetPatternImplCopyWith<$Res> {
-  __$$SetPatternImplCopyWithImpl(
-    _$SetPatternImpl _value,
-    $Res Function(_$SetPatternImpl) _then,
-  ) : super(_value, _then);
 
-  /// Create a copy of PreferencesEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({Object? value = null}) {
-    return _then(
-      _$SetPatternImpl(
-        null == value
-            ? _value.value
-            : value // ignore: cast_nullable_to_non_nullable
-                  as int,
-      ),
-    );
-  }
 }
 
 /// @nodoc
 
-class _$SetPatternImpl implements _SetPattern {
-  const _$SetPatternImpl(this.value);
 
-  @override
-  final int value;
+class _SetPattern implements PreferencesEvent {
+  const _SetPattern(this.value);
+  
 
-  @override
-  String toString() {
-    return 'PreferencesEvent.setPattern(value: $value)';
-  }
+ final  int value;
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$SetPatternImpl &&
-            (identical(other.value, value) || other.value == value));
-  }
+/// Create a copy of PreferencesEvent
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$SetPatternCopyWith<_SetPattern> get copyWith => __$SetPatternCopyWithImpl<_SetPattern>(this, _$identity);
 
-  @override
-  int get hashCode => Object.hash(runtimeType, value);
 
-  /// Create a copy of PreferencesEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$SetPatternImplCopyWith<_$SetPatternImpl> get copyWith =>
-      __$$SetPatternImplCopyWithImpl<_$SetPatternImpl>(this, _$identity);
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() load,
-    required TResult Function(int value) setWidth,
-    required TResult Function(int value) setHeight,
-    required TResult Function(int value) setInsets,
-    required TResult Function(int value) setPattern,
-    required TResult Function(int value) setThemeMode,
-    required TResult Function() save,
-  }) {
-    return setPattern(value);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? load,
-    TResult? Function(int value)? setWidth,
-    TResult? Function(int value)? setHeight,
-    TResult? Function(int value)? setInsets,
-    TResult? Function(int value)? setPattern,
-    TResult? Function(int value)? setThemeMode,
-    TResult? Function()? save,
-  }) {
-    return setPattern?.call(value);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? load,
-    TResult Function(int value)? setWidth,
-    TResult Function(int value)? setHeight,
-    TResult Function(int value)? setInsets,
-    TResult Function(int value)? setPattern,
-    TResult Function(int value)? setThemeMode,
-    TResult Function()? save,
-    required TResult orElse(),
-  }) {
-    if (setPattern != null) {
-      return setPattern(value);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Load value) load,
-    required TResult Function(_SetWidth value) setWidth,
-    required TResult Function(_SetHeight value) setHeight,
-    required TResult Function(_SetInsets value) setInsets,
-    required TResult Function(_SetPattern value) setPattern,
-    required TResult Function(_SetThemeMode value) setThemeMode,
-    required TResult Function(_Save value) save,
-  }) {
-    return setPattern(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Load value)? load,
-    TResult? Function(_SetWidth value)? setWidth,
-    TResult? Function(_SetHeight value)? setHeight,
-    TResult? Function(_SetInsets value)? setInsets,
-    TResult? Function(_SetPattern value)? setPattern,
-    TResult? Function(_SetThemeMode value)? setThemeMode,
-    TResult? Function(_Save value)? save,
-  }) {
-    return setPattern?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Load value)? load,
-    TResult Function(_SetWidth value)? setWidth,
-    TResult Function(_SetHeight value)? setHeight,
-    TResult Function(_SetInsets value)? setInsets,
-    TResult Function(_SetPattern value)? setPattern,
-    TResult Function(_SetThemeMode value)? setThemeMode,
-    TResult Function(_Save value)? save,
-    required TResult orElse(),
-  }) {
-    if (setPattern != null) {
-      return setPattern(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _SetPattern&&(identical(other.value, value) || other.value == value));
 }
 
-abstract class _SetPattern implements PreferencesEvent {
-  const factory _SetPattern(final int value) = _$SetPatternImpl;
 
-  int get value;
+@override
+int get hashCode => Object.hash(runtimeType,value);
 
-  /// Create a copy of PreferencesEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$SetPatternImplCopyWith<_$SetPatternImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+@override
+String toString() {
+  return 'PreferencesEvent.setPattern(value: $value)';
+}
+
+
 }
 
 /// @nodoc
-abstract class _$$SetThemeModeImplCopyWith<$Res> {
-  factory _$$SetThemeModeImplCopyWith(
-    _$SetThemeModeImpl value,
-    $Res Function(_$SetThemeModeImpl) then,
-  ) = __$$SetThemeModeImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({int value});
+abstract mixin class _$SetPatternCopyWith<$Res> implements $PreferencesEventCopyWith<$Res> {
+  factory _$SetPatternCopyWith(_SetPattern value, $Res Function(_SetPattern) _then) = __$SetPatternCopyWithImpl;
+@useResult
+$Res call({
+ int value
+});
+
+
+
+
+}
+/// @nodoc
+class __$SetPatternCopyWithImpl<$Res>
+    implements _$SetPatternCopyWith<$Res> {
+  __$SetPatternCopyWithImpl(this._self, this._then);
+
+  final _SetPattern _self;
+  final $Res Function(_SetPattern) _then;
+
+/// Create a copy of PreferencesEvent
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? value = null,}) {
+  return _then(_SetPattern(
+null == value ? _self.value : value // ignore: cast_nullable_to_non_nullable
+as int,
+  ));
 }
 
-/// @nodoc
-class __$$SetThemeModeImplCopyWithImpl<$Res>
-    extends _$PreferencesEventCopyWithImpl<$Res, _$SetThemeModeImpl>
-    implements _$$SetThemeModeImplCopyWith<$Res> {
-  __$$SetThemeModeImplCopyWithImpl(
-    _$SetThemeModeImpl _value,
-    $Res Function(_$SetThemeModeImpl) _then,
-  ) : super(_value, _then);
 
-  /// Create a copy of PreferencesEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({Object? value = null}) {
-    return _then(
-      _$SetThemeModeImpl(
-        null == value
-            ? _value.value
-            : value // ignore: cast_nullable_to_non_nullable
-                  as int,
-      ),
-    );
-  }
 }
 
 /// @nodoc
 
-class _$SetThemeModeImpl implements _SetThemeMode {
-  const _$SetThemeModeImpl(this.value);
 
-  @override
-  final int value;
+class _SetThemeMode implements PreferencesEvent {
+  const _SetThemeMode(this.value);
+  
 
-  @override
-  String toString() {
-    return 'PreferencesEvent.setThemeMode(value: $value)';
-  }
+ final  int value;
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$SetThemeModeImpl &&
-            (identical(other.value, value) || other.value == value));
-  }
+/// Create a copy of PreferencesEvent
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$SetThemeModeCopyWith<_SetThemeMode> get copyWith => __$SetThemeModeCopyWithImpl<_SetThemeMode>(this, _$identity);
 
-  @override
-  int get hashCode => Object.hash(runtimeType, value);
 
-  /// Create a copy of PreferencesEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$SetThemeModeImplCopyWith<_$SetThemeModeImpl> get copyWith =>
-      __$$SetThemeModeImplCopyWithImpl<_$SetThemeModeImpl>(this, _$identity);
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() load,
-    required TResult Function(int value) setWidth,
-    required TResult Function(int value) setHeight,
-    required TResult Function(int value) setInsets,
-    required TResult Function(int value) setPattern,
-    required TResult Function(int value) setThemeMode,
-    required TResult Function() save,
-  }) {
-    return setThemeMode(value);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? load,
-    TResult? Function(int value)? setWidth,
-    TResult? Function(int value)? setHeight,
-    TResult? Function(int value)? setInsets,
-    TResult? Function(int value)? setPattern,
-    TResult? Function(int value)? setThemeMode,
-    TResult? Function()? save,
-  }) {
-    return setThemeMode?.call(value);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? load,
-    TResult Function(int value)? setWidth,
-    TResult Function(int value)? setHeight,
-    TResult Function(int value)? setInsets,
-    TResult Function(int value)? setPattern,
-    TResult Function(int value)? setThemeMode,
-    TResult Function()? save,
-    required TResult orElse(),
-  }) {
-    if (setThemeMode != null) {
-      return setThemeMode(value);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Load value) load,
-    required TResult Function(_SetWidth value) setWidth,
-    required TResult Function(_SetHeight value) setHeight,
-    required TResult Function(_SetInsets value) setInsets,
-    required TResult Function(_SetPattern value) setPattern,
-    required TResult Function(_SetThemeMode value) setThemeMode,
-    required TResult Function(_Save value) save,
-  }) {
-    return setThemeMode(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Load value)? load,
-    TResult? Function(_SetWidth value)? setWidth,
-    TResult? Function(_SetHeight value)? setHeight,
-    TResult? Function(_SetInsets value)? setInsets,
-    TResult? Function(_SetPattern value)? setPattern,
-    TResult? Function(_SetThemeMode value)? setThemeMode,
-    TResult? Function(_Save value)? save,
-  }) {
-    return setThemeMode?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Load value)? load,
-    TResult Function(_SetWidth value)? setWidth,
-    TResult Function(_SetHeight value)? setHeight,
-    TResult Function(_SetInsets value)? setInsets,
-    TResult Function(_SetPattern value)? setPattern,
-    TResult Function(_SetThemeMode value)? setThemeMode,
-    TResult Function(_Save value)? save,
-    required TResult orElse(),
-  }) {
-    if (setThemeMode != null) {
-      return setThemeMode(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _SetThemeMode&&(identical(other.value, value) || other.value == value));
 }
 
-abstract class _SetThemeMode implements PreferencesEvent {
-  const factory _SetThemeMode(final int value) = _$SetThemeModeImpl;
 
-  int get value;
+@override
+int get hashCode => Object.hash(runtimeType,value);
 
-  /// Create a copy of PreferencesEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$SetThemeModeImplCopyWith<_$SetThemeModeImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+@override
+String toString() {
+  return 'PreferencesEvent.setThemeMode(value: $value)';
+}
+
+
 }
 
 /// @nodoc
-abstract class _$$SaveImplCopyWith<$Res> {
-  factory _$$SaveImplCopyWith(
-    _$SaveImpl value,
-    $Res Function(_$SaveImpl) then,
-  ) = __$$SaveImplCopyWithImpl<$Res>;
+abstract mixin class _$SetThemeModeCopyWith<$Res> implements $PreferencesEventCopyWith<$Res> {
+  factory _$SetThemeModeCopyWith(_SetThemeMode value, $Res Function(_SetThemeMode) _then) = __$SetThemeModeCopyWithImpl;
+@useResult
+$Res call({
+ int value
+});
+
+
+
+
+}
+/// @nodoc
+class __$SetThemeModeCopyWithImpl<$Res>
+    implements _$SetThemeModeCopyWith<$Res> {
+  __$SetThemeModeCopyWithImpl(this._self, this._then);
+
+  final _SetThemeMode _self;
+  final $Res Function(_SetThemeMode) _then;
+
+/// Create a copy of PreferencesEvent
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? value = null,}) {
+  return _then(_SetThemeMode(
+null == value ? _self.value : value // ignore: cast_nullable_to_non_nullable
+as int,
+  ));
 }
 
-/// @nodoc
-class __$$SaveImplCopyWithImpl<$Res>
-    extends _$PreferencesEventCopyWithImpl<$Res, _$SaveImpl>
-    implements _$$SaveImplCopyWith<$Res> {
-  __$$SaveImplCopyWithImpl(_$SaveImpl _value, $Res Function(_$SaveImpl) _then)
-    : super(_value, _then);
 
-  /// Create a copy of PreferencesEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$SaveImpl implements _Save {
-  const _$SaveImpl();
 
-  @override
-  String toString() {
-    return 'PreferencesEvent.save()';
-  }
+class _Save implements PreferencesEvent {
+  const _Save();
+  
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$SaveImpl);
-  }
 
-  @override
-  int get hashCode => runtimeType.hashCode;
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() load,
-    required TResult Function(int value) setWidth,
-    required TResult Function(int value) setHeight,
-    required TResult Function(int value) setInsets,
-    required TResult Function(int value) setPattern,
-    required TResult Function(int value) setThemeMode,
-    required TResult Function() save,
-  }) {
-    return save();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? load,
-    TResult? Function(int value)? setWidth,
-    TResult? Function(int value)? setHeight,
-    TResult? Function(int value)? setInsets,
-    TResult? Function(int value)? setPattern,
-    TResult? Function(int value)? setThemeMode,
-    TResult? Function()? save,
-  }) {
-    return save?.call();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? load,
-    TResult Function(int value)? setWidth,
-    TResult Function(int value)? setHeight,
-    TResult Function(int value)? setInsets,
-    TResult Function(int value)? setPattern,
-    TResult Function(int value)? setThemeMode,
-    TResult Function()? save,
-    required TResult orElse(),
-  }) {
-    if (save != null) {
-      return save();
-    }
-    return orElse();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Load value) load,
-    required TResult Function(_SetWidth value) setWidth,
-    required TResult Function(_SetHeight value) setHeight,
-    required TResult Function(_SetInsets value) setInsets,
-    required TResult Function(_SetPattern value) setPattern,
-    required TResult Function(_SetThemeMode value) setThemeMode,
-    required TResult Function(_Save value) save,
-  }) {
-    return save(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Load value)? load,
-    TResult? Function(_SetWidth value)? setWidth,
-    TResult? Function(_SetHeight value)? setHeight,
-    TResult? Function(_SetInsets value)? setInsets,
-    TResult? Function(_SetPattern value)? setPattern,
-    TResult? Function(_SetThemeMode value)? setThemeMode,
-    TResult? Function(_Save value)? save,
-  }) {
-    return save?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Load value)? load,
-    TResult Function(_SetWidth value)? setWidth,
-    TResult Function(_SetHeight value)? setHeight,
-    TResult Function(_SetInsets value)? setInsets,
-    TResult Function(_SetPattern value)? setPattern,
-    TResult Function(_SetThemeMode value)? setThemeMode,
-    TResult Function(_Save value)? save,
-    required TResult orElse(),
-  }) {
-    if (save != null) {
-      return save(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Save);
 }
 
-abstract class _Save implements PreferencesEvent {
-  const factory _Save() = _$SaveImpl;
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'PreferencesEvent.save()';
 }
+
+
+}
+
+
+
 
 /// @nodoc
 mixin _$PreferencesState {
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(
-      int width,
-      int height,
-      int insets,
-      int defaultPattern,
-      int themeMode,
-    )
-    ready,
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(
-      int width,
-      int height,
-      int insets,
-      int defaultPattern,
-      int themeMode,
-    )?
-    ready,
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(
-      int width,
-      int height,
-      int insets,
-      int defaultPattern,
-      int themeMode,
-    )?
-    ready,
-    required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Ready value) ready,
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_Ready value)? ready,
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Ready value)? ready,
-    required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+
+
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is PreferencesState);
+}
+
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'PreferencesState()';
+}
+
+
 }
 
 /// @nodoc
-abstract class $PreferencesStateCopyWith<$Res> {
-  factory $PreferencesStateCopyWith(
-    PreferencesState value,
-    $Res Function(PreferencesState) then,
-  ) = _$PreferencesStateCopyWithImpl<$Res, PreferencesState>;
+class $PreferencesStateCopyWith<$Res>  {
+$PreferencesStateCopyWith(PreferencesState _, $Res Function(PreferencesState) __);
 }
 
-/// @nodoc
-class _$PreferencesStateCopyWithImpl<$Res, $Val extends PreferencesState>
-    implements $PreferencesStateCopyWith<$Res> {
-  _$PreferencesStateCopyWithImpl(this._value, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+/// Adds pattern-matching-related methods to [PreferencesState].
+extension PreferencesStatePatterns on PreferencesState {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
 
-  /// Create a copy of PreferencesState
-  /// with the given fields replaced by the non-null parameter values.
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _Initial value)?  initial,TResult Function( _Loading value)?  loading,TResult Function( _Ready value)?  ready,required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _Initial() when initial != null:
+return initial(_that);case _Loading() when loading != null:
+return loading(_that);case _Ready() when ready != null:
+return ready(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _Initial value)  initial,required TResult Function( _Loading value)  loading,required TResult Function( _Ready value)  ready,}){
+final _that = this;
+switch (_that) {
+case _Initial():
+return initial(_that);case _Loading():
+return loading(_that);case _Ready():
+return ready(_that);}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _Initial value)?  initial,TResult? Function( _Loading value)?  loading,TResult? Function( _Ready value)?  ready,}){
+final _that = this;
+switch (_that) {
+case _Initial() when initial != null:
+return initial(_that);case _Loading() when loading != null:
+return loading(_that);case _Ready() when ready != null:
+return ready(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  initial,TResult Function()?  loading,TResult Function( int width,  int height,  int insets,  int defaultPattern,  int themeMode)?  ready,required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _Initial() when initial != null:
+return initial();case _Loading() when loading != null:
+return loading();case _Ready() when ready != null:
+return ready(_that.width,_that.height,_that.insets,_that.defaultPattern,_that.themeMode);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  initial,required TResult Function()  loading,required TResult Function( int width,  int height,  int insets,  int defaultPattern,  int themeMode)  ready,}) {final _that = this;
+switch (_that) {
+case _Initial():
+return initial();case _Loading():
+return loading();case _Ready():
+return ready(_that.width,_that.height,_that.insets,_that.defaultPattern,_that.themeMode);}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  initial,TResult? Function()?  loading,TResult? Function( int width,  int height,  int insets,  int defaultPattern,  int themeMode)?  ready,}) {final _that = this;
+switch (_that) {
+case _Initial() when initial != null:
+return initial();case _Loading() when loading != null:
+return loading();case _Ready() when ready != null:
+return ready(_that.width,_that.height,_that.insets,_that.defaultPattern,_that.themeMode);case _:
+  return null;
+
+}
 }
 
-/// @nodoc
-abstract class _$$InitialImplCopyWith<$Res> {
-  factory _$$InitialImplCopyWith(
-    _$InitialImpl value,
-    $Res Function(_$InitialImpl) then,
-  ) = __$$InitialImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$InitialImplCopyWithImpl<$Res>
-    extends _$PreferencesStateCopyWithImpl<$Res, _$InitialImpl>
-    implements _$$InitialImplCopyWith<$Res> {
-  __$$InitialImplCopyWithImpl(
-    _$InitialImpl _value,
-    $Res Function(_$InitialImpl) _then,
-  ) : super(_value, _then);
-
-  /// Create a copy of PreferencesState
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-
-class _$InitialImpl implements _Initial {
-  const _$InitialImpl();
-
-  @override
-  String toString() {
-    return 'PreferencesState.initial()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$InitialImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(
-      int width,
-      int height,
-      int insets,
-      int defaultPattern,
-      int themeMode,
-    )
-    ready,
-  }) {
-    return initial();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(
-      int width,
-      int height,
-      int insets,
-      int defaultPattern,
-      int themeMode,
-    )?
-    ready,
-  }) {
-    return initial?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(
-      int width,
-      int height,
-      int insets,
-      int defaultPattern,
-      int themeMode,
-    )?
-    ready,
-    required TResult orElse(),
-  }) {
-    if (initial != null) {
-      return initial();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Ready value) ready,
-  }) {
-    return initial(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_Ready value)? ready,
-  }) {
-    return initial?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Ready value)? ready,
-    required TResult orElse(),
-  }) {
-    if (initial != null) {
-      return initial(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Initial implements PreferencesState {
-  const factory _Initial() = _$InitialImpl;
-}
-
-/// @nodoc
-abstract class _$$LoadingImplCopyWith<$Res> {
-  factory _$$LoadingImplCopyWith(
-    _$LoadingImpl value,
-    $Res Function(_$LoadingImpl) then,
-  ) = __$$LoadingImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$LoadingImplCopyWithImpl<$Res>
-    extends _$PreferencesStateCopyWithImpl<$Res, _$LoadingImpl>
-    implements _$$LoadingImplCopyWith<$Res> {
-  __$$LoadingImplCopyWithImpl(
-    _$LoadingImpl _value,
-    $Res Function(_$LoadingImpl) _then,
-  ) : super(_value, _then);
-
-  /// Create a copy of PreferencesState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$LoadingImpl implements _Loading {
-  const _$LoadingImpl();
 
-  @override
-  String toString() {
-    return 'PreferencesState.loading()';
-  }
+class _Initial implements PreferencesState {
+  const _Initial();
+  
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$LoadingImpl);
-  }
 
-  @override
-  int get hashCode => runtimeType.hashCode;
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(
-      int width,
-      int height,
-      int insets,
-      int defaultPattern,
-      int themeMode,
-    )
-    ready,
-  }) {
-    return loading();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(
-      int width,
-      int height,
-      int insets,
-      int defaultPattern,
-      int themeMode,
-    )?
-    ready,
-  }) {
-    return loading?.call();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(
-      int width,
-      int height,
-      int insets,
-      int defaultPattern,
-      int themeMode,
-    )?
-    ready,
-    required TResult orElse(),
-  }) {
-    if (loading != null) {
-      return loading();
-    }
-    return orElse();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Ready value) ready,
-  }) {
-    return loading(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_Ready value)? ready,
-  }) {
-    return loading?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Ready value)? ready,
-    required TResult orElse(),
-  }) {
-    if (loading != null) {
-      return loading(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Initial);
 }
 
-abstract class _Loading implements PreferencesState {
-  const factory _Loading() = _$LoadingImpl;
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'PreferencesState.initial()';
 }
 
-/// @nodoc
-abstract class _$$ReadyImplCopyWith<$Res> {
-  factory _$$ReadyImplCopyWith(
-    _$ReadyImpl value,
-    $Res Function(_$ReadyImpl) then,
-  ) = __$$ReadyImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({
-    int width,
-    int height,
-    int insets,
-    int defaultPattern,
-    int themeMode,
-  });
+
 }
 
-/// @nodoc
-class __$$ReadyImplCopyWithImpl<$Res>
-    extends _$PreferencesStateCopyWithImpl<$Res, _$ReadyImpl>
-    implements _$$ReadyImplCopyWith<$Res> {
-  __$$ReadyImplCopyWithImpl(
-    _$ReadyImpl _value,
-    $Res Function(_$ReadyImpl) _then,
-  ) : super(_value, _then);
 
-  /// Create a copy of PreferencesState
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? width = null,
-    Object? height = null,
-    Object? insets = null,
-    Object? defaultPattern = null,
-    Object? themeMode = null,
-  }) {
-    return _then(
-      _$ReadyImpl(
-        width: null == width
-            ? _value.width
-            : width // ignore: cast_nullable_to_non_nullable
-                  as int,
-        height: null == height
-            ? _value.height
-            : height // ignore: cast_nullable_to_non_nullable
-                  as int,
-        insets: null == insets
-            ? _value.insets
-            : insets // ignore: cast_nullable_to_non_nullable
-                  as int,
-        defaultPattern: null == defaultPattern
-            ? _value.defaultPattern
-            : defaultPattern // ignore: cast_nullable_to_non_nullable
-                  as int,
-        themeMode: null == themeMode
-            ? _value.themeMode
-            : themeMode // ignore: cast_nullable_to_non_nullable
-                  as int,
-      ),
-    );
-  }
-}
+
 
 /// @nodoc
 
-class _$ReadyImpl implements _Ready {
-  const _$ReadyImpl({
-    required this.width,
-    required this.height,
-    required this.insets,
-    required this.defaultPattern,
-    required this.themeMode,
-  });
 
-  /// Default canvas width for new canvases.
-  @override
-  final int width;
+class _Loading implements PreferencesState {
+  const _Loading();
+  
 
-  /// Default canvas height for new canvases.
-  @override
-  final int height;
 
-  /// Default canvas insets/padding.
-  @override
-  final int insets;
 
-  /// Default painting pattern as integer index.
-  @override
-  final int defaultPattern;
 
-  /// Theme mode preference (0=light, 1=dark, 2=system).
-  @override
-  final int themeMode;
 
-  @override
-  String toString() {
-    return 'PreferencesState.ready(width: $width, height: $height, insets: $insets, defaultPattern: $defaultPattern, themeMode: $themeMode)';
-  }
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ReadyImpl &&
-            (identical(other.width, width) || other.width == width) &&
-            (identical(other.height, height) || other.height == height) &&
-            (identical(other.insets, insets) || other.insets == insets) &&
-            (identical(other.defaultPattern, defaultPattern) ||
-                other.defaultPattern == defaultPattern) &&
-            (identical(other.themeMode, themeMode) ||
-                other.themeMode == themeMode));
-  }
-
-  @override
-  int get hashCode => Object.hash(
-    runtimeType,
-    width,
-    height,
-    insets,
-    defaultPattern,
-    themeMode,
-  );
-
-  /// Create a copy of PreferencesState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ReadyImplCopyWith<_$ReadyImpl> get copyWith =>
-      __$$ReadyImplCopyWithImpl<_$ReadyImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(
-      int width,
-      int height,
-      int insets,
-      int defaultPattern,
-      int themeMode,
-    )
-    ready,
-  }) {
-    return ready(width, height, insets, defaultPattern, themeMode);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(
-      int width,
-      int height,
-      int insets,
-      int defaultPattern,
-      int themeMode,
-    )?
-    ready,
-  }) {
-    return ready?.call(width, height, insets, defaultPattern, themeMode);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(
-      int width,
-      int height,
-      int insets,
-      int defaultPattern,
-      int themeMode,
-    )?
-    ready,
-    required TResult orElse(),
-  }) {
-    if (ready != null) {
-      return ready(width, height, insets, defaultPattern, themeMode);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Ready value) ready,
-  }) {
-    return ready(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_Ready value)? ready,
-  }) {
-    return ready?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Ready value)? ready,
-    required TResult orElse(),
-  }) {
-    if (ready != null) {
-      return ready(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Loading);
 }
 
-abstract class _Ready implements PreferencesState {
-  const factory _Ready({
-    required final int width,
-    required final int height,
-    required final int insets,
-    required final int defaultPattern,
-    required final int themeMode,
-  }) = _$ReadyImpl;
 
-  /// Default canvas width for new canvases.
-  int get width;
+@override
+int get hashCode => runtimeType.hashCode;
 
-  /// Default canvas height for new canvases.
-  int get height;
-
-  /// Default canvas insets/padding.
-  int get insets;
-
-  /// Default painting pattern as integer index.
-  int get defaultPattern;
-
-  /// Theme mode preference (0=light, 1=dark, 2=system).
-  int get themeMode;
-
-  /// Create a copy of PreferencesState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ReadyImplCopyWith<_$ReadyImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+@override
+String toString() {
+  return 'PreferencesState.loading()';
 }
+
+
+}
+
+
+
+
+/// @nodoc
+
+
+class _Ready implements PreferencesState {
+  const _Ready({required this.width, required this.height, required this.insets, required this.defaultPattern, required this.themeMode});
+  
+
+/// Default canvas width for new canvases.
+ final  int width;
+/// Default canvas height for new canvases.
+ final  int height;
+/// Default canvas insets/padding.
+ final  int insets;
+/// Default painting pattern as integer index.
+ final  int defaultPattern;
+/// Theme mode preference (0=light, 1=dark, 2=system).
+ final  int themeMode;
+
+/// Create a copy of PreferencesState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$ReadyCopyWith<_Ready> get copyWith => __$ReadyCopyWithImpl<_Ready>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Ready&&(identical(other.width, width) || other.width == width)&&(identical(other.height, height) || other.height == height)&&(identical(other.insets, insets) || other.insets == insets)&&(identical(other.defaultPattern, defaultPattern) || other.defaultPattern == defaultPattern)&&(identical(other.themeMode, themeMode) || other.themeMode == themeMode));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,width,height,insets,defaultPattern,themeMode);
+
+@override
+String toString() {
+  return 'PreferencesState.ready(width: $width, height: $height, insets: $insets, defaultPattern: $defaultPattern, themeMode: $themeMode)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$ReadyCopyWith<$Res> implements $PreferencesStateCopyWith<$Res> {
+  factory _$ReadyCopyWith(_Ready value, $Res Function(_Ready) _then) = __$ReadyCopyWithImpl;
+@useResult
+$Res call({
+ int width, int height, int insets, int defaultPattern, int themeMode
+});
+
+
+
+
+}
+/// @nodoc
+class __$ReadyCopyWithImpl<$Res>
+    implements _$ReadyCopyWith<$Res> {
+  __$ReadyCopyWithImpl(this._self, this._then);
+
+  final _Ready _self;
+  final $Res Function(_Ready) _then;
+
+/// Create a copy of PreferencesState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? width = null,Object? height = null,Object? insets = null,Object? defaultPattern = null,Object? themeMode = null,}) {
+  return _then(_Ready(
+width: null == width ? _self.width : width // ignore: cast_nullable_to_non_nullable
+as int,height: null == height ? _self.height : height // ignore: cast_nullable_to_non_nullable
+as int,insets: null == insets ? _self.insets : insets // ignore: cast_nullable_to_non_nullable
+as int,defaultPattern: null == defaultPattern ? _self.defaultPattern : defaultPattern // ignore: cast_nullable_to_non_nullable
+as int,themeMode: null == themeMode ? _self.themeMode : themeMode // ignore: cast_nullable_to_non_nullable
+as int,
+  ));
+}
+
+
+}
+
+// dart format on

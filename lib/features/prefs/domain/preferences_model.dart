@@ -9,7 +9,7 @@ part 'preferences_model.g.dart';
 /// insets, default painting pattern, and theme mode preference.
 /// Used by the preferences screen and canvas creation flow.
 @freezed
-class PreferencesModel with _$PreferencesModel {
+abstract class PreferencesModel with _$PreferencesModel {
   /// Creates a preferences model with default canvas settings.
   const factory PreferencesModel({
     /// Default canvas width for new canvases.

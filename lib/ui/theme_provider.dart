@@ -83,14 +83,14 @@ extension AppThemeModeExtension on AppThemeMode {
 
 /// Events for theme management.
 @freezed
-class ThemeEvent with _$ThemeEvent {
+abstract class ThemeEvent with _$ThemeEvent {
   /// Changes the app theme mode.
   const factory ThemeEvent.changeTheme(AppThemeMode themeMode) = _ChangeTheme;
 }
 
 /// States for theme management.
 @freezed
-class ThemeState with _$ThemeState {
+abstract class ThemeState with _$ThemeState {
   /// Current theme state.
   const factory ThemeState({
     /// Current theme mode.

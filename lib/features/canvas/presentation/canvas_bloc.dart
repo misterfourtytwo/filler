@@ -16,7 +16,7 @@ part 'canvas_bloc.freezed.dart';
 /// Defines user interactions with the pixel canvas including
 /// initialization, color selection, painting, and saving.
 @freezed
-class CanvasEvent with _$CanvasEvent {
+sealed class CanvasEvent with _$CanvasEvent {
   /// Initializes canvas with default preferences.
   const factory CanvasEvent.init() = _Init;
 
@@ -24,7 +24,8 @@ class CanvasEvent with _$CanvasEvent {
   const factory CanvasEvent.load(int canvasId) = _Load;
 
   /// Changes the active painting pattern.
-  const factory CanvasEvent.setActiveColor(int pattern) = _SetActiveColor;
+  const factory CanvasEvent.setActivePatternId(int pattern) =
+      _SetactivePatternId;
 
   /// Rotates the active pattern by the given angle in radians.
   const factory CanvasEvent.rotatePattern(double angle) = _RotatePattern;
@@ -59,7 +60,7 @@ class CanvasEvent with _$CanvasEvent {
 /// Follows the standard initial → loading → ready pattern.
 /// Ready state contains all canvas data including dimensions and pixels.
 @freezed
-class CanvasState with _$CanvasState {
+sealed class CanvasState with _$CanvasState {
   /// Initial state before canvas setup.
   const factory CanvasState.initial() = _Initial;
 
@@ -78,7 +79,7 @@ class CanvasState with _$CanvasState {
     required int insets,
 
     /// Currently selected painting pattern as integer index.
-    required int activeColor,
+    required int activePatternId,
 
     /// Pattern rotation angle in radians.
     required double patternRotation,
@@ -150,7 +151,7 @@ class CanvasBloc extends Bloc<CanvasEvent, CanvasState> {
             width: p.width,
             height: p.height,
             insets: p.insets,
-            activeColor: 0, // Start with empty pattern as active
+            activePatternId: 0, // Start with empty pattern as active
             patternRotation: 0.0,
             pixels: pixels,
             patternPaintColor: const Color(0xFF000000), // Default black
@@ -198,7 +199,7 @@ class CanvasBloc extends Bloc<CanvasEvent, CanvasState> {
             width: canvas.width,
             height: canvas.height,
             insets: canvas.insets,
-            activeColor: 0, // Default to first pattern
+            activePatternId: 0, // Default to first pattern
             patternRotation: 0.0,
             pixels: canvas.pixels,
             patternPaintColor: canvas.patternPaintColor,
@@ -216,7 +217,7 @@ class CanvasBloc extends Bloc<CanvasEvent, CanvasState> {
         );
       }
     });
-    on<_SetActiveColor>((event, emit) {
+    on<_SetactivePatternId>((event, emit) {
       state.maybeWhen(
         ready:
             (
@@ -240,7 +241,7 @@ class CanvasBloc extends Bloc<CanvasEvent, CanvasState> {
                   width: w,
                   height: h,
                   insets: ins,
-                  activeColor: event.pattern,
+                  activePatternId: event.pattern,
                   patternRotation: rotation,
                   customPattern: customPattern,
                   pixels: px,
@@ -292,7 +293,7 @@ class CanvasBloc extends Bloc<CanvasEvent, CanvasState> {
                   width: w,
                   height: h,
                   insets: ins,
-                  activeColor: color,
+                  activePatternId: color,
                   patternRotation: rotation,
                   customPattern: customPattern,
                   pixels: copy,
@@ -418,7 +419,7 @@ class CanvasBloc extends Bloc<CanvasEvent, CanvasState> {
                   width: w,
                   height: h,
                   insets: ins,
-                  activeColor: color,
+                  activePatternId: color,
                   patternRotation: newRotation,
                   customPattern: customPattern,
                   pixels: px,
@@ -458,7 +459,7 @@ class CanvasBloc extends Bloc<CanvasEvent, CanvasState> {
                   width: w,
                   height: h,
                   insets: ins,
-                  activeColor: color,
+                  activePatternId: color,
                   patternRotation: rotation,
                   customPattern: event.pattern,
                   pixels: px,
@@ -512,7 +513,7 @@ class CanvasBloc extends Bloc<CanvasEvent, CanvasState> {
                   width: w,
                   height: h,
                   insets: ins,
-                  activeColor: color,
+                  activePatternId: color,
                   patternRotation: rotation,
                   customPattern: customPattern,
                   pixels: copy,
@@ -557,7 +558,7 @@ class CanvasBloc extends Bloc<CanvasEvent, CanvasState> {
                 data: {
                   'filledCells': filledCount,
                   'totalCells': copy.length,
-                  'activePattern': color,
+                  'activePatternId': color,
                 },
               );
 
@@ -566,7 +567,7 @@ class CanvasBloc extends Bloc<CanvasEvent, CanvasState> {
                   width: w,
                   height: h,
                   insets: ins,
-                  activeColor: color,
+                  activePatternId: color,
                   patternRotation: rotation,
                   customPattern: customPattern,
                   pixels: copy,
@@ -609,7 +610,7 @@ class CanvasBloc extends Bloc<CanvasEvent, CanvasState> {
                   width: w,
                   height: h,
                   insets: ins,
-                  activeColor: color,
+                  activePatternId: color,
                   patternRotation: rotation,
                   customPattern: customPattern,
                   pixels: px,
@@ -650,7 +651,7 @@ class CanvasBloc extends Bloc<CanvasEvent, CanvasState> {
                   width: w,
                   height: h,
                   insets: ins,
-                  activeColor: color,
+                  activePatternId: color,
                   patternRotation: rotation,
                   customPattern: customPattern,
                   pixels: px,

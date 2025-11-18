@@ -215,7 +215,7 @@ void main() {
       await Future.delayed(const Duration(milliseconds: 500));
 
       // Change active color
-      canvasBloc.add(const CanvasEvent.setActiveColor(2));
+      canvasBloc.add(const CanvasEvent.setActivePatternId(2));
       await Future.delayed(const Duration(milliseconds: 100));
 
       // Paint some pixels
@@ -246,7 +246,7 @@ void main() {
 
       // Paint some pixels
       canvasBloc
-        ..add(const CanvasEvent.setActiveColor(3))
+        ..add(const CanvasEvent.setActivePatternId(3))
         ..add(const CanvasEvent.paint(0))
         ..add(const CanvasEvent.paint(1));
       await Future.delayed(const Duration(milliseconds: 100));

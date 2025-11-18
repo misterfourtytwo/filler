@@ -11,7 +11,7 @@ part 'gallery_bloc.freezed.dart';
 ///
 /// Supports loading and deleting saved canvases from the repository.
 @freezed
-class GalleryEvent with _$GalleryEvent {
+sealed class GalleryEvent with _$GalleryEvent {
   /// Loads all saved canvases from the database.
   const factory GalleryEvent.load() = _Load;
 
@@ -24,7 +24,7 @@ class GalleryEvent with _$GalleryEvent {
 /// Follows standard initial → loading → loaded pattern for
 /// displaying saved canvas thumbnails.
 @freezed
-class GalleryState with _$GalleryState {
+sealed class GalleryState with _$GalleryState {
   /// Initial state before loading begins.
   const factory GalleryState.initial() = _Initial;
 
@@ -41,7 +41,7 @@ class GalleryState with _$GalleryState {
 /// Contains canvas data needed for thumbnail rendering including
 /// dimensions, pixel data, and colors. Used in gallery grid views.
 @freezed
-class GalleryItem with _$GalleryItem {
+abstract class GalleryItem with _$GalleryItem {
   /// Creates a gallery item with canvas data.
   const factory GalleryItem({
     /// Unique canvas identifier.

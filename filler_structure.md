@@ -215,7 +215,7 @@ class CanvasState with _$CanvasState {
   const factory CanvasState.ready({                            // Ready to draw!
     required int width,
     required int height,
-    required int activeColor,           // Which pattern you're using
+    required int activePatternId,           // Which pattern you're using
     required double patternRotation,    // How much it's turned
     required List<PixelData> pixels,    // All your squares
     required Color patternPaintColor,   // Pattern color

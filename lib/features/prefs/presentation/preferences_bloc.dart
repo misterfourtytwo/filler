@@ -11,7 +11,7 @@ part 'preferences_bloc.freezed.dart';
 /// Includes loading current preferences, updating individual
 /// settings values, and saving changes to the database.
 @freezed
-class PreferencesEvent with _$PreferencesEvent {
+sealed class PreferencesEvent with _$PreferencesEvent {
   /// Loads current preferences from repository.
   const factory PreferencesEvent.load() = _Load;
 
@@ -39,7 +39,7 @@ class PreferencesEvent with _$PreferencesEvent {
 /// Follows standard initial → loading → ready pattern with
 /// ready state containing current preference values.
 @freezed
-class PreferencesState with _$PreferencesState {
+sealed class PreferencesState with _$PreferencesState {
   /// Initial state before preferences are loaded.
   const factory PreferencesState.initial() = _Initial;
 

@@ -22,7 +22,7 @@ class CanvasReadyView extends StatelessWidget {
     required this.width,
     required this.height,
     required this.insets,
-    required this.activeColor,
+    required this.activePatternId,
     required this.patternRotation,
     required this.customPattern,
     required this.pixels,
@@ -41,7 +41,7 @@ class CanvasReadyView extends StatelessWidget {
   final int insets;
 
   /// Currently selected color as ARGB integer.
-  final int activeColor;
+  final int activePatternId;
 
   /// Pattern rotation angle in radians.
   final double patternRotation;
@@ -136,7 +136,7 @@ class CanvasReadyView extends StatelessWidget {
         children: [
           // Active pattern display
           ActivePatternDisplay(
-            activePatternIndex: activeColor,
+            activePatternIndex: activePatternId,
             rotationAngle: patternRotation,
             customPattern: customPattern,
           ),
@@ -147,9 +147,9 @@ class CanvasReadyView extends StatelessWidget {
           const SizedBox(height: DesignSystem.spaceSm),
           PatternPalette(
             patterns: CanvasPattern.values,
-            selectedPattern: CanvasPattern.values[activeColor],
+            selectedPattern: CanvasPattern.values[activePatternId],
             onPatternSelected: (pattern) => context.read<CanvasBloc>().add(
-              CanvasEvent.setActiveColor(pattern.value),
+              CanvasEvent.setActivePatternId(pattern.value),
             ),
           ),
           const SizedBox(height: DesignSystem.spaceLg),
@@ -160,7 +160,7 @@ class CanvasReadyView extends StatelessWidget {
             onAngleChanged: (angle) => context.read<CanvasBloc>().add(
               CanvasEvent.rotatePattern(angle),
             ),
-            activePatternIndex: activeColor,
+            activePatternIndex: activePatternId,
             customPattern: customPattern,
           ),
           const SizedBox(height: DesignSystem.spaceLg),
@@ -233,9 +233,9 @@ class CanvasReadyView extends StatelessWidget {
               // Pattern palette
               PatternPalette(
                 patterns: CanvasPattern.values,
-                selectedPattern: CanvasPattern.values[activeColor],
+                selectedPattern: CanvasPattern.values[activePatternId],
                 onPatternSelected: (pattern) => context.read<CanvasBloc>().add(
-                  CanvasEvent.setActiveColor(pattern.index),
+                  CanvasEvent.setActivePatternId(pattern.index),
                 ),
               ),
               const SizedBox(height: DesignSystem.spaceSm),
@@ -243,10 +243,13 @@ class CanvasReadyView extends StatelessWidget {
               // Angle picker
               AnglePicker(
                 currentAngle: patternRotation,
-                onAngleChanged: (angle) => context.read<CanvasBloc>().add(
-                  CanvasEvent.rotatePattern(angle),
-                ),
-                activePatternIndex: activeColor,
+                onAngleChanged: (angle) {
+                  if (angle == patternRotation) return;
+                  context.read<CanvasBloc>().add(
+                    CanvasEvent.rotatePattern(angle),
+                  );
+                },
+                activePatternIndex: activePatternId,
                 customPattern: customPattern,
               ),
               const SizedBox(height: DesignSystem.spaceSm),
@@ -265,7 +268,7 @@ class CanvasReadyView extends StatelessWidget {
     final scheme = Theme.of(context).colorScheme;
     final pattern =
         customPattern ??
-        CanvasPattern.values[activeColor % CanvasPattern.values.length];
+        CanvasPattern.values[activePatternId % CanvasPattern.values.length];
 
     return Row(
       children: [

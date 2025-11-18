@@ -75,7 +75,7 @@ void main() {
             width: 10,
             height: 10,
             insets: 0,
-            activeColor: 0, // Empty pattern index
+            activePatternId: 0, // Empty pattern index
             patternRotation: 0.0,
             pixels: List.generate(
               100,
@@ -126,7 +126,7 @@ void main() {
             width: 3,
             height: 3,
             insets: 1,
-            activeColor: 0, // Should be empty pattern, not defaultPattern
+            activePatternId: 0, // Should be empty pattern, not defaultPattern
             patternRotation: 0.0,
             pixels: List.generate(
               9, // 3x3 = 9 pixels
@@ -144,7 +144,7 @@ void main() {
       );
     });
 
-    group('CanvasEvent.setActiveColor', () {
+    group('CanvasEvent.setActivePatternId', () {
       blocTest<CanvasBloc, CanvasState>(
         'updates active color when canvas is ready',
         build: () {
@@ -162,7 +162,7 @@ void main() {
           width: 2,
           height: 2,
           insets: 0,
-          activeColor: 0, // Empty pattern index
+          activePatternId: 0, // Empty pattern index
           patternRotation: 0.0,
           pixels: [
             PixelData(pattern: 0), // Empty pattern
@@ -173,13 +173,13 @@ void main() {
           patternPaintColor: Color(0xFF000000),
           canvasBackgroundColor: Color(0xFFFFFFFF),
         ),
-        act: (bloc) => bloc.add(const CanvasEvent.setActiveColor(2)),
+        act: (bloc) => bloc.add(const CanvasEvent.setActivePatternId(2)),
         expect: () => [
           const CanvasState.ready(
             width: 2,
             height: 2,
             insets: 0,
-            activeColor: 2,
+            activePatternId: 2,
             patternRotation: 0.0,
             pixels: [
               PixelData(pattern: 0), // Empty pattern
@@ -197,7 +197,7 @@ void main() {
         'ignores color change when canvas not ready',
         build: () => canvasBloc,
         seed: () => const CanvasState.loading(),
-        act: (bloc) => bloc.add(const CanvasEvent.setActiveColor(2)),
+        act: (bloc) => bloc.add(const CanvasEvent.setActivePatternId(2)),
         expect: () => [],
       );
     });
@@ -210,7 +210,7 @@ void main() {
           width: 2,
           height: 2,
           insets: 0,
-          activeColor: 2, // Pattern index, not color
+          activePatternId: 2, // Pattern index, not color
           patternRotation: 0.0,
           pixels: [
             PixelData(pattern: 0), // Empty pattern
@@ -227,7 +227,7 @@ void main() {
             width: 2,
             height: 2,
             insets: 0,
-            activeColor: 2, // Pattern index, not color
+            activePatternId: 2, // Pattern index, not color
             patternRotation: 0.0,
             pixels: [
               PixelData(pattern: 0), // Empty pattern
@@ -248,7 +248,7 @@ void main() {
           width: 2,
           height: 2,
           insets: 0,
-          activeColor: 2, // Pattern index, not color
+          activePatternId: 2, // Pattern index, not color
           patternRotation: 0.0,
           pixels: [
             PixelData(pattern: 0), // Empty pattern
@@ -280,7 +280,7 @@ void main() {
           width: 2,
           height: 2,
           insets: 0,
-          activeColor: 2, // Pattern index, not color
+          activePatternId: 2, // Pattern index, not color
           patternRotation: 0.0,
           pixels: [
             PixelData(pattern: 0), // Empty pattern
@@ -297,7 +297,7 @@ void main() {
             width: 2,
             height: 2,
             insets: 0,
-            activeColor: 2, // Pattern index, not color
+            activePatternId: 2, // Pattern index, not color
             patternRotation: 0.0,
             pixels: [
               PixelData(pattern: 2), // Filled with active pattern
@@ -318,7 +318,7 @@ void main() {
           width: 2,
           height: 2,
           insets: 0,
-          activeColor: 1, // Pattern index, not color
+          activePatternId: 1, // Pattern index, not color
           patternRotation: 0.0,
           pixels: [
             PixelData(pattern: 0), // Empty pattern
@@ -335,7 +335,7 @@ void main() {
             width: 2,
             height: 2,
             insets: 0,
-            activeColor: 1, // Pattern index, not color
+            activePatternId: 1, // Pattern index, not color
             patternRotation: 0.0,
             pixels: [
               PixelData(pattern: 1), // Filled with active pattern
@@ -356,7 +356,7 @@ void main() {
           width: 2,
           height: 2,
           insets: 0,
-          activeColor: 2, // Pattern index, not color
+          activePatternId: 2, // Pattern index, not color
           patternRotation: 0.0,
           pixels: [
             PixelData(pattern: 1), // Non-empty pattern
@@ -391,7 +391,7 @@ void main() {
           width: 2,
           height: 2,
           insets: 1,
-          activeColor: 2, // Pattern index, not color
+          activePatternId: 2, // Pattern index, not color
           patternRotation: 0.0,
           pixels: [
             PixelData(pattern: 0), // Empty pattern
@@ -432,7 +432,7 @@ void main() {
           width: 1,
           height: 1,
           insets: 0,
-          activeColor: 0, // Empty pattern index
+          activePatternId: 0, // Empty pattern index
           patternRotation: 0.0,
           pixels: [PixelData(pattern: 0)], // Empty pattern
           patternPaintColor: Color(0xFF000000),

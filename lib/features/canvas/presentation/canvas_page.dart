@@ -127,7 +127,7 @@ class _CanvasPageState extends State<CanvasPage> {
             width: s.width,
             height: s.height,
             insets: s.insets,
-            activeColor: s.activeColor,
+            activePatternId: s.activePatternId,
             patternRotation: s.patternRotation,
             customPattern: s.customPattern,
             pixels: s.pixels,

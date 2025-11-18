@@ -8,7 +8,7 @@ part 'pixel_data.g.dart';
 /// Each pixel stores both the pattern index and rotation angle.
 /// Rotation is in radians and should be in 90-degree increments (0, π/2, π, 3π/2).
 @freezed
-class PixelData with _$PixelData {
+abstract class PixelData with _$PixelData {
   /// Creates pixel data with pattern and rotation.
   const factory PixelData({
     /// Pattern index (0-11 for built-in patterns).

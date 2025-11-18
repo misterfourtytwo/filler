@@ -22,7 +22,7 @@ class ColorConverter implements JsonConverter<Color, int> {
 /// Uses Freezed for immutability. Note: JSON serialization removed to avoid circular dependencies.
 /// Pixel data is stored as a flat list of PixelData objects in row-major order.
 @freezed
-class CanvasModel with _$CanvasModel {
+abstract class CanvasModel with _$CanvasModel {
   /// Creates a canvas model with the given properties.
   const factory CanvasModel({
     /// Unique identifier for the canvas.
