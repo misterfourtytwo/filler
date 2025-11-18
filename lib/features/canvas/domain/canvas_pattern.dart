@@ -417,60 +417,44 @@ class PatternPainter extends CustomPainter {
   }
 
   void _drawQuarterCircle(Canvas canvas, Rect bounds, Paint paint) {
-    final radius = min(bounds.width, bounds.height) / 2;
-    final center = Offset(bounds.center.dx, bounds.center.dy);
+    // Place circle center at top-left corner with radius = square side
+    final radius = min(bounds.width, bounds.height);
+    final center = Offset(bounds.left, bounds.top);
 
     final path = Path()
-      ..moveTo(center.dx - radius, center.dy - radius)
-      ..lineTo(center.dx - radius, center.dy + radius)
+      ..moveTo(center.dx, center.dy)
+      ..lineTo(center.dx + radius, center.dy)
       ..arcTo(
-        Rect.fromLTWH(
-          center.dx - radius,
-          center.dy - radius,
-          2 * radius,
-          2 * radius,
-        ),
-        0,
-        pi / 2,
-        true,
+        Rect.fromCircle(center: center, radius: radius),
+        0, // Start angle (pointing right)
+        pi / 2, // Sweep 90 degrees
+        false,
       )
-      ..lineTo(center.dx - radius, center.dy - radius)
+      ..lineTo(center.dx, center.dy)
       ..close();
 
     canvas.drawPath(path, paint);
   }
 
   void _drawInverseQuarterCircle(Canvas canvas, Rect bounds, Paint paint) {
-    final radius = min(bounds.width, bounds.height) / 2;
-    final center = Offset(bounds.center.dx, bounds.center.dy);
+    // Place circle center at top-left corner with radius = square side
+    final radius = min(bounds.width, bounds.height);
+    final center = Offset(bounds.left, bounds.top);
 
-    // Create a square path
-    final squarePath = Path()
-      ..addRect(
-        Rect.fromLTWH(
-          center.dx - radius,
-          center.dy - radius,
-          2 * radius,
-          2 * radius,
-        ),
-      );
+    // Create a square path (the full bounds)
+    final squarePath = Path()..addRect(bounds);
 
     // Create a quarter circle path (the "hole" to cut out)
     final quarterCirclePath = Path()
-      ..moveTo(center.dx + radius, center.dy + radius)
-      ..lineTo(center.dx - radius, center.dy + radius)
+      ..moveTo(center.dx, center.dy)
+      ..lineTo(center.dx + radius, center.dy)
       ..arcTo(
-        Rect.fromLTWH(
-          center.dx - radius,
-          center.dy - radius,
-          2 * radius,
-          2 * radius,
-        ),
-        3 * pi / 2,
-        pi / 2,
-        true,
+        Rect.fromCircle(center: center, radius: radius),
+        0, // Start angle (pointing right)
+        pi / 2, // Sweep 90 degrees
+        false,
       )
-      ..lineTo(center.dx + radius, center.dy + radius)
+      ..lineTo(center.dx, center.dy)
       ..close();
 
     // Subtract the quarter circle from the square
