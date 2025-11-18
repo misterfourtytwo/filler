@@ -39,10 +39,14 @@ flutter build web --release
 
 #### Test Locally
 ```bash
-# Serve the built app locally
-cd build/web
-python3 -m http.server 8080
-# Or use any local server
+# RECOMMENDED: Use the custom server with proper WASM MIME types
+python3 scripts/serve-local.py
+
+# ALTERNATIVE: Use Flutter's built-in server
+flutter run -d chrome --web-port 8080
+
+# NOTE: DO NOT use simple HTTP servers like 'python3 -m http.server'
+# They don't serve WASM files with correct MIME types and will fail
 ```
 
 ### 3. Deployment
@@ -53,7 +57,7 @@ python3 -m http.server 8080
    - Build the Flutter web app
    - Run tests
    - Deploy to GitHub Pages
-3. Your app will be available at: `https://your-username.github.io/filler/`
+3. Your app will be available at: `https://your-username.github.io/konstruktor/`
 
 #### Manual Deployment
 ```bash
@@ -72,9 +76,12 @@ npx gh-pages -d build/web
 - **Triggers**: Push to main branch, pull requests
 
 ### Web Configuration
-- **index.html**: Optimized for SEO and performance
+- **index.html**: Optimized for SEO and performance with WASM preloading
 - **manifest.json**: PWA configuration
 - **404.html**: Custom 404 page for client-side routing
+- **_headers**: GitHub Pages MIME type configuration (especially for WASM)
+- **.htaccess**: Apache server MIME type configuration
+- **serve-local.py**: Local development server with proper MIME types
 
 ### Build Script
 - **File**: `scripts/build-web.sh`
@@ -103,6 +110,33 @@ npx gh-pages -d build/web
 
 ### Common Issues
 
+#### WebAssembly MIME Type Errors
+**Error**: `Failed to execute 'compile' on 'WebAssembly': Incorrect response MIME type. Expected 'application/wasm'.`
+
+**Solution**:
+```bash
+# ✅ CORRECT: Use the custom local server
+python3 scripts/serve-local.py
+
+# ✅ CORRECT: Use Flutter's built-in server
+flutter run -d chrome --web-port 8080
+
+# ❌ WRONG: Don't use simple HTTP servers
+# python3 -m http.server 8080  # This will fail!
+```
+
+**Why This Happens**:
+- WASM files must be served with `Content-Type: application/wasm`
+- Simple HTTP servers don't set proper MIME types
+- The custom `serve-local.py` script properly configures all MIME types
+- GitHub Pages uses `_headers` and `.htaccess` files (included in build)
+
+**Verification**:
+```bash
+# Check MIME type being served (should show "application/wasm")
+curl -I http://localhost:8080/sql-wasm.wasm | grep -i content-type
+```
+
 #### Build Failures
 ```bash
 # Clean and rebuild
@@ -118,10 +152,11 @@ flutter build web --release --dart-define=FLUTTER_WEB_USE_SKIA=true --tree-shake
 1. Check GitHub Actions logs
 2. Verify repository permissions
 3. Ensure gh-pages branch exists
+4. Verify MIME type configuration files are deployed
 
 #### Routing Issues
 - Custom 404 page handles client-side routing
-- Update base href if needed: `--base-href=/filler/`
+- Update base href if needed: `--base-href=/konstruktor/`
 
 ### Performance Monitoring
 - Use Chrome DevTools for performance analysis
@@ -216,5 +251,6 @@ For deployment issues:
 
 ---
 
-**Last Updated**: August 2024  
-**Version**: 1.0.0
+**Last Updated**: November 2024  
+**Version**: 1.1.0  
+**Project**: Konstruktor (formerly Filler)

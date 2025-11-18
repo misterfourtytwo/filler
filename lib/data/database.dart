@@ -1,11 +1,7 @@
 import 'dart:convert';
 import 'package:drift/drift.dart';
+import 'package:drift_flutter/drift_flutter.dart';
 import 'package:konstruktor/core/logging.dart';
-
-// Platform-specific database connection
-import 'database_connection.dart'
-    if (dart.library.html) 'database_connection_web.dart';
-
 part 'database.g.dart';
 
 /// Table definition for storing canvas data.
@@ -85,7 +81,24 @@ class AppDatabase extends _$AppDatabase {
   }
 
   /// Creates a test database instance with platform-appropriate database.
-  AppDatabase.test() : super(createTestDatabaseConnection());
+  AppDatabase.test() : super(_openConnection(test: true));
+  static QueryExecutor _openConnection({bool test = false}) {
+    return driftDatabase(
+      name: 'my_database',
+      native: const DriftNativeOptions(
+        // By default, `driftDatabase` from `package:drift_flutter` stores the
+        // database files in `getApplicationDocumentsDirectory()`.
+        // databaseDirectory: getApplicationSupportDirectory,
+      ),
+      web: DriftWebOptions(
+        sqlite3Wasm: test
+            ? Uri.parse('sqlite3.debug.wasm')
+            : Uri.parse('sqlite3.wasm'),
+        driftWorker: Uri.parse('drift_worker.js'),
+      ),
+    );
+  }
+
   static AppDatabase? _instance;
 
   /// Gets the singleton database instance.
@@ -375,8 +388,4 @@ class AppDatabase extends _$AppDatabase {
       rethrow;
     }
   }
-}
-
-LazyDatabase _openConnection() {
-  return createDatabaseConnection();
 }

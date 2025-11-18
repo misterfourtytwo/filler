@@ -1,4 +1,4 @@
-# MIME Type Configuration for Filler Web App
+# MIME Type Configuration for Konstruktor Web App
 # This ensures proper serving of WASM files and other assets
 
 # WASM files
@@ -6,12 +6,6 @@ AddType application/wasm .wasm
 
 # JavaScript files
 AddType application/javascript .js
-
-# Specific configuration for dummy-worker.js
-<Files "dummy-worker.js">
-    ForceType application/javascript
-    Header set X-Content-Type-Options nosniff
-</Files>
 
 # JSON files
 AddType application/json .json
