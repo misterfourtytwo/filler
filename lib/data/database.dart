@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:drift/drift.dart';
+import 'package:drift/native.dart';
 import 'package:drift_flutter/drift_flutter.dart';
 import 'package:konstruktor/core/logging.dart';
 part 'database.g.dart';
@@ -80,9 +81,16 @@ class AppDatabase extends _$AppDatabase {
     AppLogger.database('AppDatabase singleton instance created');
   }
 
-  /// Creates a test database instance with platform-appropriate database.
+  /// Creates a test database instance with in-memory database.
   AppDatabase.test() : super(_openConnection(test: true));
+
   static QueryExecutor _openConnection({bool test = false}) {
+    // For tests, use an in-memory database to avoid path_provider dependency
+    if (test) {
+      return NativeDatabase.memory();
+    }
+
+    // For production, use driftDatabase with proper configuration
     return driftDatabase(
       name: 'my_database',
       native: const DriftNativeOptions(
@@ -91,9 +99,7 @@ class AppDatabase extends _$AppDatabase {
         // databaseDirectory: getApplicationSupportDirectory,
       ),
       web: DriftWebOptions(
-        sqlite3Wasm: test
-            ? Uri.parse('sqlite3.debug.wasm')
-            : Uri.parse('sqlite3.wasm'),
+        sqlite3Wasm: Uri.parse('sqlite3.wasm'),
         driftWorker: Uri.parse('drift_worker.js'),
       ),
     );

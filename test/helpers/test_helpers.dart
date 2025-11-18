@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:drift/drift.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_test/flutter_test.dart';
 import 'package:konstruktor/core/logging.dart';
 import 'package:konstruktor/data/database.dart';
 import 'package:konstruktor/domain/repositories.dart';
@@ -27,6 +28,8 @@ class TestHelpers {
 
   /// Create a test database instance.
   static AppDatabase createTestDatabase() {
+    // Ensure Flutter bindings are initialized before creating database
+    TestWidgetsFlutterBinding.ensureInitialized();
     AppLogger.instance.d('🗄️ Creating test database');
     return AppDatabase.test();
   }
