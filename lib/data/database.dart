@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'package:drift/drift.dart';
-import 'package:filler/core/logging.dart';
+import 'package:konstruktor/core/logging.dart';
 
 // Platform-specific database connection
 import 'database_connection.dart'

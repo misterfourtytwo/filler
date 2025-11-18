@@ -1,4 +1,4 @@
-# Filler - Pixel Canvas Editor
+# Konstruktor - Pixel Canvas Editor
 
 A colorful pixel canvas editor with gallery, preferences, and export capabilities. Create beautiful pixel art with an intuitive interface.
 
@@ -20,8 +20,8 @@ A colorful pixel canvas editor with gallery, preferences, and export capabilitie
 ### Local Development
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/filler.git
-cd filler
+git clone https://github.com/your-username/konstruktor.git
+cd konstruktor
 
 # Get dependencies
 flutter pub get
@@ -58,7 +58,7 @@ flutter build web --release --web-renderer canvaskit
 3. **Deploy**:
    - Push changes to the `main` branch
    - GitHub Actions will automatically build and deploy
-   - Your app will be available at: `https://your-username.github.io/filler/`
+   - Your app will be available at: `https://your-username.github.io/konstruktor/`
 
 ### Manual Deployment
 ```bash
@@ -72,7 +72,7 @@ npx gh-pages -d build/web
 ## 📁 Project Structure
 
 ```
-filler/
+konstruktor/
 ├── lib/                    # Main application code
 │   ├── app.dart           # App entry point
 │   ├── main.dart          # Main function

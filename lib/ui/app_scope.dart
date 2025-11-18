@@ -1,6 +1,6 @@
-import 'package:filler/data/database.dart';
-import 'package:filler/domain/repositories.dart';
 import 'package:flutter/material.dart';
+import 'package:konstruktor/data/database.dart';
+import 'package:konstruktor/domain/repositories.dart';
 
 /// Dependency injection container using InheritedWidget.
 ///

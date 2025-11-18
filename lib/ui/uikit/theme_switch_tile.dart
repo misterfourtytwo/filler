@@ -1,6 +1,6 @@
-import 'package:filler/ui/design_system.dart';
-import 'package:filler/ui/theme_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:konstruktor/ui/design_system.dart';
+import 'package:konstruktor/ui/theme_provider.dart';
 
 /// Premium theme switch tile for selecting app theme mode.
 ///

@@ -1,15 +1,15 @@
-import 'package:filler/core/logging.dart';
-import 'package:filler/data/database.dart';
-import 'package:filler/domain/repositories.dart';
-import 'package:filler/features/canvas/presentation/canvas_bloc.dart';
-import 'package:filler/features/gallery/presentation/gallery_bloc.dart';
-import 'package:filler/features/prefs/presentation/preferences_bloc.dart';
-import 'package:filler/ui/app_scope.dart';
-import 'package:filler/ui/design_system.dart';
-import 'package:filler/ui/navigation/app_navigation.dart';
-import 'package:filler/ui/theme_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:konstruktor/core/logging.dart';
+import 'package:konstruktor/data/database.dart';
+import 'package:konstruktor/domain/repositories.dart';
+import 'package:konstruktor/features/canvas/presentation/canvas_bloc.dart';
+import 'package:konstruktor/features/gallery/presentation/gallery_bloc.dart';
+import 'package:konstruktor/features/prefs/presentation/preferences_bloc.dart';
+import 'package:konstruktor/ui/app_scope.dart';
+import 'package:konstruktor/ui/design_system.dart';
+import 'package:konstruktor/ui/navigation/app_navigation.dart';
+import 'package:konstruktor/ui/theme_provider.dart';
 
 /// Premium application widget that sets up the entire app architecture.
 ///

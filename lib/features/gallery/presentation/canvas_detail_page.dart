@@ -1,14 +1,14 @@
 import 'dart:ui' as ui;
 
-import 'package:filler/core/file_picker_service.dart';
-import 'package:filler/core/logging.dart';
-import 'package:filler/features/canvas/presentation/canvas_page.dart';
-import 'package:filler/features/canvas/presentation/widgets/canvas_grid.dart';
-import 'package:filler/features/gallery/presentation/gallery_bloc.dart';
-import 'package:filler/ui/design_system.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:konstruktor/core/file_picker_service.dart';
+import 'package:konstruktor/core/logging.dart';
+import 'package:konstruktor/features/canvas/presentation/canvas_page.dart';
+import 'package:konstruktor/features/canvas/presentation/widgets/canvas_grid.dart';
+import 'package:konstruktor/features/gallery/presentation/gallery_bloc.dart';
+import 'package:konstruktor/ui/design_system.dart';
 
 /// Detail page for viewing and interacting with a saved canvas.
 ///

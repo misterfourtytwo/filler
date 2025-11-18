@@ -1,6 +1,6 @@
 # Design System
 
-Purpose: Provide consistent tokens, themes, and reusable components tailored to Filler's pixel canvas editor.
+Purpose: Provide consistent tokens, themes, and reusable components tailored to Konstruktor's pixel canvas editor.
 
 ## Design Tokens
 

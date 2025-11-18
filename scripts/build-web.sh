@@ -1,11 +1,11 @@
 #!/bin/bash
 
-# Filler Web Build Script
+# Konstruktor Web Build Script
 # Optimized for GitHub Pages deployment
 
 set -e
 
-echo "🚀 Building Filler for web deployment..."
+echo "🚀 Building Konstruktor for web deployment..."
 
 # Clean previous builds
 echo "🧹 Cleaning previous builds..."

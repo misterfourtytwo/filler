@@ -1,9 +1,9 @@
-import 'package:filler/core/logging.dart';
-import 'package:filler/domain/repositories.dart';
-import 'package:filler/features/canvas/domain/pixel_data.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:konstruktor/core/logging.dart';
+import 'package:konstruktor/domain/repositories.dart';
+import 'package:konstruktor/features/canvas/domain/pixel_data.dart';
 
 part 'gallery_bloc.freezed.dart';
 

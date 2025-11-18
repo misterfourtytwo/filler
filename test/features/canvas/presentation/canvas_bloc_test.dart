@@ -1,12 +1,12 @@
 import 'package:bloc_test/bloc_test.dart';
-// Removed unused import
-import 'package:filler/domain/repositories.dart';
-import 'package:filler/features/canvas/domain/canvas_model.dart';
-import 'package:filler/features/canvas/domain/pixel_data.dart';
-import 'package:filler/features/canvas/presentation/canvas_bloc.dart';
-import 'package:filler/features/prefs/domain/preferences_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+// Removed unused import
+import 'package:konstruktor/domain/repositories.dart';
+import 'package:konstruktor/features/canvas/domain/canvas_model.dart';
+import 'package:konstruktor/features/canvas/domain/pixel_data.dart';
+import 'package:konstruktor/features/canvas/presentation/canvas_bloc.dart';
+import 'package:konstruktor/features/prefs/domain/preferences_model.dart';
 import 'package:mocktail/mocktail.dart';
 
 import '../../../helpers/test_helpers.dart';

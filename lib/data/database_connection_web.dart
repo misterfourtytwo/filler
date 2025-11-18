@@ -2,7 +2,7 @@ import 'package:drift/drift.dart';
 // Using the new WASM approach instead of deprecated web.dart
 // See: https://drift.simonbinder.eu/web
 import 'package:drift/wasm.dart';
-import 'package:filler/core/logging.dart';
+import 'package:konstruktor/core/logging.dart';
 
 /// Creates a database connection for web platform.
 LazyDatabase createDatabaseConnection() {

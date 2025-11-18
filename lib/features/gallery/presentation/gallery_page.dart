@@ -1,10 +1,10 @@
-import 'package:filler/core/logging.dart';
-import 'package:filler/features/gallery/presentation/gallery_bloc.dart';
-import 'package:filler/features/gallery/presentation/views/gallery_initial_view.dart';
-import 'package:filler/features/gallery/presentation/views/gallery_loaded_view.dart';
-import 'package:filler/features/gallery/presentation/views/gallery_loading_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:konstruktor/core/logging.dart';
+import 'package:konstruktor/features/gallery/presentation/gallery_bloc.dart';
+import 'package:konstruktor/features/gallery/presentation/views/gallery_initial_view.dart';
+import 'package:konstruktor/features/gallery/presentation/views/gallery_loaded_view.dart';
+import 'package:konstruktor/features/gallery/presentation/views/gallery_loading_view.dart';
 
 /// Gallery page displaying a grid of saved canvases.
 ///

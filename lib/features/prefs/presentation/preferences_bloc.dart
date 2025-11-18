@@ -1,8 +1,8 @@
-import 'package:filler/core/logging.dart';
-import 'package:filler/domain/repositories.dart';
-import 'package:filler/ui/theme_provider.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:konstruktor/core/logging.dart';
+import 'package:konstruktor/domain/repositories.dart';
+import 'package:konstruktor/ui/theme_provider.dart';
 
 part 'preferences_bloc.freezed.dart';
 

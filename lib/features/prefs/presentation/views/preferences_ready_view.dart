@@ -1,9 +1,9 @@
-import 'package:filler/core/logging.dart';
-import 'package:filler/features/prefs/presentation/preferences_bloc.dart';
-import 'package:filler/ui/design_system.dart';
-import 'package:filler/ui/uikit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:konstruktor/core/logging.dart';
+import 'package:konstruktor/features/prefs/presentation/preferences_bloc.dart';
+import 'package:konstruktor/ui/design_system.dart';
+import 'package:konstruktor/ui/uikit.dart';
 
 /// Ready state view with preference editing form fields.
 ///

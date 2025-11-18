@@ -1,7 +1,7 @@
-import 'package:filler/features/canvas/domain/canvas_pattern.dart';
-import 'package:filler/features/gallery/presentation/gallery_bloc.dart';
-import 'package:filler/ui/design_system.dart';
 import 'package:flutter/material.dart';
+import 'package:konstruktor/features/canvas/domain/canvas_pattern.dart';
+import 'package:konstruktor/features/gallery/presentation/gallery_bloc.dart';
+import 'package:konstruktor/ui/design_system.dart';
 
 /// Miniature canvas widget for gallery thumbnails.
 ///

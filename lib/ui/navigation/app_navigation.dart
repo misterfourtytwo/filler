@@ -1,9 +1,9 @@
-import 'package:filler/core/logging.dart';
-import 'package:filler/features/canvas/presentation/canvas_page.dart';
-import 'package:filler/features/gallery/presentation/gallery_page.dart';
-import 'package:filler/features/prefs/presentation/preferences_page.dart';
-import 'package:filler/ui/design_system.dart';
 import 'package:flutter/material.dart';
+import 'package:konstruktor/core/logging.dart';
+import 'package:konstruktor/features/canvas/presentation/canvas_page.dart';
+import 'package:konstruktor/features/gallery/presentation/gallery_page.dart';
+import 'package:konstruktor/features/prefs/presentation/preferences_page.dart';
+import 'package:konstruktor/ui/design_system.dart';
 
 /// Main navigation component that adapts to screen size.
 ///

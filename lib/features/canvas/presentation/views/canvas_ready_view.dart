@@ -1,14 +1,14 @@
-import 'package:filler/features/canvas/domain/canvas_pattern.dart';
-import 'package:filler/features/canvas/domain/custom_pattern.dart';
-import 'package:filler/features/canvas/domain/custom_pattern_painter.dart';
-import 'package:filler/features/canvas/domain/pixel_data.dart';
-import 'package:filler/features/canvas/presentation/canvas_bloc.dart';
-import 'package:filler/features/canvas/presentation/widgets/canvas_grid.dart';
-import 'package:filler/features/canvas/presentation/widgets/custom_pattern_editor.dart';
-import 'package:filler/ui/design_system.dart';
-import 'package:filler/ui/uikit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:konstruktor/features/canvas/domain/canvas_pattern.dart';
+import 'package:konstruktor/features/canvas/domain/custom_pattern.dart';
+import 'package:konstruktor/features/canvas/domain/custom_pattern_painter.dart';
+import 'package:konstruktor/features/canvas/domain/pixel_data.dart';
+import 'package:konstruktor/features/canvas/presentation/canvas_bloc.dart';
+import 'package:konstruktor/features/canvas/presentation/widgets/canvas_grid.dart';
+import 'package:konstruktor/features/canvas/presentation/widgets/custom_pattern_editor.dart';
+import 'package:konstruktor/ui/design_system.dart';
+import 'package:konstruktor/ui/uikit.dart';
 
 /// Ready state view with interactive canvas grid and color palette.
 ///

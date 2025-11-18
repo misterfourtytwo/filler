@@ -1,7 +1,7 @@
-import 'package:filler/features/canvas/domain/custom_pattern.dart';
-import 'package:filler/ui/design_system.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:konstruktor/features/canvas/domain/custom_pattern.dart';
+import 'package:konstruktor/ui/design_system.dart';
 
 /// Editor widget for creating and modifying custom patterns.
 ///

@@ -1,9 +1,9 @@
 import 'dart:async';
 
-import 'package:filler/app.dart';
-import 'package:filler/core/logging.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:konstruktor/app.dart';
+import 'package:konstruktor/core/logging.dart';
 
 /// Entry point for the Filler pixel canvas application.
 void main() {

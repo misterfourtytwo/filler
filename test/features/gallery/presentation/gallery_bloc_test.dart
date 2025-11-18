@@ -1,10 +1,10 @@
 import 'package:bloc_test/bloc_test.dart';
-import 'package:filler/domain/repositories.dart';
-import 'package:filler/features/canvas/domain/canvas_model.dart';
-import 'package:filler/features/canvas/domain/pixel_data.dart';
-import 'package:filler/features/gallery/presentation/gallery_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:konstruktor/domain/repositories.dart';
+import 'package:konstruktor/features/canvas/domain/canvas_model.dart';
+import 'package:konstruktor/features/canvas/domain/pixel_data.dart';
+import 'package:konstruktor/features/gallery/presentation/gallery_bloc.dart';
 import 'package:mocktail/mocktail.dart';
 
 import '../../../helpers/test_helpers.dart';

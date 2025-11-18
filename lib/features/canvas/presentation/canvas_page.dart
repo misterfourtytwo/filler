@@ -1,16 +1,16 @@
 import 'dart:ui' as ui;
 
-import 'package:filler/core/file_picker_service.dart';
-import 'package:filler/core/logging.dart';
-import 'package:filler/features/canvas/presentation/canvas_bloc.dart';
-import 'package:filler/features/canvas/presentation/views/canvas_initial_view.dart';
-import 'package:filler/features/canvas/presentation/views/canvas_loading_view.dart';
-import 'package:filler/features/canvas/presentation/views/canvas_ready_view.dart';
-import 'package:filler/ui/design_system.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:konstruktor/core/file_picker_service.dart';
+import 'package:konstruktor/core/logging.dart';
+import 'package:konstruktor/features/canvas/presentation/canvas_bloc.dart';
+import 'package:konstruktor/features/canvas/presentation/views/canvas_initial_view.dart';
+import 'package:konstruktor/features/canvas/presentation/views/canvas_loading_view.dart';
+import 'package:konstruktor/features/canvas/presentation/views/canvas_ready_view.dart';
+import 'package:konstruktor/ui/design_system.dart';
 
 /// Canvas editor page providing pixel art creation interface.
 ///

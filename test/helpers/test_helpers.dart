@@ -1,19 +1,19 @@
 import 'dart:io';
 
 import 'package:drift/drift.dart';
-import 'package:filler/core/logging.dart';
-import 'package:filler/data/database.dart';
-import 'package:filler/domain/repositories.dart';
-import 'package:filler/features/canvas/domain/canvas_model.dart';
-import 'package:filler/features/canvas/domain/pixel_data.dart';
-import 'package:filler/features/canvas/presentation/canvas_bloc.dart';
-import 'package:filler/features/gallery/presentation/gallery_bloc.dart';
-import 'package:filler/features/home/presentation/home_page.dart';
-import 'package:filler/features/prefs/presentation/preferences_bloc.dart';
-import 'package:filler/ui/app_scope.dart';
-import 'package:filler/ui/design_system.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:konstruktor/core/logging.dart';
+import 'package:konstruktor/data/database.dart';
+import 'package:konstruktor/domain/repositories.dart';
+import 'package:konstruktor/features/canvas/domain/canvas_model.dart';
+import 'package:konstruktor/features/canvas/domain/pixel_data.dart';
+import 'package:konstruktor/features/canvas/presentation/canvas_bloc.dart';
+import 'package:konstruktor/features/gallery/presentation/gallery_bloc.dart';
+import 'package:konstruktor/features/home/presentation/home_page.dart';
+import 'package:konstruktor/features/prefs/presentation/preferences_bloc.dart';
+import 'package:konstruktor/ui/app_scope.dart';
+import 'package:konstruktor/ui/design_system.dart';
 
 /// Helper utilities for testing the Filler application.
 ///

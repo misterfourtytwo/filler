@@ -1,6 +1,6 @@
-# Filler App - GitHub Pages Deployment Guide
+# Konstruktor App - GitHub Pages Deployment Guide
 
-This guide provides step-by-step instructions for deploying the Filler pixel canvas editor to GitHub Pages.
+This guide provides step-by-step instructions for deploying the Konstruktor pixel canvas editor to GitHub Pages.
 
 ## 🚀 Quick Start
 

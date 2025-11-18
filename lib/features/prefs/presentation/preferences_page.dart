@@ -1,11 +1,11 @@
-import 'package:filler/core/logging.dart';
-import 'package:filler/features/prefs/presentation/preferences_bloc.dart';
-import 'package:filler/features/prefs/presentation/views/preferences_initial_view.dart';
-import 'package:filler/features/prefs/presentation/views/preferences_loading_view.dart';
-import 'package:filler/features/prefs/presentation/views/preferences_ready_view.dart';
-import 'package:filler/ui/design_system.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:konstruktor/core/logging.dart';
+import 'package:konstruktor/features/prefs/presentation/preferences_bloc.dart';
+import 'package:konstruktor/features/prefs/presentation/views/preferences_initial_view.dart';
+import 'package:konstruktor/features/prefs/presentation/views/preferences_loading_view.dart';
+import 'package:konstruktor/features/prefs/presentation/views/preferences_ready_view.dart';
+import 'package:konstruktor/ui/design_system.dart';
 
 /// Preferences page for configuring default canvas settings.
 ///

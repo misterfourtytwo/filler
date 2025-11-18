@@ -1,8 +1,8 @@
 import 'package:bloc_test/bloc_test.dart';
-import 'package:filler/domain/repositories.dart';
-import 'package:filler/features/prefs/domain/preferences_model.dart';
-import 'package:filler/features/prefs/presentation/preferences_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:konstruktor/domain/repositories.dart';
+import 'package:konstruktor/features/prefs/domain/preferences_model.dart';
+import 'package:konstruktor/features/prefs/presentation/preferences_bloc.dart';
 import 'package:mocktail/mocktail.dart';
 
 import '../../../helpers/test_helpers.dart';

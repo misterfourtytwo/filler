@@ -1,6 +1,6 @@
-import 'package:filler/ui/design_system.dart';
-import 'package:filler/ui/uikit/color_swatch_button.dart';
 import 'package:flutter/material.dart';
+import 'package:konstruktor/ui/design_system.dart';
+import 'package:konstruktor/ui/uikit/color_swatch_button.dart';
 
 /// Color palette widget for selecting painting colors.
 ///

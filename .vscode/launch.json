@@ -9,8 +9,7 @@
       "args": [
         "--web-browser-flag=--disable-web-security",
         "--web-port=8089"
-      ],
-      "webRenderer": "canvaskit"
+      ]
     },
     {
       "name": "Filler (Web - Chrome with WASM)",
@@ -21,8 +20,7 @@
         "--web-browser-flag=--disable-web-security",
         "--web-port=8089",
         "--dart-define=FLUTTER_WEB_USE_SKIA=true"
-      ],
-      "webRenderer": "canvaskit"
+      ]
     },
     {
       "name": "Filler (Web - Edge)",
@@ -32,8 +30,7 @@
       "args": [
         "--web-browser-flag=--disable-web-security",
         "--web-port=8080"
-      ],
-      "webRenderer": "canvaskit"
+      ]
     },
     {
       "name": "Filler (Web - Release Mode)",
@@ -43,8 +40,7 @@
       "flutterMode": "release",
       "args": [
         "--web-port=8089"
-      ],
-      "webRenderer": "canvaskit"
+      ]
     },
     {
       "name": "Filler (Web - Profile Mode)",
@@ -54,8 +50,7 @@
       "flutterMode": "profile",
       "args": [
         "--web-port=8080"
-      ],
-      "webRenderer": "canvaskit"
+      ]
     }
   ]
 }

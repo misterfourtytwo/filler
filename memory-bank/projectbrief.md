@@ -1,6 +1,6 @@
 # Project Brief
 
-Build "Filler" – a colorful pixel canvas editor with gallery, preferences, and export.
+Build "Konstruktor" – a colorful pixel canvas editor with gallery, preferences, and export.
 
 - Home: navigate to New Canvas, Gallery, Preferences.
 - Canvas Editor: width×height grid, insets, color picker, save to gallery.
