@@ -46,13 +46,7 @@ class _AnglePickerState extends State<AnglePicker> {
 
   /// Gets the index of the current angle.
   int get _currentIndex {
-    final normalizedAngle = widget.currentAngle % (2 * 3.1416);
-    for (int i = 0; i < _angles.length; i++) {
-      if ((normalizedAngle - _angles[i]).abs() < 0.1) {
-        return i;
-      }
-    }
-    return 0; // Default to 0° if no match
+    return (widget.currentAngle / 1.5708).round();
   }
 
   @override
@@ -205,6 +199,7 @@ class _AnglePickerState extends State<AnglePicker> {
             ClipRRect(
               borderRadius: BorderRadius.circular(DesignSystem.radiusMd),
               child: CustomPaint(
+                size: Size(buttonSize, buttonSize),
                 painter: pattern is CustomPattern
                     ? CustomPatternPainter(
                         pattern,

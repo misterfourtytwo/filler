@@ -219,7 +219,7 @@ class _CanvasGridState extends State<CanvasGrid> {
                     ? CustomPaint(
                         painter: CustomPatternPainter(
                           widget.customPattern!,
-                          rotation: widget.patternRotation,
+                          rotation: pixelData.rotation,
                           paintColor: widget.patternPaintColor,
                         ),
                       )

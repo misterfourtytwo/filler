@@ -275,13 +275,14 @@ class CanvasBloc extends Bloc<CanvasEvent, CanvasState> {
               }
 
               final copy = List<PixelData>.from(px);
-              copy[event.index] = PixelData(pattern: color);
+              copy[event.index] = PixelData(pattern: color, rotation: rotation);
 
               AppLogger.canvas(
                 'Pixel painted',
                 data: {
                   'index': event.index,
                   'pattern': color,
+                  'rotation': '${(rotation * 180 / pi).toStringAsFixed(1)}°',
                   'position': '${event.index % w},${event.index ~/ w}',
                 },
               );
@@ -401,7 +402,8 @@ class CanvasBloc extends Bloc<CanvasEvent, CanvasState> {
               patternPaintColor,
               canvasBackgroundColor,
             ) {
-              final newRotation = (rotation + event.angle) % (2 * pi);
+              // Angle picker sends absolute angles, not deltas
+              final newRotation = event.angle;
 
               AppLogger.canvas(
                 'Pattern rotation changed',
