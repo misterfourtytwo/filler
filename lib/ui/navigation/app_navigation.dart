@@ -143,7 +143,7 @@ class _HomeView extends StatelessWidget {
             ),
             const SizedBox(height: DesignSystem.spaceLg),
             Text(
-              'Filler',
+              'Konstruktor',
               style: Theme.of(context).textTheme.displaySmall?.copyWith(
                 fontWeight: FontWeight.w800,
                 letterSpacing: 1.0,

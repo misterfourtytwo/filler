@@ -2,7 +2,7 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Filler (Web - Chrome)",
+      "name": "Konstruktor (Web - Chrome)",
       "request": "launch",
       "type": "dart",
       "deviceId": "chrome",
@@ -12,7 +12,7 @@
       ]
     },
     {
-      "name": "Filler (Web - Chrome with WASM)",
+      "name": "Konstruktor (Web - Chrome with WASM)",
       "request": "launch",
       "type": "dart",
       "deviceId": "chrome",
@@ -23,7 +23,7 @@
       ]
     },
     {
-      "name": "Filler (Web - Edge)",
+      "name": "Konstruktor (Web - Edge)",
       "request": "launch",
       "type": "dart",
       "deviceId": "edge",
@@ -33,7 +33,7 @@
       ]
     },
     {
-      "name": "Filler (Web - Release Mode)",
+      "name": "Konstruktor (Web - Release Mode)",
       "request": "launch",
       "type": "dart",
       "deviceId": "chrome",
@@ -43,7 +43,7 @@
       ]
     },
     {
-      "name": "Filler (Web - Profile Mode)",
+      "name": "Konstruktor (Web - Profile Mode)",
       "request": "launch",
       "type": "dart",
       "deviceId": "chrome",

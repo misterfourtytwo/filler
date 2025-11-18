@@ -5,11 +5,11 @@ import 'package:flutter/material.dart';
 import 'package:konstruktor/app.dart';
 import 'package:konstruktor/core/logging.dart';
 
-/// Entry point for the Filler pixel canvas application.
+/// Entry point for the Konstruktor pixel canvas application.
 void main() {
   // Initialize logging system
   AppLogger.initialize(isDebug: kDebugMode);
-  AppLogger.instance.i('🎯 Starting Filler application');
+  AppLogger.instance.i('🎯 Starting Konstruktor application');
 
   // Setup global error handling
   FlutterError.onError = (details) {
@@ -29,7 +29,7 @@ void main() {
   runZonedGuarded(
     () {
       runApp(const MyApp());
-      AppLogger.instance.i('✅ Filler application started successfully');
+      AppLogger.instance.i('✅ Konstruktor application started successfully');
     },
     (error, stackTrace) {
       AppLogger.error(

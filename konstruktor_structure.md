@@ -524,7 +524,7 @@ This helps developers remember what they were doing and what needs to be done ne
 
 ## Summary - The Big Picture! 🎯
 
-Filler is like a magical digital coloring book where:
+Konstruktor is like a magical digital coloring book where:
 
 1. **You create** beautiful patterns on a grid
 2. **You rotate** patterns to make them look different
@@ -541,4 +541,4 @@ The code is organized like a well-organized toy box, with each part having a spe
 - **Responsive** - Works on all devices
 - **Extensible** - Easy to add new features
 
-That's Filler in a nutshell - a beautiful, well-organized pixel art studio that brings joy to creators everywhere! 🎨✨
+That's Konstruktor in a nutshell - a beautiful, well-organized pixel art studio that brings joy to creators everywhere! 🎨✨

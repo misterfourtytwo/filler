@@ -50,7 +50,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                   const SizedBox(width: DesignSystem.spaceSm),
                   Text(
-                    'Filler',
+                    'Konstruktor',
                     style: Theme.of(context).textTheme.headlineMedium?.copyWith(
                       fontWeight: FontWeight.bold,
                       color: Theme.of(context).colorScheme.primary,
@@ -81,7 +81,7 @@ class _HomePageState extends State<HomePage> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
-          'Filler',
+          'Konstruktor',
           style: Theme.of(context).textTheme.displaySmall?.copyWith(
             fontWeight: FontWeight.w800,
             letterSpacing: 1.0,

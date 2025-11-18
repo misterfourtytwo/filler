@@ -9,18 +9,33 @@ Build and optimize the web version of Konstruktor for deployment.
 
 **Usage:**
 ```bash
+# Default: GitHub Pages subdirectory (/konstruktor/)
 ./scripts/build-web.sh
+
+# Custom base-href for root domain
+./scripts/build-web.sh /
+
+# Custom base-href for different subdirectory
+./scripts/build-web.sh /my-app/
 ```
 
+**Parameters:**
+- `$1` (optional): Base href path (defaults to `/konstruktor/`)
+  - Use `/konstruktor/` for GitHub Pages at `username.github.io/konstruktor/`
+  - Use `/` for root domain deployment
+  - Must start and end with `/`
+
 **What it does:**
-1. Cleans previous builds
-2. Gets dependencies
-3. Runs all tests
-4. Builds optimized web app with:
+1. Parses base-href parameter (defaults to `/konstruktor/`)
+2. Cleans previous builds
+3. Gets dependencies
+4. Runs all tests
+5. Builds optimized web app with:
+   - Specified base-href for correct asset paths
    - CanvasKit renderer for better performance
    - Tree-shaken icons to reduce bundle size
-5. Copies MIME type configuration files (`.htaccess`, `_headers`)
-6. Creates `.nojekyll` file for GitHub Pages
+6. Copies MIME type configuration files (`.htaccess`, `_headers`)
+7. Creates `.nojekyll` file for GitHub Pages
 
 **Output:** `build/web/` directory ready for deployment
 
@@ -90,16 +105,26 @@ Edit your code in the `lib/` directory
 
 #### 2. Test Locally
 ```bash
-# Option 1: Use custom server (RECOMMENDED for WASM testing)
-python3 scripts/serve-local.py
-
-# Option 2: Use Flutter's dev server
+# Option 1: Use Flutter's dev server (BEST for development)
 flutter run -d chrome --web-port 8080
+
+# Option 2: Build and test with local server (for production testing)
+./scripts/build-web.sh /        # Build with root base-href for local testing
+python3 scripts/serve-local.py  # Serve at http://localhost:8099
 ```
+
+**Important Notes:**
+- When testing locally, use `/` as base-href: `./scripts/build-web.sh /`
+- The default `/konstruktor/` base-href is for GitHub Pages deployment only
+- For production testing, build with `/konstruktor/` then deploy to test server
 
 #### 3. Build for Production
 ```bash
-./scripts/build-web.sh
+# For GitHub Pages at username.github.io/konstruktor/
+./scripts/build-web.sh /konstruktor/
+
+# For root domain deployment
+./scripts/build-web.sh /
 ```
 
 #### 4. Deploy

@@ -15,7 +15,7 @@ import 'package:konstruktor/features/prefs/presentation/preferences_bloc.dart';
 import 'package:konstruktor/ui/app_scope.dart';
 import 'package:konstruktor/ui/design_system.dart';
 
-/// Helper utilities for testing the Filler application.
+/// Helper utilities for testing the Konstruktor application.
 ///
 /// Provides common test setup, database creation, and cleanup utilities
 /// to ensure consistent test environments across all test files.
@@ -55,7 +55,7 @@ class TestHelpers {
           BlocProvider(create: (_) => GalleryBloc(canvasRepo)),
         ],
         child: MaterialApp(
-          title: 'Filler Test',
+          title: 'Konstruktor Test',
           theme: DesignSystem.theme(colorScheme),
           home: Builder(
             builder: (context) {

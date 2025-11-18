@@ -90,7 +90,7 @@ class _AppState extends State<App> {
                   prefsBloc.themeBloc ??= themeBloc;
 
                   return MaterialApp(
-                    title: 'Filler',
+                    title: 'Konstruktor',
                     debugShowCheckedModeBanner:
                         false, // Remove debug banner for premium look
                     theme: DesignSystem.theme(lightColorScheme),

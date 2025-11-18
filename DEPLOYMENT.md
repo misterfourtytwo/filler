@@ -27,14 +27,18 @@ This guide provides step-by-step instructions for deploying the Konstruktor pixe
 
 #### Build the Web App
 ```bash
-# Run the build script
+# Run the build script (defaults to /konstruktor/ base-href for GitHub Pages)
 ./scripts/build-web.sh
+
+# Or specify custom base-href:
+./scripts/build-web.sh /konstruktor/    # GitHub Pages subdirectory
+./scripts/build-web.sh /                # Root domain
 
 # Or manually:
 flutter clean
 flutter pub get
 flutter test
-flutter build web --release
+flutter build web --release --base-href=/konstruktor/
 ```
 
 #### Test Locally
@@ -156,7 +160,18 @@ flutter build web --release --dart-define=FLUTTER_WEB_USE_SKIA=true --tree-shake
 
 #### Routing Issues
 - Custom 404 page handles client-side routing
-- Update base href if needed: `--base-href=/konstruktor/`
+- **Base href configuration**: The app uses `--base-href=/konstruktor/` for GitHub Pages
+- If deploying to root domain, use: `./scripts/build-web.sh /`
+- If deploying to different subdirectory, use: `./scripts/build-web.sh /your-path/`
+
+#### Asset Path Issues
+**Problem**: Assets not loading (404 errors on images, JS, CSS files)
+
+**Cause**: Incorrect base-href configuration
+- GitHub Pages subdirectory requires: `--base-href=/konstruktor/`
+- Root domain requires: `--base-href=/`
+
+**Solution**: The build script and GitHub Actions now automatically set the correct base-href
 
 ### Performance Monitoring
 - Use Chrome DevTools for performance analysis
@@ -253,4 +268,4 @@ For deployment issues:
 
 **Last Updated**: November 2024  
 **Version**: 1.1.0  
-**Project**: Konstruktor (formerly Filler)
+**Project**: Konstruktor (formerly Konstruktor)

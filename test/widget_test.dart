@@ -13,7 +13,7 @@ void main() {
     await tester.pumpWidget(const App());
 
     // Verify the app loads and shows the home page
-    expect(find.text('Filler'), findsOneWidget);
+    expect(find.text('Konstruktor'), findsOneWidget);
     expect(find.text('Create New Canvas'), findsOneWidget);
     expect(find.text('Gallery'), findsOneWidget);
     expect(find.text('Settings'), findsOneWidget);
